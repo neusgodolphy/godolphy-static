@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Godolphy - El motor de reservas con IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
+    .font-gabarito { font-family: 'Gabarito', sans-serif; }
+    .font-poppins  { font-family: 'Poppins', sans-serif; }
+    .font-roboto   { font-family: 'Roboto', sans-serif; }
+
+    /* Hero gradient */
+    .hero-bg {
+      background: linear-gradient(160deg, #9B4FE8 0%, #7835C3 30%, #631cff 65%, #3a0aaa 100%);
+    }
+
+    /* Tabs */
+    .tab-btn { color: rgba(255,255,255,0.6); border-bottom: 3px solid transparent; transition: all .2s; background:none; border-top:none; border-left:none; border-right:none; }
+    .tab-btn.active { color: #fff; border-bottom-color: #fff; }
+    #tab-track { display:flex; transition: transform 0.45s cubic-bezier(.4,0,.2,1); will-change:transform; }
+    .tab-slide { flex: 0 0 100%; width: 100%; }
+
+    /* Testimonial slider */
+    #testimonial-track { transition: transform 0.4s ease; }
+
+    /* Dot */
+    .dot { height: 8px; border-radius: 4px; cursor: pointer; transition: all .3s; }
+    .dot.active  { width: 45px; background: #1a1aff; }
+    .dot.inactive{ width: 17px; background: rgba(26,26,255,.3); }
+
+    /* Marquee */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-inner { display: inline-block; white-space: nowrap; animation: marquee 20s linear infinite; }
+
+    /* Toggle */
+    .toggle-track { width:44px; height:24px; background:#ccc; border-radius:12px; position:relative; transition:background .2s; cursor:pointer; }
+    .toggle-track.on { background:#631cff; }
+    .toggle-thumb { width:18px; height:18px; background:#fff; border-radius:50%; position:absolute; top:3px; left:3px; transition:left .2s; }
+    .toggle-track.on .toggle-thumb { left:23px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="/"><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:40px;" /></a>
+    <ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;">
+      <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li>
+      <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li>
+      <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li>
+      <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li>
+    </ul>
+    <div style="display:flex;gap:12px;">
+      <a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a>
+      <a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Login</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+<section class="hero-bg" style="position:relative;padding:160px 40px 420px;text-align:center;overflow:hidden;">
+  <img src="https://www.figma.com/api/mcp/asset/f2562695-503c-4a05-ac0b-2caf1835480c" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;pointer-events:none;" />
+  <div style="position:relative;z-index:1;max-width:960px;margin:0 auto;">
+    <h1 class="font-gabarito" style="color:#fff;font-size:68px;line-height:1.04;font-weight:700;margin:0 0 16px;">El motor de reservas con IA</h1>
+    <h2 class="font-poppins" style="color:#fff;font-size:35px;font-weight:400;margin:0 0 24px;">que te ayuda con tus finanzas</h2>
+    <p style="color:#fff;font-size:17.7px;line-height:1.52;letter-spacing:.5px;max-width:720px;margin:0 auto 40px;">
+      Más allá de una gestión óptima de las reservas tu negocio precisa de inteligencia, y consejos para poder entender que hay detrás de los datos.
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;">
+      <a href="#" style="background:#fff;color:#631cff;font-size:18px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Demo</a>
+      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="border:2px solid #fff;color:#fff;font-size:18px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Alta</a>
+    </div>
+  </div>
+  <!-- Wave -->
+  <div style="position:absolute;bottom:-1px;left:0;right:0;overflow:hidden;height:200px;">
+    <img src="https://www.figma.com/api/mcp/asset/7d93e5ec-c6ad-4b7d-a448-3aa6f80a4b55" alt="" style="width:110%;height:100%;object-fit:cover;" />
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ TABS ═══════════════════════════════════════ -->
+<section style="position:relative;z-index:10;margin-top:-320px;background:transparent;padding:0 40px 0;">
+  <div style="max-width:1120px;margin:0 auto;">
+    <!-- Tab buttons — sit on top of the hero purple -->
+    <div style="display:flex;justify-content:center;gap:0;margin-bottom:32px;">
+
+      <button onclick="switchTab(0)" class="tab-btn active" data-tab="0" style="padding:12px 32px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.06em;font-family:'Poppins',sans-serif;display:flex;flex-direction:row;align-items:center;gap:7px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm-7-2h2v-3h3v-2h-3V9h-2v2H9v2h3z"/></svg>
+        RESERVAS
+      </button>
+
+      <button onclick="switchTab(1)" class="tab-btn" data-tab="1" style="padding:12px 32px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.06em;font-family:'Poppins',sans-serif;display:flex;flex-direction:row;align-items:center;gap:7px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3h-1V1h-2v2H7V1H5v2H4C2.9 3 2 3.9 2 5v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13zm-2-7H6v-2h12zm-4 4H6v-2h8z"/></svg>
+        AGENDA
+      </button>
+
+      <button onclick="switchTab(2)" class="tab-btn" data-tab="2" style="padding:12px 32px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.06em;font-family:'Poppins',sans-serif;display:flex;flex-direction:row;align-items:center;gap:7px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        EQUIPO
+      </button>
+
+      <button onclick="switchTab(3)" class="tab-btn" data-tab="3" style="padding:12px 32px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.06em;font-family:'Poppins',sans-serif;display:flex;flex-direction:row;align-items:center;gap:7px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg>
+        ANÁLISIS
+      </button>
+
+    </div>
+    <!-- Sliding viewport — card floats over the white section below -->
+    <div style="overflow:hidden;border-radius:16px;box-shadow:0 16px 60px rgba(0,0,0,.18);max-width:70%;margin:0 auto;">
+      <div id="tab-track" style="transform:translateX(0%);">
+        <div class="tab-slide">
+          <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="Reservas" style="width:100%;display:block;" />
+        </div>
+        <div class="tab-slide">
+          <img src="/Volumes/Intenso/Godolphy/producto/agenda/visualización citas.png" alt="Agenda" style="width:100%;display:block;" />
+        </div>
+        <div class="tab-slide">
+          <img src="https://www.godolphy.com/wp-content/uploads/2025/11/Equipo-1.png" alt="Equipo" style="width:100%;display:block;" />
+        </div>
+        <div class="tab-slide">
+          <img src="https://www.godolphy.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-08-a-las-22.21.51.png" alt="Análisis" style="width:100%;display:block;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURE 0: ANÁLISIS COPILOTO ═══════════════════════════════════════ -->
+<section style="background:#fff;padding:105px 40px 80px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;padding-left:56px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:54px;font-weight:600;margin:0 0 20px;">Descubre dónde estás<br>perdiendo dinero y<br>cómo recuperarlo.</h3>
+      <p style="color:rgba(2,2,30,.8);font-size:18.6px;line-height:28px;margin:0 0 32px;">El copiloto que analiza tu negocio y te dice qué hacer.</p>
+      <ul style="list-style:none;margin:0 0 36px;padding:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;">
+          <svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Qué servicios te hacen perder dinero
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;">
+          <svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Qué clientes estás a punto de perder
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;">
+          <svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Dónde puedes aumentar ingresos sin trabajar más
+        </li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-08-a-las-22.21.51.png" alt="Análisis de negocio con IA" style="width:100%;border-radius:12px;" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURE 1: RESERVAS ═══════════════════════════════════════ -->
+<section style="background:#fff;padding:105px 40px 50px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;padding-left:56px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:50px;font-weight:600;margin:0 0 32px;">Tus clientes reservan y<br>realizan cambios sin<br>molestar.</h3>
+      <p style="color:rgba(2,2,30,.8);font-size:18.6px;line-height:28px;margin:0 0 32px;">Ofrece libertad a los clientes para reservar a cualquier hora y realizar cambios dentro de tu política de empresa. El cliente podrá reservar con su teléfono, seleccionar profesional si lo desea, ubicación, día y hora.</p>
+      <a href="https://www.godolphy.com/funcionalidades/reservas-online/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Ver proceso de reserva</a>
+    </div>
+    <div style="flex:1;">
+      <img src="https://www.figma.com/api/mcp/asset/ceeb3e00-cd9d-4f5a-b752-b6fb950007e9" alt="Software para salones de uñas - reservas y agenda" style="width:100%;" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURE 2: PAGOS ═══════════════════════════════════════ -->
+<section style="background:rgba(8,15,30,.02);padding:135px 40px 105px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;padding-left:56px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:50px;font-weight:600;margin:0 0 32px;">Opciones de pago<br>flexibles con garantia<br>para todos.</h3>
+      <ul style="list-style:none;margin:0 0 32px;padding:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;">
+          <svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Solicita un deposito para consolidar compromiso.
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;">
+          <svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Cobra una vez realizado el servicio y evita barreras de entrada.
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;">
+          <svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Reduce cancelaciones con penalizaciones según política.
+        </li>
+      </ul>
+      <a href="https://www.godolphy.com/funcionalidades/pagos-depositos/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Ver pagos y depósitos</a>
+    </div>
+    <div style="flex:1;">
+      <img src="https://www.figma.com/api/mcp/asset/791494d2-2e0b-4df6-bd59-f00e4e843dc5" alt="Procese pagos contra las tarjetas de crédito almacenadas" style="width:100%;" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURE 3: EQUIPO ═══════════════════════════════════════ -->
+<section style="background:#fff;padding:105px 40px 50px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;padding-left:56px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:50px;font-weight:600;margin:0 0 32px;">El equipo está<br>organizado.</h3>
+      <ul style="list-style:none;margin:0 0 32px;padding:0;display:flex;flex-direction:column;gap:14px;">
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>App muy visual para visualizar las citas y servicios.</li>
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificación de nuevas citas y recordatorios.</li>
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Especificaciones aportadas por el cliente.</li>
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Chat con el cliente y notificaciones de retrasos.</li>
+      </ul>
+      <a href="https://www.godolphy.com/funcionalidades/equipo-y-horarios/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Ver gestión del equipo</a>
+    </div>
+    <div style="flex:1;">
+      <img src="https://www.figma.com/api/mcp/asset/9afbf1ea-4559-4b4a-a9bb-c13cb5294b1f" alt="La agenda inteligente para técnicos de campo" style="width:100%;" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURE 4: DISTANCIAS ═══════════════════════════════════════ -->
+<section style="background:rgba(8,15,30,.02);padding:135px 40px 105px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;padding-left:56px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:50px;font-weight:600;margin:0 0 32px;">Cálculo de distancias y<br>precios en servicios a<br>domicilio.</h3>
+      <p style="color:rgba(2,2,30,.8);font-size:18.8px;line-height:28px;margin:0 0 32px;">Calcula los tiempo de desplazamiento en base el medio de transporte, andando, coche, transporte público y gestiona las reservas en base a los tiempos de transporte para no llegar tarde a ninguna cita.</p>
+      <a href="https://www.godolphy.com/funcionalidades/servicios-a-domicilio/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">¿Cómo funcionan los servicios a domicilio?</a>
+    </div>
+    <div style="flex:1;position:relative;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/01/google-maps.png" alt="Servicios a domicilio" style="width:100%;" />
+      <button style="position:absolute;top:-20px;right:-20px;width:110px;height:110px;background:#080f1e;border:10px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+        <svg style="width:32px;height:32px;color:#f54748;margin-left:4px;" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURE 5: WHATSAPP / IA ═══════════════════════════════════════ -->
+<section style="background:rgba(8,15,30,.02);padding:135px 40px 105px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;padding-left:56px;">
+      <span style="display:inline-block;background:#EEFE3A;color:#02021e;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.06em;margin-bottom:20px;font-family:'Poppins',sans-serif;">PRÓXIMAMENTE</span>
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:50px;font-weight:600;margin:0 0 32px;">Incrementa la fidelización<br>un 60% con mensajes de<br>seguimiento humanos.</h3>
+      <p style="color:rgba(2,2,30,.8);font-size:18.8px;line-height:28px;margin:0;">Escoge la plantilla según tu sector y envía mensajes customizados con AI según el perfil de cada cliente, a tu nombre. Aumenta la tasa de fidelización un 60%.</p>
+    </div>
+    <div style="flex:1;padding:0 48px;">
+      <img src="https://www.figma.com/api/mcp/asset/0053a1af-ecf9-4aa0-8190-bcaa720dbe5e" alt="Conversación WhatsApp con clienta" style="width:100%;" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FEATURES GRID ═══════════════════════════════════════ -->
+<section style="background:#0e1649;padding:85px 40px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:56px;padding:0 80px;">
+      <h3 class="font-gabarito" style="color:#fff;font-size:55px;line-height:66px;font-weight:600;margin:0 0 24px;">Maximiza la experiencia de<br>clientes y empleados mientras<br>crece tu negocio.</h3>
+      <p style="color:#fff;font-size:18.8px;line-height:28px;margin:0;">Godolphy es un software para servicios a domicilio y técnicos de campo<br>que mejora los procesos optimizando rutas y mejorando la vida de los empleados.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002276.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/fidelizacion-ai/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Fidelización AI</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Comunicaciones automatizadas por WhatsApp que se sienten más humanas con un mensaje personalizado con AI.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002288.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/servicios-a-domicilio/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Servicios a domicilio</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Permite reservas en base ubicación y calculo de los tiempos necesarios para el servicio + desplazamiento.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002280.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/reservas-online/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Reservas online</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Permite reservas fáciles para el usuario y adaptadas a tu negocio con cálculo de los tiempos y precios.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002282.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/pagos-y-depositos/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Pagos y depósitos</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Solicita un deposito porcentual o fijo en el momento de la reserva para consolidar el compromiso de los clientes.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002281.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/multiples-ubicaciones/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Múltiples ubicaciones</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Permite reservar entre varias ubicaciones o salones, o citas a domicilio. Asigna profesionales y precios a cada ubicación.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002287.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/gestion-de-clientes/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Gestión de clientes</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Gestiona toda la información de los clientes desde un único lugar, reservas, métodos de pago, etc.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002284.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/geolocalizacion-equipo/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Geolocalización equipo</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Visualiza la ubicación de tu equipo, asigna nuevos proyectos y servicios, incrementa el precio en base ubicación, etc.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002284.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/facturacion-y-reporte/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Facturación y reporte</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Descárgate un excel periódico con todos los datos de ventas para poder ejecutar una correcta contabilidad.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
+        <img src="https://www.godolphy.com/wp-content/uploads/2022/02/Group-1000002281.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <a href="https://www.godolphy.com/funcionalidades/equipo-y-horarios/" target="_blank" style="display:block;color:#331378;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Equipo y horarios</a>
+        <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Gestiona los horarios del equipo interno o freelance, sus vacaciones, qué servicios realizan, precios, comisiones, etc.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ ANALYTICS ═══════════════════════════════════════ -->
+<section style="background:#eeeeee;padding:155px 40px 102px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
+    <div style="flex:1;">
+      <img src="https://www.figma.com/api/mcp/asset/4d86a305-8e63-4795-a640-f212f7363c86" alt="Gestión de clientes para tu centro de estética en España" style="width:100%;" />
+    </div>
+    <div style="flex:1;padding-left:48px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:50px;line-height:50px;font-weight:600;margin:0 0 24px;">Analiza las ventas y toma<br>acciones correctivas</h3>
+      <p style="color:rgba(2,2,30,.8);font-size:18.8px;line-height:28px;margin:0 0 24px;">Obtén una visión global, y analiza fácilmente como están los números de tu negocio de servicios a domicilio / de campo.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Descubre qué servicios se venden más.</li>
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Analiza los clientes A y dales preferencia.</li>
+        <li style="display:flex;align-items:center;gap:12px;color:rgba(2,2,30,.8);font-size:19px;font-weight:500;"><svg style="width:24px;height:24px;color:#1a1aff;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Incrementa el precio según la distancia.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ PRICING ═══════════════════════════════════════ -->
+<section style="background:rgba(8,15,30,.02);padding:92px 40px 100px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:64px;line-height:76.8px;font-weight:700;margin:0 0 24px;">Precio</h3>
+      <p style="color:#02021e;font-size:18.6px;line-height:28px;margin:0;">Un único pack con todas las funcionalidades que se adapta a medida que creces.<br>Empieza hoy a digitalizar y optimizar tu negocio de servicios a domicilio / técnicos de campo.</p>
+    </div>
+    <div style="display:flex;gap:30px;max-width:980px;margin:0 auto;">
+      <!-- Calculator -->
+      <div style="flex:1;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);padding:28px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+          <div>
+            <label style="display:block;color:#333;font-weight:600;font-size:15.6px;margin-bottom:8px;">Reservas por mes:</label>
+            <div style="position:relative;">
+              <select id="reservas-sel" onchange="calcPrice()" style="width:100%;border:1px solid #e8e8e8;border-radius:5px;padding:12px 36px 12px 18px;color:#4e4e62;font-size:16px;appearance:none;background:#fff;cursor:pointer;">
+                <option value="29">100 servicios</option>
+                <option value="49">200–500 servicios</option>
+                <option value="79">500–1000 servicios</option>
+                <option value="119">1000–1500 servicios</option>
+                <option value="159">1500–2000 servicios</option>
+                <option value="199">Más de 2000 servicios</option>
+              </select>
+              <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:#696871;">▾</span>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;color:#333;font-weight:600;font-size:15.6px;margin-bottom:8px;">Número de profesionales:</label>
+            <input id="prof-inp" type="number" value="1" min="1" onchange="calcPrice()" style="width:100%;border:1px solid rgba(0,0,0,.1);border-radius:8px;padding:12px 16px;color:#4e4e62;font-size:16px;box-sizing:border-box;" />
+          </div>
+        </div>
+        <!-- Toggle -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px;">
+          <span class="font-roboto" style="font-weight:700;color:#212529;font-size:20px;">Mensualmente</span>
+          <div id="toggle" class="toggle-track" onclick="toggleBilling()">
+            <div class="toggle-thumb"></div>
+          </div>
+          <span class="font-roboto" style="font-weight:700;color:#212529;font-size:20px;">Anualmente</span>
+        </div>
+        <div style="text-align:center;margin-top:16px;">
+          <img src="https://www.figma.com/api/mcp/asset/6b290a37-9a44-4400-84ac-43c3d5dbaee9" alt="Ahorra un 20%" style="height:96px;" />
+        </div>
+      </div>
+      <!-- Result -->
+      <div style="width:300px;background:#121212;border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column;gap:44px;padding:44px 30px 30px;">
+        <!-- Oferta ribbon -->
+        <div style="position:absolute;top:0;right:0;width:140px;height:140px;overflow:hidden;">
+          <div style="position:absolute;top:28px;right:-36px;background:#eefe3a;color:#333;font-weight:600;font-size:16px;padding:12px 48px;transform:rotate(45deg);">Oferta</div>
+        </div>
+        <div>
+          <p class="font-roboto" style="color:#fff;font-weight:700;font-size:18px;margin:0 0 8px;">Todo Incluido</p>
+          <div style="display:flex;align-items:baseline;gap:4px;">
+            <span id="price-out" class="font-roboto" style="color:#fff;font-weight:700;font-size:40px;">€29.00</span>
+            <span class="font-roboto" style="color:#fff;font-size:15px;">/ mes</span>
+          </div>
+        </div>
+        <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:block;background:#eefe3a;color:#404040;font-family:'Roboto',sans-serif;font-weight:700;font-size:18px;text-align:center;padding:16px 32px;border-radius:8px;text-decoration:none;">Crear mi cuenta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ DECORATIVE BAND ═══════════════════════════════════════ -->
+<div style="position:relative;overflow:hidden;line-height:0;">
+  <img src="https://www.figma.com/api/mcp/asset/a38d594c-85d1-492d-b992-00fd194e61d7" alt="" style="width:100%;display:block;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,#fff 0%,transparent 18%,transparent 82%,#fff 100%);pointer-events:none;"></div>
+</div>
+
+<!-- ═══════════════════════════════════════ TESTIMONIALS ═══════════════════════════════════════ -->
+<section style="background:#fff;padding:95px 40px 100px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <h3 class="font-gabarito" style="color:#331378;font-size:60px;line-height:72px;font-weight:600;margin:0;">La confianza de nuestros<br>clientes</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+      <!-- Card 1 -->
+      <div style="background:#faf8fb;border-radius:16px;padding:32px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Neus Figueres" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          <div>
+            <p style="font-weight:600;font-size:16px;color:#02021e;margin:0 0 2px;">Neus Figueres</p>
+            <p style="font-size:13px;color:rgba(2,2,30,.6);margin:0;">CEO Orgasmi</p>
+          </div>
+        </div>
+        <div style="color:#EEFE3A;font-size:18px;margin-bottom:12px;">★★★★★</div>
+        <p style="font-size:15px;line-height:24px;color:rgba(2,2,30,.8);margin:0;">"Hemos mejorado muchísimo el tiempo de transporte entre servicio y aumentado el número de servicios diarios por profesional. La experiencia del cliente ha mejorado notablemente."</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#faf8fb;border-radius:16px;padding:32px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Silvia Gonzalo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          <div>
+            <p style="font-weight:600;font-size:16px;color:#02021e;margin:0 0 2px;">Silvia Gonzalo</p>
+            <p style="font-size:13px;color:rgba(2,2,30,.6);margin:0;">Terapeuta</p>
+          </div>
+        </div>
+        <div style="color:#EEFE3A;font-size:18px;margin-bottom:12px;">★★★★★</div>
+        <p style="font-size:15px;line-height:24px;color:rgba(2,2,30,.8);margin:0;">"Mis clientes pueden agendar citas y cambiar las horas todo dentro de la política y sin tener que llamarme. He ganado en tranquilidad y mis clientes están mucho más satisfechos."</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#faf8fb;border-radius:16px;padding:32px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ricardo Alemany" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
+          <div>
+            <p style="font-weight:600;font-size:16px;color:#02021e;margin:0 0 2px;">Ricardo Alemany</p>
+            <p style="font-size:13px;color:rgba(2,2,30,.6);margin:0;">Businessman</p>
+          </div>
+        </div>
+        <div style="color:#EEFE3A;font-size:18px;margin-bottom:12px;">★★★★★</div>
+        <p style="font-size:15px;line-height:24px;color:rgba(2,2,30,.8);margin:0;">"Las rutas de mis empleados son mucho más óptimas, ellos mismos pueden comunicarse con los clientes y ofrecer una mejor experiencia de trabajo."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CTA FINAL ═══════════════════════════════════════ -->
+<section style="background:#fff;padding:60px 40px 80px;">
+  <div style="max-width:1300px;margin:0 auto;background:linear-gradient(160deg,#7835C3 0%,#631cff 55%,#3a0aaa 100%);border-radius:30px;padding:45px 80px 80px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 8px 40px rgba(99,28,255,.3);">
+    <h2 class="font-gabarito" style="color:#fff;font-size:52px;line-height:1.1;font-weight:700;margin:0 0 32px;">Empieza gratis hoy</h2>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:inline-block;background:#fff;color:#631cff;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;font-family:'Poppins',sans-serif;">Empieza ahora</a>
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/05/Arrow-shape-1024x983.png" alt="" style="width:60px;" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<footer style="background:#02021e;padding:80px 40px 24px;">
+  <div style="max-width:1320px;margin:0 auto;">
+
+    <!-- 4 columns -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.1);">
+
+      <!-- Logo + contact -->
+      <div>
+        <img src="https://www.figma.com/api/mcp/asset/901244c7-127d-4b97-aaf1-74622d48a0f9" alt="Godolphy" style="height:56px;margin-bottom:24px;" />
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <span style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.7);font-size:17.2px;">
+            <svg style="width:16px;height:16px;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            Barcelona
+          </span>
+          <span style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.7);font-size:15.5px;">
+            <svg style="width:16px;height:16px;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            +34 614 058 249
+          </span>
+          <a href="mailto:hello@godolphy.com" style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.7);font-size:17.3px;text-decoration:none;">
+            <svg style="width:16px;height:16px;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            hello@godolphy.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Industrias -->
+      <div>
+        <h4 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Industrias</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Centro estética</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Salón de uñas</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Peluquerías</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Barberías</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Centros masajes SPA</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Empresas de limpieza</a>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Limpieza de oficinas</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Limpieza industrial</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Limpieza de vehículos</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Técnicos de campo</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Manitas a domicilio</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Jardineros</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Lampistas</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Fontaneros</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Mantenimiento de piscinas</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Niñeras</span>
+          <span style="color:rgba(255,255,255,.7);font-size:17px;">Tutores a domicilio</span>
+        </div>
+      </div>
+
+      <!-- Funcionalidades -->
+      <div>
+        <h4 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Funcionalidades</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Reservas online</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Calendario</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Equipos y horario</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Pagos y depósitos</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Facturación y reporte</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Chat y notificaciones</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Cupones y tarjetas regalo</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Geolocalización del equipo</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Servicios a domicilio</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Múltiples ubicaciones</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Gestión de clientes</a>
+        </div>
+      </div>
+
+      <!-- Recursos -->
+      <div>
+        <h4 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Recursos</h4>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <a href="#" style="color:#0d6efd;font-size:17.4px;line-height:26px;text-decoration:none;">Plantilla excel plan financiero centros estética.</a>
+          <a href="#" style="color:#0d6efd;font-size:17.4px;line-height:26px;text-decoration:none;">Guia Emprendedores Salones estética</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;padding-top:32px;gap:32px;">
+      <!-- CTA -->
+      <div>
+        <h5 style="color:#fff;font-weight:600;font-size:17.9px;letter-spacing:1px;margin:0 0 8px;">Darme de alta</h5>
+        <p style="color:rgba(255,255,255,.7);font-size:16.7px;margin:0 0 20px;">Prueba godolphy durante 30 días.</p>
+        <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:inline-block;background:#eefe3b;color:#631cff;font-weight:600;font-size:17.6px;padding:15px 32px;border-radius:20px;text-decoration:none;">Empieza ahora</a>
+      </div>
+      <!-- Legal -->
+      <div>
+        <h5 style="color:#fff;font-weight:600;font-size:17.9px;letter-spacing:1px;margin:0 0 20px;">Legal</h5>
+        <div style="display:flex;flex-wrap:wrap;gap:12px 16px;max-width:480px;">
+          <a href="#" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">Política privacidad</a>
+          <a href="#" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">Cookies</a>
+          <a href="#" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">Aviso Legal</a>
+          <a href="#" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">DPA</a>
+          <a href="#" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">Términos y condiciones</a>
+        </div>
+      </div>
+      <!-- Social -->
+      <div style="display:flex;gap:16px;margin-top:48px;">
+        <a href="https://www.instagram.com/godolphy.app" target="_blank" style="width:30px;height:30px;background:rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+          <svg style="width:14px;height:14px;" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" style="width:30px;height:30px;background:rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+          <svg style="width:14px;height:14px;" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding-top:16px;">
+      <a href="#" style="color:#fff;font-size:13.3px;font-weight:500;text-transform:capitalize;text-decoration:none;">política de privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════ JS ═══════════════════════════════════════ -->
+<script>
+  // ── Tabs (horizontal slider) ──
+  function switchTab(index) {
+    document.getElementById('tab-track').style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+  }
+
+  // ── Pricing ──
+  let annual = false;
+  function toggleBilling() {
+    annual = !annual;
+    document.getElementById('toggle').classList.toggle('on', annual);
+    calcPrice();
+  }
+  function calcPrice() {
+    const base = parseInt(document.getElementById('reservas-sel').value);
+    const profs = Math.max(1, parseInt(document.getElementById('prof-inp').value) || 1);
+    let price = base + (profs - 1) * 10;
+    if (annual) price = Math.round(price * 0.8);
+    document.getElementById('price-out').textContent = '€' + price + '.00';
+  }
+
+  // ── Testimonials ──
+  let slide = 0;
+  function goToSlide(n) {
+    slide = n;
+    const track = document.getElementById('testimonial-track');
+    track.style.transform = `translateX(calc(-${n * 442}px))`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === n);
+      d.classList.toggle('inactive', i !== n);
+    });
+  }
+  setInterval(() => goToSlide((slide + 1) % 3), 4000);
+</script>
+</body>
+</html>
