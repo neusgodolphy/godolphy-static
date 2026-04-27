@@ -9,27 +9,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
-    .font-gabarito { font-family: 'Gabarito', sans-serif; }
-    .hero-bg { background: linear-gradient(160deg, #9B4FE8 0%, #7835C3 30%, #631cff 65%, #3a0aaa 100%); }
-    .faq-item { border-bottom: 1px solid rgba(2,2,30,.1); }
-    .faq-btn { width:100%; background:none; border:none; text-align:left; cursor:pointer; padding:24px 0; display:flex; justify-content:space-between; align-items:center; }
-    .faq-body { display:none; padding:0 0 24px; }
-    .faq-body.open { display:block; }
-    .faq-icon { transition: transform .3s; flex-shrink:0; margin-left:16px; }
-    .faq-icon.open { transform: rotate(45deg); }
-    .feat-card { transition: all .2s; border:1.5px solid rgba(2,2,30,.08); border-radius:16px; padding:28px 24px; }
-    .feat-card:hover { box-shadow: 0 8px 32px rgba(99,28,255,.12); transform: translateY(-2px); }
+    body{font-family:'Poppins',sans-serif;margin:0;overflow-x:hidden;}
+    .font-gabarito{font-family:'Gabarito',sans-serif;}
+    .hero-bg{background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);}
+    .faq-item{border-bottom:1px solid rgba(2,2,30,.1);}
+    .faq-btn{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;}
+    .faq-body{display:none;padding:0 0 24px;}
+    .faq-body.open{display:block;}
+    .faq-icon{transition:transform .3s;flex-shrink:0;margin-left:16px;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .feat-card{transition:all .2s;border:1.5px solid rgba(2,2,30,.08);border-radius:16px;padding:24px 20px;background:#fff;}
+    .feat-card:hover{box-shadow:0 8px 32px rgba(99,28,255,.12);transform:translateY(-2px);}
+    .check{width:22px;height:22px;fill:#631cff;flex-shrink:0;margin-top:2px;}
+    .mini-faq-body{display:none;padding:10px 0 4px;}
+    .mini-faq-body.open{display:block;}
+    .mini-faq-icon{transition:transform .3s;flex-shrink:0;}
+    .mini-faq-icon.open{transform:rotate(45deg);}
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;">
   <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
     <a href="/"><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:40px;" /></a>
     <ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;">
-      <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li>
+      <li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li>
       <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li>
       <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li>
       <li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li>
@@ -41,139 +45,231 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero-bg" style="position:relative;padding:180px 40px 120px;text-align:center;overflow:hidden;">
-  <img src="https://www.figma.com/api/mcp/asset/f2562695-503c-4a05-ac0b-2caf1835480c" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;pointer-events:none;" />
-  <div style="position:relative;z-index:1;max-width:900px;margin:0 auto;">
-    <div style="display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:13px;font-weight:600;letter-spacing:.1em;padding:6px 18px;border-radius:20px;margin-bottom:24px;border:1px solid rgba(255,255,255,.3);">BARBERÍAS</div>
-    <h1 class="font-gabarito" style="color:#fff;font-size:64px;line-height:1.05;font-weight:700;margin:0 0 20px;">Software de gestión<br>de barberías</h1>
-    <p style="color:rgba(255,255,255,.9);font-size:19px;line-height:1.55;max-width:680px;margin:0 auto 40px;">
-      Reservas online, gestión de barberos, recordatorios automáticos y análisis de negocio. Todo lo que necesita tu barbería para crecer.
-    </p>
-    <div style="display:flex;gap:16px;justify-content:center;">
-      <a href="#" style="background:#fff;color:#631cff;font-size:17px;font-weight:600;padding:15px 36px;border-radius:20px;text-decoration:none;">Ver demo</a>
-      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="border:2px solid #fff;color:#fff;font-size:17px;font-weight:600;padding:15px 36px;border-radius:20px;text-decoration:none;">Empezar gratis</a>
+<section class="hero-bg" style="position:relative;padding:130px 40px 100px;overflow:hidden;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px;">
+    <div style="flex:1;max-width:580px;">
+      <div style="display:inline-block;background:rgba(255,255,255,.15);color:#EEFE3A;font-size:13px;font-weight:600;letter-spacing:.08em;padding:6px 18px;border-radius:20px;margin-bottom:24px;border:1px solid rgba(238,254,58,.3);">BARBERÍAS</div>
+      <h1 class="font-gabarito" style="color:#fff;font-size:58px;line-height:1.05;font-weight:700;margin:0 0 20px;">Automatiza la agenda de tu barbería</h1>
+      <p style="color:rgba(255,255,255,.85);font-size:18px;line-height:1.6;margin:0 0 36px;">Reservas online, gestión de barberos, cobros y recordatorios. Todo desde una sola plataforma.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="background:#fff;color:#631cff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:20px;text-decoration:none;">Empezar gratis</a>
+        <a href="#" style="border:2px solid #fff;color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:20px;text-decoration:none;">Ver demo</a>
+      </div>
+      <p style="color:rgba(255,255,255,.6);font-size:13px;margin:16px 0 0;">30 días gratis · Sin tarjeta de crédito</p>
     </div>
-    <p style="color:rgba(255,255,255,.65);font-size:14px;margin:20px 0 0;">30 días gratis · Sin tarjeta de crédito</p>
+    <div style="flex:1;display:flex;justify-content:flex-end;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="Software barbería" style="width:100%;max-width:520px;border-radius:20px;box-shadow:0 24px 80px rgba(0,0,0,.3);" />
+    </div>
   </div>
-  <div style="position:absolute;bottom:-1px;left:0;right:0;overflow:hidden;height:120px;">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="width:100%;height:100%;display:block;" fill="white"><path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z"/></svg>
-  </div>
-</section>
-
-<!-- VENTAJAS CLAVE -->
-<section style="background:#f8f7ff;padding:96px 40px;">
-  <div style="max-width:1120px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:64px;">
-      <h2 class="font-gabarito" style="color:#02021e;font-size:46px;font-weight:700;margin:0 0 16px;">La app que tu barbería necesita</h2>
-      <p style="color:rgba(2,2,30,.6);font-size:18px;max-width:580px;margin:0 auto;">Para barberías con un solo barbero o con todo un equipo. Cada uno con su agenda propia.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
-      <div style="background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 2px 16px rgba(0,0,0,.06);"><div style="width:52px;height:52px;background:#f0ebff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="26" height="26" fill="#631cff" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm-7-2h2v-3h3v-2h-3V9h-2v2H9v2h3z"/></svg></div><h3 style="color:#02021e;font-size:20px;font-weight:600;margin:0 0 12px;">Reservas online 24/7</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Tus clientes reservan con su barbero favorito desde el móvil a cualquier hora.</p></div>
-      <div style="background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 2px 16px rgba(0,0,0,.06);"><div style="width:52px;height:52px;background:#f0ebff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="26" height="26" fill="#631cff" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div><h3 style="color:#02021e;font-size:20px;font-weight:600;margin:0 0 12px;">Recordatorios por WhatsApp</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Reduce las ausencias con recordatorios automáticos el día antes de cada cita.</p></div>
-      <div style="background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 2px 16px rgba(0,0,0,.06);"><div style="width:52px;height:52px;background:#f0ebff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="26" height="26" fill="#631cff" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><h3 style="color:#02021e;font-size:20px;font-weight:600;margin:0 0 12px;">Agenda por barbero</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Cada barbero gestiona su propia agenda. Los clientes eligen con quién quieren ir.</p></div>
-      <div style="background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 2px 16px rgba(0,0,0,.06);"><div style="width:52px;height:52px;background:#f0ebff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="26" height="26" fill="#631cff" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div><h3 style="color:#02021e;font-size:20px;font-weight:600;margin:0 0 12px;">Cobro de depósitos</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Protege tus horas con un depósito previo que el cliente paga al reservar.</p></div>
-      <div style="background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 2px 16px rgba(0,0,0,.06);"><div style="width:52px;height:52px;background:#f0ebff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="26" height="26" fill="#631cff" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg></div><h3 style="color:#02021e;font-size:20px;font-weight:600;margin:0 0 12px;">Reseñas automáticas</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Solicita valoraciones a tus clientes tras cada servicio para mejorar tu posición en Google.</p></div>
-      <div style="background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 2px 16px rgba(0,0,0,.06);"><div style="width:52px;height:52px;background:#f0ebff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="26" height="26" fill="#631cff" viewBox="0 0 24 24"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg></div><h3 style="color:#02021e;font-size:20px;font-weight:600;margin:0 0 12px;">Análisis de negocio</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Ingresos por barbero, servicios más rentables y evolución mensual en un solo panel.</p></div>
-    </div>
+  <div style="position:absolute;bottom:-1px;left:0;right:0;overflow:hidden;height:80px;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:100%;display:block;" fill="white"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/></svg>
   </div>
 </section>
 
-<!-- FEATURE -->
-<section style="background:#fff;padding:110px 40px;">
+<section style="background:#fff;padding:100px 40px 80px;">
+  <div style="max-width:960px;margin:0 auto;text-align:center;">
+    <h2 class="font-gabarito" style="color:#02021e;font-size:46px;line-height:1.1;font-weight:700;margin:0 0 20px;">Reservas, agenda, pagos, domicilios y mucho más</h2>
+    <p style="color:rgba(2,2,30,.6);font-size:18px;line-height:1.6;max-width:680px;margin:0 auto 56px;">Una plataforma completa diseñada para barberías que quieren dejar de perder tiempo con la gestión.</p>
+    <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="Panel Godolphy barbería" style="width:100%;border-radius:20px;box-shadow:0 16px 60px rgba(99,28,255,.12);" />
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:100px 40px;">
   <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
-    <div style="flex:1;"><img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="Reservas barbería" style="width:100%;border-radius:16px;box-shadow:0 16px 60px rgba(99,28,255,.15);" /></div>
     <div style="flex:1;">
-      <h2 class="font-gabarito" style="color:#331378;font-size:46px;line-height:1.1;font-weight:700;margin:0 0 20px;">Sin llamadas, sin mensajes. Solo reservas confirmadas.</h2>
-      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 32px;">Tus clientes reservan directamente desde Instagram o Google. Eligen barbero, servicio y hora. Tú recibes la confirmación sin interrumpir tu trabajo.</p>
-      <ul style="list-style:none;margin:0 0 36px;padding:0;display:flex;flex-direction:column;gap:14px;">
-        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg style="width:22px;height:22px;color:#631cff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Enlace de reserva en tu bio de Instagram</li>
-        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg style="width:22px;height:22px;color:#631cff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Botón de reserva en Google My Business</li>
-        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg style="width:22px;height:22px;color:#631cff;flex-shrink:0;margin-top:2px;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Recordatorio automático 24h antes</li>
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">Los clientes reservan sin interrumpir tu tiempo.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 28px;">Tu página de reservas online disponible 24/7. El cliente elige barbero, servicio, fecha y hora — sin llamadas ni mensajes.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Página de reservas con tu branding</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>El cliente elige barbero, servicio y hora</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Disponible en Instagram, web y Google</li>
       </ul>
-      <a href="https://www.godolphy.com/funcionalidades/reservas-online/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:20px;text-decoration:none;">Ver cómo funciona</a>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#e8e0ff,#d0c0ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
     </div>
   </div>
 </section>
 
-<!-- GRID 12 -->
+<section style="background:#fff;padding:100px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
+    <div style="flex:1;background:linear-gradient(135deg,#f0ebff,#e0d5ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
+    </div>
+    <div style="flex:1;">
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">¡Qué no te dejen colgado/a! Solicita depósito.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 28px;">Reduce las cancelaciones de última hora cobrando un depósito al reservar. Si el cliente no aparece, el dinero es tuyo.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Porcentaje o importe fijo a configurar</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>El depósito se descuenta del servicio final</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Política de cancelación personalizable</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:100px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
+    <div style="flex:1;">
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">Envía recordatorios vía whatsapp e email.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 28px;">Avisa automáticamente a tus clientes antes de su cita. Menos olvidos, menos sillas vacías en tu barbería.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Recordatorio automático por WhatsApp</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Confirmación y cancelación en un clic</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Mensajes personalizados con tu nombre</li>
+      </ul>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#e8e0ff,#d0c0ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;padding:100px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
+    <div style="flex:1;background:linear-gradient(135deg,#f0ebff,#e0d5ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
+    </div>
+    <div style="flex:1;">
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">Gestión de horarios y vacaciones.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 28px;">Configura el horario de cada barbero, sus días libres y vacaciones. La agenda se actualiza sola.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Horario individual por barbero</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Días de descanso y vacaciones bloqueadas</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Vista de agenda por día, semana y mes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:100px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
+    <div style="flex:1;">
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">Vende tarjetas regalo y cupones descuento.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 28px;">Nuevas fuentes de ingresos sin esfuerzo extra. Vende bonos, tarjetas regalo y cupones directamente desde tu página de reservas.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Tarjetas regalo digitales personalizadas</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Bonos de sesiones múltiples</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cupones de descuento con código</li>
+      </ul>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#e8e0ff,#d0c0ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;padding:100px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
+    <div style="flex:1;background:linear-gradient(135deg,#f0ebff,#e0d5ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2022/09/distancias-1.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
+    </div>
+    <div style="flex:1;">
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">Múltiples barberías y servicios a domicilio.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 28px;">Gestiona varios centros desde una sola cuenta. Y si también haces servicios a domicilio, Godolphy calcula el precio del desplazamiento automáticamente.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Un panel para todas tus barberías</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Precio de domicilio según distancia</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(2,2,30,.8);font-size:16px;"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Geolocalización del barbero en ruta</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:100px 40px;">
+  <div style="max-width:960px;margin:0 auto;text-align:center;">
+    <h2 class="font-gabarito" style="color:#02021e;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 16px;">Y si realizas servicios de barbería a domicilio...</h2>
+    <p style="color:rgba(2,2,30,.6);font-size:18px;margin:0 0 60px;">Godolphy lo gestiona todo para que puedas ofrecer domicilios sin complicaciones.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:left;">
+      <div><div style="width:52px;height:52px;background:#631cff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px;font-weight:700;color:#fff;font-family:'Gabarito',sans-serif;">1</div><h3 style="color:#02021e;font-size:19px;font-weight:600;margin:0 0 10px;">El cliente introduce su dirección</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Al reservar, el cliente indica dónde quiere el servicio y el sistema calcula el coste del desplazamiento.</p></div>
+      <div><div style="width:52px;height:52px;background:#631cff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px;font-weight:700;color:#fff;font-family:'Gabarito',sans-serif;">2</div><h3 style="color:#02021e;font-size:19px;font-weight:600;margin:0 0 10px;">El barbero ve la ruta del día</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Cada barbero recibe su agenda con las direcciones ordenadas para optimizar los desplazamientos.</p></div>
+      <div><div style="width:52px;height:52px;background:#631cff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px;font-weight:700;color:#fff;font-family:'Gabarito',sans-serif;">3</div><h3 style="color:#02021e;font-size:19px;font-weight:600;margin:0 0 10px;">Cobro automático al terminar</h3><p style="color:rgba(2,2,30,.6);font-size:15px;line-height:1.6;margin:0;">Al finalizar el servicio se genera la factura con el coste del servicio más el desplazamiento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;padding:100px 40px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
+    <div style="flex:1;background:linear-gradient(135deg,#f0ebff,#e0d5ff);border-radius:20px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <img src="https://www.godolphy.com/wp-content/uploads/2025/11/reservas-fondo.png" alt="" style="width:90%;border-radius:14px;box-shadow:0 12px 40px rgba(99,28,255,.2);" />
+    </div>
+    <div style="flex:1;">
+      <h2 class="font-gabarito" style="color:#331378;font-size:42px;line-height:1.1;font-weight:700;margin:0 0 20px;">Tus empleados siempre tendrán trabajo.</h2>
+      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 24px;">Asigna servicios en local o a domicilio a cada barbero. Ellos ven su agenda y sus clientes del día.</p>
+      <div style="border-top:1px solid rgba(2,2,30,.1);">
+        <div style="border-bottom:1px solid rgba(2,2,30,.1);padding:16px 0;"><button onclick="var b=this.nextElementSibling;b.classList.toggle('open');this.querySelector('.mini-faq-icon').classList.toggle('open')" style="width:100%;background:none;border:none;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;"><span style="color:#02021e;font-size:15px;font-weight:600;">¿Cada barbero tiene su propio acceso?</span><svg class="mini-faq-icon" width="18" height="18" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="mini-faq-body"><p style="color:rgba(2,2,30,.6);font-size:14px;line-height:1.6;margin:0;">Sí. Cada barbero tiene su propio acceso y solo ve su agenda y sus clientes asignados.</p></div></div>
+        <div style="border-bottom:1px solid rgba(2,2,30,.1);padding:16px 0;"><button onclick="var b=this.nextElementSibling;b.classList.toggle('open');this.querySelector('.mini-faq-icon').classList.toggle('open')" style="width:100%;background:none;border:none;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;"><span style="color:#02021e;font-size:15px;font-weight:600;">¿Pueden los barberos hacer domicilios?</span><svg class="mini-faq-icon" width="18" height="18" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="mini-faq-body"><p style="color:rgba(2,2,30,.6);font-size:14px;line-height:1.6;margin:0;">Sí. Puedes configurar qué barberos realizan servicios a domicilio y en qué radio de kilómetros.</p></div></div>
+        <div style="border-bottom:1px solid rgba(2,2,30,.1);padding:16px 0;"><button onclick="var b=this.nextElementSibling;b.classList.toggle('open');this.querySelector('.mini-faq-icon').classList.toggle('open')" style="width:100%;background:none;border:none;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0;"><span style="color:#02021e;font-size:15px;font-weight:600;">¿Cómo ve el barbero su agenda del día?</span><svg class="mini-faq-icon" width="18" height="18" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="mini-faq-body"><p style="color:rgba(2,2,30,.6);font-size:14px;line-height:1.6;margin:0;">Desde su móvil, en la app de Godolphy. Ve sus citas del día y la dirección si es domicilio.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section style="background:#f8f7ff;padding:96px 40px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:64px;"><h2 class="font-gabarito" style="color:#02021e;font-size:44px;font-weight:700;margin:0 0 16px;">Todo en una sola plataforma</h2></div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Agenda inteligente</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Todas las citas de todos los barberos en un solo panel.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Depósitos</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Cobro previo para asegurar el compromiso.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Recordatorios</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">WhatsApp y SMS automáticos antes de cada cita.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Reseñas</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Valoraciones automáticas tras cada servicio.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Turnos y horarios</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Horario individual para cada barbero.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Chat</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Comunicación directa con clientes desde la app.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Facturación</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Tickets y facturas automáticos.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Gastos</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Control de gastos del local categorizados.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Varias sedes</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Gestiona múltiples barberías desde una cuenta.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Geolocalización</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Para barberos que trabajan a domicilio.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Servicios a domicilio</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Precio automático por distancia.</p></div>
-      <div class="feat-card"><h4 style="color:#02021e;font-size:16px;font-weight:600;margin:0 0 8px;">Tarjetas y bonos</h4><p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.55;margin:0;">Fidelización con bonos de servicios y tarjetas regalo.</p></div>
+    <div style="text-align:center;margin-bottom:56px;"><h2 class="font-gabarito" style="color:#02021e;font-size:42px;font-weight:700;margin:0;">Funcionalidades específicas para tu barbería.</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Agenda</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Reservas online 24/7 para tus clientes.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Depósitos</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Cobra por adelantado para asegurar la cita.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Recordatorios</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">WhatsApp y email automáticos antes de cada cita.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Reseñas</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Solicita valoraciones automáticas tras cada visita.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Turnos</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Horarios y vacaciones de cada barbero.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Chat</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Comunicación directa con clientes desde Godolphy.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Facturación</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Facturas automáticas por cada servicio.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Gastos</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Registra y controla los gastos de tu negocio.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Varias barberías</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Gestiona múltiples locales desde una cuenta.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Geolocalización</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Seguimiento del barbero en servicios a domicilio.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Domicilios</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Precio automático según distancia al cliente.</p></div>
+      <div class="feat-card"><h4 style="color:#02021e;font-size:15px;font-weight:600;margin:0 0 8px;">Tarjetas y cupones</h4><p style="color:rgba(2,2,30,.55);font-size:13px;line-height:1.55;margin:0;">Vende tarjetas regalo y aplica descuentos.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section style="background:#fff;padding:96px 40px;">
-  <div style="max-width:780px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:56px;"><h2 class="font-gabarito" style="color:#02021e;font-size:44px;font-weight:700;margin:0;">Preguntas frecuentes</h2></div>
-    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Mis clientes necesitan descargarse una app?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">No. Reservan desde el navegador de su móvil sin instalar nada. Solo necesitas compartir tu enlace de reserva en Instagram o WhatsApp.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Cada barbero puede tener su propia agenda?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí. Cada miembro del equipo tiene su propio acceso, su agenda y sus servicios configurados. El propietario tiene visión global de todo el equipo.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Cómo gestiono los turnos y horarios del equipo?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Desde el panel de administración defines el horario de cada barbero, bloqueas días libres o vacaciones, y los clientes solo ven la disponibilidad real al reservar.</p></div></div>
-    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Hay contrato de permanencia?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">No. Suscripción mensual sin permanencia. Cancela cuando quieras.</p></div></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section style="background:#f8f7ff;padding:96px 40px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:56px;"><h2 class="font-gabarito" style="color:#02021e;font-size:44px;font-weight:700;margin:0 0 12px;">Barberías que ya usan Godolphy</h2></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
-      <div style="background:#fff;border-radius:20px;padding:32px 28px;"><div style="margin-bottom:16px;"><span style="color:#EEFE3A;font-size:20px;">★★★★★</span></div><p style="color:rgba(2,2,30,.75);font-size:15px;line-height:1.7;margin:0 0 24px;">"Mis clientes me escribían por Instagram para reservar y era un caos. Ahora el enlace de reserva está en la bio y el 90% reserva solo. Me ahorro 1 hora al día."</p><div style="display:flex;align-items:center;gap:14px;"><img src="https://randomuser.me/api/portraits/men/44.jpg" alt="" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" /><div><div style="color:#02021e;font-weight:600;font-size:15px;">Marcos A.</div><div style="color:rgba(2,2,30,.5);font-size:13px;">Barbería The Cut, Madrid</div></div></div></div>
-      <div style="background:#fff;border-radius:20px;padding:32px 28px;"><div style="margin-bottom:16px;"><span style="color:#EEFE3A;font-size:20px;">★★★★★</span></div><p style="color:rgba(2,2,30,.75);font-size:15px;line-height:1.7;margin:0 0 24px;">"Somos 4 barberos y con el sistema anterior era imposible saber quién tenía libre cuándo. Con Godolphy, cada uno gestiona su agenda y yo veo todo desde una pantalla."</p><div style="display:flex;align-items:center;gap:14px;"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" /><div><div style="color:#02021e;font-weight:600;font-size:15px;">Pablo R.</div><div style="color:rgba(2,2,30,.5);font-size:13px;">Old School Barber, Barcelona</div></div></div></div>
-      <div style="background:#fff;border-radius:20px;padding:32px 28px;"><div style="margin-bottom:16px;"><span style="color:#EEFE3A;font-size:20px;">★★★★★</span></div><p style="color:rgba(2,2,30,.75);font-size:15px;line-height:1.7;margin:0 0 24px;">"El análisis de qué servicios dan más rentabilidad me abrió los ojos. Estaba perdiendo tiempo y dinero en servicios de bajo margen. Lo ajusté y ahora gano más."</p><div style="display:flex;align-items:center;gap:14px;"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="" style="width:48px;height:48px;border-radius:50%;object-fit:cover;" /><div><div style="color:#02021e;font-weight:600;font-size:15px;">Adrián G.</div><div style="color:rgba(2,2,30,.5);font-size:13px;">Gentlemen's Club, Sevilla</div></div></div></div>
+    <div style="text-align:center;margin-bottom:60px;"><h2 class="font-gabarito" style="color:#02021e;font-size:42px;font-weight:700;margin:0;">Testimonios de otras barberías y centros de belleza</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);"><div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:#631cff;display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div><p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">"Desde que usamos Godolphy no tenemos que estar pendientes del teléfono. Las reservas llegan solas y los recordatorios evitan que nos fallen los clientes."</p><div style="display:flex;align-items:center;gap:14px;"><div style="width:44px;height:44px;background:linear-gradient(135deg,#9B4FE8,#631cff);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;font-weight:700;font-family:'Gabarito',sans-serif;">N</div><div><div style="color:#02021e;font-size:15px;font-weight:600;">Neus Figueres</div><div style="color:rgba(2,2,30,.5);font-size:13px;">CEO Orgasmi</div></div></div></div>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);"><div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:#631cff;display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div><p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">"El depósito al reservar ha cambiado todo. Antes perdía horas por cancelaciones de última hora. Ahora eso casi no pasa, y cuando pasa, el dinero ya está cobrado."</p><div style="display:flex;align-items:center;gap:14px;"><div style="width:44px;height:44px;background:linear-gradient(135deg,#e8409e,#b52d80);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;font-weight:700;font-family:'Gabarito',sans-serif;">S</div><div><div style="color:#02021e;font-size:15px;font-weight:600;">Silvia Gonzalo</div><div style="color:rgba(2,2,30,.5);font-size:13px;">Terapeuta</div></div></div></div>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);"><div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:#631cff;display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div><p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">"Tengo barberos en varios locales. Antes era un caos gestionarlo. Con Godolphy todo está centralizado en un panel y cada barbero ve solo su agenda."</p><div style="display:flex;align-items:center;gap:14px;"><div style="width:44px;height:44px;background:linear-gradient(135deg,#1976d2,#0d47a1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;font-weight:700;font-family:'Gabarito',sans-serif;">R</div><div><div style="color:#02021e;font-size:15px;font-weight:600;">Ricardo Alemany</div><div style="color:rgba(2,2,30,.5);font-size:13px;">Businessman</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:#fff;padding:60px 40px 80px;">
-  <div style="max-width:1300px;margin:0 auto;background:linear-gradient(160deg,#7835C3 0%,#631cff 55%,#3a0aaa 100%);border-radius:30px;padding:60px 80px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 8px 40px rgba(99,28,255,.3);">
-    <h2 class="font-gabarito" style="color:#fff;font-size:52px;line-height:1.1;font-weight:700;margin:0 0 16px;">Empieza gratis hoy</h2>
-    <p style="color:rgba(255,255,255,.8);font-size:18px;margin:0 0 36px;">30 días sin compromiso. Sin tarjeta de crédito.</p>
-    <div style="display:flex;align-items:center;gap:16px;">
-      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:inline-block;background:#fff;color:#631cff;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;">Empieza ahora</a>
-      <img src="https://www.godolphy.com/wp-content/uploads/2025/05/Arrow-shape-1024x983.png" alt="" style="width:60px;" />
-    </div>
+<section style="background:#f8f7ff;padding:96px 40px;">
+  <div style="max-width:780px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:56px;"><h2 class="font-gabarito" style="color:#02021e;font-size:42px;font-weight:700;margin:0;">Preguntas frecuentes</h2></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Puedo gestionar a domicilio y en local a la vez?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí. Godolphy permite configurar servicios en local y a domicilio con precios distintos. El cliente elige dónde quiere el servicio al reservar.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Cuántos barberos puedo añadir?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">No hay límite de barberos. Puedes añadir todo tu equipo con sus horarios y servicios individuales.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Los clientes pueden elegir barbero específico?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí. Los clientes pueden seleccionar a su barbero favorito o dejar que el sistema asigne el primero disponible.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Funciona con Instagram y Google?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí. Puedes añadir el enlace de reservas en tu bio de Instagram y en tu ficha de Google My Business.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Hay periodo de prueba gratuito?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí, 30 días gratis sin necesidad de tarjeta de crédito. Puedes probarlo con todo tu equipo y servicios reales.</p></div></div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#02021e;padding:80px 40px 24px;">
-  <div style="max-width:1320px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.1);">
-      <div><img src="https://www.figma.com/api/mcp/asset/901244c7-127d-4b97-aaf1-74622d48a0f9" alt="Godolphy" style="height:56px;margin-bottom:24px;" /><div style="display:flex;flex-direction:column;gap:12px;"><span style="color:rgba(255,255,255,.7);font-size:15px;">📍 Barcelona</span><span style="color:rgba(255,255,255,.7);font-size:15px;">📞 +34 614 058 249</span><a href="mailto:hello@godolphy.com" style="color:rgba(255,255,255,.7);font-size:15px;text-decoration:none;">✉️ hello@godolphy.com</a></div></div>
-      <div><h4 style="color:#fff;font-weight:600;font-size:16px;margin:0 0 20px;">Sectores</h4><div style="display:flex;flex-direction:column;gap:12px;"><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:#0d6efd;font-size:15px;text-decoration:none;">Centro estética</a><a href="/sectores/software-para-salones-de-unas/" style="color:#0d6efd;font-size:15px;text-decoration:none;">Salón de uñas</a><a href="/sectores/software-para-peluquerias/" style="color:#0d6efd;font-size:15px;text-decoration:none;">Peluquerías</a><a href="/sectores/software-para-barberias/" style="color:#0d6efd;font-size:15px;text-decoration:none;">Barberías</a><a href="/sectores/software-para-spa-y-masajes/" style="color:#0d6efd;font-size:15px;text-decoration:none;">Centros SPA</a><a href="/sectores/software-para-empresas-de-limpieza/" style="color:#0d6efd;font-size:15px;text-decoration:none;">Empresas de limpieza</a></div></div>
-      <div><h4 style="color:#fff;font-weight:600;font-size:16px;margin:0 0 20px;">Funcionalidades</h4><div style="display:flex;flex-direction:column;gap:12px;"><a href="#" style="color:#0d6efd;font-size:15px;text-decoration:none;">Reservas online</a><a href="#" style="color:#0d6efd;font-size:15px;text-decoration:none;">Calendario</a><a href="#" style="color:#0d6efd;font-size:15px;text-decoration:none;">Pagos y depósitos</a><a href="#" style="color:#0d6efd;font-size:15px;text-decoration:none;">Geolocalización</a></div></div>
-      <div><h4 style="color:#fff;font-weight:600;font-size:16px;margin:0 0 20px;">Recursos</h4><div style="display:flex;flex-direction:column;gap:16px;"><a href="#" style="color:#0d6efd;font-size:15px;text-decoration:none;">Guía para barberías</a></div></div>
+<section style="background:#fff;padding:80px 40px;">
+  <div style="max-width:900px;margin:0 auto;background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);border-radius:32px;padding:80px 60px;text-align:center;">
+    <h2 class="font-gabarito" style="color:#fff;font-size:46px;line-height:1.1;font-weight:700;margin:0 0 20px;">Da de alta tu barbería y empieza a optimizar tu tiempo</h2>
+    <p style="color:rgba(255,255,255,.85);font-size:18px;line-height:1.6;max-width:600px;margin:0 auto 40px;">Carga tus servicios y barberos, sube su agenda, los precios según local o domicilio, y empieza a tomar control de tu negocio.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="background:#EEFE3A;color:#02021e;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;">Empezar gratis</a>
+      <a href="#" style="border:2px solid #fff;color:#fff;font-size:18px;font-weight:600;padding:16px 40px;border-radius:20px;text-decoration:none;">Ver demo</a>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;"><a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:inline-block;background:#eefe3b;color:#631cff;font-weight:600;font-size:16px;padding:14px 32px;border-radius:20px;text-decoration:none;">Empieza ahora</a><span style="color:rgba(255,255,255,.4);font-size:13px;">© 2026 Godolphy. Todos los derechos reservados.</span></div>
+    <p style="color:rgba(255,255,255,.6);font-size:14px;margin:20px 0 0;">30 días gratis · Sin tarjeta de crédito</p>
+  </div>
+</section>
+
+<footer style="background:#02021e;padding:80px 40px 40px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;">
+      <div><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:36px;margin-bottom:20px;display:block;" /><p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;max-width:280px;margin:0;">El software de reservas con IA para negocios de servicios.</p></div>
+      <div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">INDUSTRIAS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/sectores/software-para-peluquerias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Peluquería</a></li><li><a href="/sectores/software-para-barberias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Barbería</a></li><li><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Centro de estética</a></li><li><a href="/sectores/software-para-salones-de-unas/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Salón de uñas</a></li><li><a href="/sectores/software-para-spa-y-masajes/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Spa y masajes</a></li><li><a href="/sectores/software-para-empresas-de-limpieza/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Empresa de limpieza</a></li></ul></div>
+      <div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">FUNCIONALIDADES</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Reservas online</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Gestión de equipo</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Pagos y cobros</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Recordatorios</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Domicilios</a></li></ul></div>
+      <div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">RECURSOS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Blog</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Ayuda</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Precio</a></li><li><a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="color:#EEFE3A;font-size:14px;text-decoration:none;font-weight:600;">Darme de alta</a></li></ul></div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;"><p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;">© 2025 Godolphy. Todos los derechos reservados.</p><div style="display:flex;gap:24px;"><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Privacidad</a><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Términos</a><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Cookies</a></div></div>
   </div>
 </footer>
-
-<script>
-  function toggleFaq(btn) {
-    const body = btn.nextElementSibling;
-    const icon = btn.querySelector('.faq-icon');
-    const isOpen = body.classList.contains('open');
-    document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
-    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
-    if (!isOpen) { body.classList.add('open'); icon.classList.add('open'); }
-  }
-</script>
+<script>function toggleFaq(btn){var b=btn.nextElementSibling,i=btn.querySelector('.faq-icon');b.classList.toggle('open');i.classList.toggle('open');}</script>
 </body>
 </html>
