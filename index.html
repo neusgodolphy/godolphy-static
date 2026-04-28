@@ -43,7 +43,28 @@
     .toggle-track.on { background:#631cff; }
     .toggle-thumb { width:18px; height:18px; background:#fff; border-radius:50%; position:absolute; top:3px; left:3px; transition:left .2s; }
     .toggle-track.on .toggle-thumb { left:23px; }
-  </style>
+  
+@media(max-width:768px){
+  nav ul,nav div{display:none!important;}
+  nav>div{padding:0 20px!important;}
+  section{padding:60px 20px!important;}
+  section[style*="padding:130px"],section[style*="padding:96px 40px"]{padding:80px 20px 60px!important;}
+  .hero-bg>div>div[style*="display:flex;align-items:center;gap:60px"],
+  div[style*="display:flex;align-items:center;gap:80px"]{flex-direction:column!important;gap:32px!important;}
+  div[style*="max-width:1200px"][style*="display:flex;align-items:center;gap:80px"]{flex-direction:column!important;gap:32px!important;}
+  div[style*="display:flex;justify-content:flex-end"]{justify-content:center!important;}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="flex:1;max-width:580px"]{max-width:100%!important;}
+  h1[style*="font-size:58px"]{font-size:36px!important;}
+  h1[style*="font-size:52px"]{font-size:32px!important;}
+  h2[style*="font-size:42px"]{font-size:28px!important;}
+  h2[style*="font-size:46px"]{font-size:30px!important;}
+  p[style*="font-size:18px"]{font-size:16px!important;}
+  div[style*="flex:1;display:flex;align-items:center;justify-content:center;"]{order:2!important;width:100%!important;}
+  div[style*="flex:1;display:flex;justify-content:flex-end;"]{order:2!important;width:100%!important;}
+}
+</style>
 </head>
 <body>
 
