@@ -12,7 +12,7 @@
     .faq-item{border-bottom:1px solid rgba(2,2,30,.1);}.faq-btn{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;}
     .faq-body{display:none;padding:0 0 24px;}.faq-body.open{display:block;}.faq-icon{transition:transform .3s;flex-shrink:0;margin-left:16px;}.faq-icon.open{transform:rotate(45deg);}
     .feat-card{transition:all .2s;border:1.5px solid rgba(2,2,30,.08);border-radius:16px;padding:24px 20px;background:#fff;}.feat-card:hover{box-shadow:0 8px 32px rgba(99,28,255,.12);transform:translateY(-2px);}
-    .check{width:22px;height:22px;fill:#631cff;flex-shrink:0;margin-top:2px;}.mini-faq-body{display:none;padding:10px 0 4px;}.mini-faq-body.open{display:block;}.mini-faq-icon{transition:transform .3s;flex-shrink:0;}.mini-faq-icon.open{transform:rotate(45deg);}
+    .check{width:22px;height:22px;fill:url(#checkGrad);flex-shrink:0;margin-top:2px;}.mini-faq-body{display:none;padding:10px 0 4px;}.mini-faq-body.open{display:block;}.mini-faq-icon{transition:transform .3s;flex-shrink:0;}.mini-faq-icon.open{transform:rotate(45deg);}
 
     @media (max-width: 768px) {
       /* Stack feature rows: text first, image below */
@@ -65,6 +65,9 @@
   </style>
 </head>
 <body>
+<svg style="display:none" aria-hidden="true"><defs><linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9B4FE8"/><stop offset="100%" stop-color="#631cff"/></linearGradient></defs></svg>
+
+<svg style="display:none" aria-hidden="true"><defs><linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9B4FE8"/><stop offset="100%" stop-color="#631cff"/></linearGradient></defs></svg>
 <nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li><li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Login</a></div></div></nav>
 
 <section class="hero-bg" style="position:relative;padding:130px 40px 100px;overflow:hidden;">

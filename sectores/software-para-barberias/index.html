@@ -20,7 +20,7 @@
     .faq-icon.open{transform:rotate(45deg);}
     .feat-card{transition:all .2s;border:1.5px solid rgba(2,2,30,.08);border-radius:16px;padding:24px 20px;background:#fff;}
     .feat-card:hover{box-shadow:0 8px 32px rgba(99,28,255,.12);transform:translateY(-2px);}
-    .check{width:22px;height:22px;fill:#631cff;flex-shrink:0;margin-top:2px;}
+    .check{width:22px;height:22px;fill:url(#checkGrad);flex-shrink:0;margin-top:2px;}
     .mini-faq-body{display:none;padding:10px 0 4px;}
     .mini-faq-body.open{display:block;}
     .mini-faq-icon{transition:transform .3s;flex-shrink:0;}
@@ -77,6 +77,9 @@
   </style>
 </head>
 <body>
+<svg style="display:none" aria-hidden="true"><defs><linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9B4FE8"/><stop offset="100%" stop-color="#631cff"/></linearGradient></defs></svg>
+
+<svg style="display:none" aria-hidden="true"><defs><linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9B4FE8"/><stop offset="100%" stop-color="#631cff"/></linearGradient></defs></svg>
 
 <nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;">
   <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
