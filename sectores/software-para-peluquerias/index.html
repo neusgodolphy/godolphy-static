@@ -25,6 +25,55 @@
     .mini-faq-body.open{display:block;}
     .mini-faq-icon{transition:transform .3s;flex-shrink:0;}
     .mini-faq-icon.open{transform:rotate(45deg);}
+
+    @media (max-width: 768px) {
+      /* Stack feature rows: text first, image below */
+      div[style*="gap:80px"] {
+        flex-wrap: wrap !important;
+        gap: 32px !important;
+      }
+      div[style*="gap:80px"] > div {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      /* Image wrapper divs always go last */
+      div[style*="gap:80px"] > div[style*="align-items:center"] {
+        order: 10 !important;
+      }
+      /* Hero: stack */
+      div[style*="gap:60px"] {
+        flex-wrap: wrap !important;
+        gap: 32px !important;
+        justify-content: center !important;
+      }
+      div[style*="gap:60px"] > div {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+      }
+      div[style*="gap:60px"] > div > div[style*="display:flex;gap"] {
+        justify-content: center !important;
+      }
+      /* Font sizes */
+      h1 { font-size: 36px !important; line-height: 1.15 !important; }
+      h2[style*="font-size:42px"], h2[style*="font-size:46px"], h2[style*="font-size:44px"] { font-size: 26px !important; line-height: 1.2 !important; }
+      /* Section padding */
+      section { padding-left: 20px !important; padding-right: 20px !important; }
+      section[style*="padding:100px 40px"], section[style*="padding:96px 40px"] { padding-top: 56px !important; padding-bottom: 56px !important; }
+      section[style*="padding:130px 40px"] { padding-top: 100px !important; padding-bottom: 56px !important; }
+      /* Feature cards grid */
+      div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
+      div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+      /* Testimonials */
+      div[style*="grid-template-columns:repeat(3,1fr);gap:32px"] { grid-template-columns: 1fr !important; }
+      /* Navbar */
+      nav ul { display: none !important; }
+      /* Hero image */
+      div[style*="gap:60px"] img { max-width: 100% !important; }
+      /* Value prop image */
+      div[style*="max-width:960px"] img { border-radius: 12px !important; }
+    }
   </style>
 </head>
 <body>
