@@ -8,24 +8,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>body{font-family:'Poppins',sans-serif;margin:0;overflow-x:hidden;}.font-gabarito{font-family:'Gabarito',sans-serif;}.hero-bg{background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);}.faq-item{border-bottom:1px solid rgba(2,2,30,.1);}.faq-btn{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;}.faq-body{display:none;padding:0 0 24px;}.faq-body.open{display:block;}.faq-icon{transition:transform .3s;flex-shrink:0;margin-left:16px;}.faq-icon.open{transform:rotate(45deg);}.feat-card{transition:all .2s;border:1.5px solid rgba(2,2,30,.08);border-radius:16px;padding:24px 20px;background:#fff;}.feat-card:hover{box-shadow:0 8px 32px rgba(99,28,255,.12);transform:translateY(-2px);}.check{width:22px;height:22px;fill:#631cff;flex-shrink:0;margin-top:2px;}.mini-faq-body{display:none;padding:10px 0 4px;}.mini-faq-body.open{display:block;}.mini-faq-icon{transition:transform .3s;flex-shrink:0;}.mini-faq-icon.open{transform:rotate(45deg);}
 @media(max-width:768px){
-  nav ul,nav div{display:none!important;}
+  /* Navbar: ocultar menú y botones, mantener logo */
+  nav ul{display:none!important;}
+  nav>div>div:last-child{display:none!important;}
   nav>div{padding:0 20px!important;}
-  section{padding:60px 20px!important;}
-  section[style*="padding:130px"],section[style*="padding:96px 40px"]{padding:80px 20px 60px!important;}
-  .hero-bg>div>div[style*="display:flex;align-items:center;gap:60px"],
+  /* Secciones: padding reducido */
+  section{padding:56px 20px!important;}
+  section.hero-bg{padding:100px 20px 56px!important;}
+  /* Contenedores con max-width: quitarle el padding lateral */
+  div[style*="max-width:1200px"],div[style*="max-width:960px"],div[style*="max-width:780px"]{padding-left:0!important;padding-right:0!important;}
+  /* Hero: apilar contenido */
+  div[style*="display:flex;align-items:center;gap:60px"]{flex-direction:column!important;gap:32px!important;}
+  /* Secciones feature: apilar */
   div[style*="display:flex;align-items:center;gap:80px"]{flex-direction:column!important;gap:32px!important;}
-  div[style*="max-width:1200px"][style*="display:flex;align-items:center;gap:80px"]{flex-direction:column!important;gap:32px!important;}
-  div[style*="display:flex;justify-content:flex-end"]{justify-content:center!important;}
+  /* Imágenes: al final (debajo del texto) */
+  div[style*="flex:1;display:flex;align-items:center;justify-content:center;"]{order:2!important;width:100%!important;}
+  div[style*="flex:1;display:flex;justify-content:flex-end;"]{order:2!important;width:100%!important;justify-content:center!important;}
+  /* Flex:1 divs: ancho completo */
+  div[style*="flex:1;max-width:580px"]{max-width:100%!important;}
+  /* Grids */
   div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
   div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
-  div[style*="flex:1;max-width:580px"]{max-width:100%!important;}
-  h1[style*="font-size:58px"]{font-size:36px!important;}
-  h1[style*="font-size:52px"]{font-size:32px!important;}
-  h2[style*="font-size:42px"]{font-size:28px!important;}
-  h2[style*="font-size:46px"]{font-size:30px!important;}
+  /* Tipografía */
+  h1[style*="font-size:58px"]{font-size:36px!important;line-height:1.1!important;}
+  h1[style*="font-size:52px"]{font-size:32px!important;line-height:1.1!important;}
+  h2[style*="font-size:42px"]{font-size:26px!important;}
+  h2[style*="font-size:46px"]{font-size:28px!important;}
   p[style*="font-size:18px"]{font-size:16px!important;}
-  div[style*="flex:1;display:flex;align-items:center;justify-content:center;"]{order:2!important;width:100%!important;}
-  div[style*="flex:1;display:flex;justify-content:flex-end;"]{order:2!important;width:100%!important;}
+  /* Botones hero: columna */
+  div[style*="display:flex;gap:14px;flex-wrap:wrap"]{flex-direction:column!important;align-items:stretch!important;}
 }
 </style>
 </head>
