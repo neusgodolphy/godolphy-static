@@ -332,7 +332,7 @@
     return anual ? Math.round(total * 0.75 * 100) / 100 : Math.round(total * 100) / 100;
   }
 
-  function fmt(n) { return n % 1 === 0 ? String(n) : n.toFixed(2); }
+  function fmt(n) { return n % 1 === 0 ? String(n) : n.toFixed(2).replace('.', ','); }
 
   // ── Selección de plan ───────────────────────────────────
   function selectPlan(planId) {
@@ -393,12 +393,12 @@
     // Hint dinámico
     var activeP = selectedPlan === 'solo' ? 1 : profs;
     var activePrice = calcPrice(selectedPlan, activeP, res, isAnnual);
+    var monthlyPrice = calcPrice(selectedPlan, activeP, res, false);
     var planName = selectedPlan === 'solo' ? 'Solo' : selectedPlan === 'pro' ? 'Pro' : 'Max';
-    var profText = profs >= 20 ? '20+' : profs;
-    document.getElementById('selector-hint').textContent =
-      'Con ' + profText + ' profesional' + (profs === 1 ? '' : 'es') + ' y ' + resLabel +
-      ' reservas/mes → Plan ' + planName + ' a ' + fmt(activePrice) + '€/mes' +
-      (isAnnual ? ' (anual)' : '');
+    var profText = (profs >= 20 ? '20+' : profs) + ' profesional' + (profs === 1 ? '' : 'es');
+    var hint = profText + ' · ' + resLabel + ' reservas/mes → ' + planName + ': ' + fmt(activePrice) + '€/mes';
+    if (isAnnual) { hint += ' facturado anualmente (antes ' + fmt(monthlyPrice) + '€/mes)'; }
+    document.getElementById('selector-hint').textContent = hint;
   }
 
   // ── Controles ───────────────────────────────────────────
