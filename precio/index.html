@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precio - Godolphy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body{font-family:'Poppins',sans-serif;margin:0;overflow-x:hidden;}
+    .font-gabarito{font-family:'Gabarito',sans-serif;}
+    .hero-bg{background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);}
+    .check{width:20px;height:20px;fill:url(#checkGrad);flex-shrink:0;}
+    .check-x{width:20px;height:20px;flex-shrink:0;}
+    .faq-item{border-bottom:1px solid rgba(2,2,30,.1);}
+    .faq-btn{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;}
+    .faq-body{display:none;padding:0 0 24px;}
+    .faq-body.open{display:block;}
+    .faq-icon{transition:transform .3s;flex-shrink:0;margin-left:16px;}
+    .faq-icon.open{transform:rotate(45deg);}
+
+    /* Toggle */
+    .toggle-wrap{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:28px;}
+    .toggle-label{color:rgba(255,255,255,.8);font-size:16px;font-weight:500;}
+    .toggle-label.active{color:#fff;font-weight:600;}
+    .toggle-track{width:52px;height:28px;background:rgba(255,255,255,.25);border-radius:14px;position:relative;cursor:pointer;transition:background .3s;border:2px solid rgba(255,255,255,.4);}
+    .toggle-track.annual{background:rgba(255,255,255,.4);}
+    .toggle-knob{width:20px;height:20px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .25s;box-shadow:0 1px 4px rgba(0,0,0,.25);}
+    .toggle-track.annual .toggle-knob{left:26px;}
+    .annual-badge{background:#EEFE3A;color:#02021e;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:4px;}
+
+    /* Pricing cards */
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1180px;margin:0 auto;}
+    .pricing-card{background:#fff;border-radius:24px;padding:36px 32px;position:relative;border:1.5px solid rgba(2,2,30,.08);}
+    .card-featured{background:#fff;border-radius:24px;padding:36px 32px;position:relative;
+      background:linear-gradient(#fff,#fff) padding-box,
+      linear-gradient(87deg,#1869cc 4%,#742afe 47%,#e30beb 100%) border-box;
+      border:2px solid transparent;}
+    .best-badge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:linear-gradient(87deg,#1869cc 4%,#742afe 47%,#e30beb 100%);color:#fff;font-size:13px;font-weight:600;padding:5px 18px;border-radius:20px;white-space:nowrap;}
+
+    /* Section toggles inside cards */
+    .sect-btn{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:none;cursor:pointer;padding:14px 0;border-top:1px solid rgba(2,2,30,.08);}
+    .sect-arrow{transition:transform .25s;flex-shrink:0;}
+    .sect-btn.open .sect-arrow{transform:rotate(180deg);}
+    .sect-body{overflow:hidden;}
+
+    /* Feature row */
+    .feat-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(2,2,30,.05);font-size:14px;color:#444;}
+    .feat-row:last-child{border-bottom:none;}
+    .feat-row.unavailable{opacity:.45;}
+
+    /* Price display */
+    .price-monthly{display:block;}
+    .price-annual{display:none;}
+    body.annual .price-monthly{display:none;}
+    body.annual .price-annual{display:block;}
+
+    @media(max-width:900px){
+      .pricing-grid{grid-template-columns:1fr!important;max-width:500px;}
+      .card-featured,.pricing-card{margin-top:20px;}
+    }
+    @media(max-width:768px){
+      nav ul{display:none!important;}
+      nav>div>div:last-child{display:none!important;}
+      nav>div{padding:0 20px!important;}
+      section.hero-bg{padding:100px 20px 60px!important;}
+    }
+  </style>
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs><linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9B4FE8"/><stop offset="100%" stop-color="#631cff"/></linearGradient></defs></svg>
+
+<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li><li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="/precio/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Login</a></div></div></nav>
+
+<!-- HERO -->
+<section class="hero-bg" style="position:relative;padding:130px 40px 100px;overflow:hidden;text-align:center;">
+  <h1 class="font-gabarito" style="color:#fff;font-size:72px;line-height:1.05;font-weight:700;margin:0 0 20px;">Precio</h1>
+  <p style="color:rgba(255,255,255,.85);font-size:20px;line-height:1.6;margin:0 auto;max-width:640px;">Tu consultor de negocio con IA nunca ha sido tan económico y tan eficaz.<br>Cancela en cualquier momento, sin lazo emocional.</p>
+
+  <!-- Toggle mensual / anual -->
+  <div class="toggle-wrap">
+    <span class="toggle-label active" id="lbl-monthly">Precio mensual</span>
+    <div class="toggle-track" id="billing-toggle" onclick="toggleBilling()">
+      <div class="toggle-knob"></div>
+    </div>
+    <span class="toggle-label" id="lbl-annual">Precio anual <span class="annual-badge">-10%</span></span>
+  </div>
+
+  <!-- Wave bottom -->
+  <div style="position:absolute;bottom:-1px;left:0;right:0;overflow:hidden;height:80px;"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:100%;display:block;" fill="white"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
+</section>
+
+<!-- PRICING CARDS -->
+<section style="background:#fff;padding:80px 40px 100px;">
+  <div class="pricing-grid">
+
+    <!-- INICIACIÓN -->
+    <div class="pricing-card">
+      <div style="margin-bottom:8px;font-size:22px;font-weight:700;color:#02021e;">Iniciación</div>
+      <p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.6;margin:0 0 24px;">Para profesionales que comienzan y quieren digitalizar sus reservas.</p>
+      <div class="price-monthly">
+        <span style="font-size:52px;font-weight:800;color:#02021e;line-height:1;">0</span>
+        <span style="font-size:28px;font-weight:700;color:#02021e;">€</span>
+        <span style="font-size:15px;color:rgba(2,2,30,.5);margin-left:4px;">/ mensual</span>
+      </div>
+      <div class="price-annual">
+        <span style="font-size:52px;font-weight:800;color:#02021e;line-height:1;">0</span>
+        <span style="font-size:28px;font-weight:700;color:#02021e;">€</span>
+        <span style="font-size:15px;color:rgba(2,2,30,.5);margin-left:4px;">/ mensual</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin:16px 0 24px;">
+        <svg width="18" height="18" fill="rgba(2,2,30,.4)" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <span style="font-size:14px;font-weight:600;color:rgba(2,2,30,.6);">1 usuario</span>
+      </div>
+      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:block;background:#02021e;color:#fff;font-size:16px;font-weight:600;padding:14px 24px;border-radius:14px;text-decoration:none;text-align:center;margin-bottom:28px;">Activar →</a>
+
+      <!-- Funcionalidades -->
+      <button class="sect-btn open" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Funcionalidades</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Reservas online (múltiples reservas)</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Calendario / Agenda</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Gestión de equipo y colaboradores</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Aceptación de citas por parte de prof.</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Horarios y festivos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Pagos y depósitos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Facturación y reporte</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificaciones por email</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificaciones via WhatsApp</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cupones</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Tarjetas regalo</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Geolocalización equipo</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Servicios a domicilio (cálculo rutas)</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Múltiples ubicaciones</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Gestión de clientes</div>
+      </div>
+
+      <!-- Integraciones -->
+      <button class="sect-btn" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Integraciones</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#999" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Stripe</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Google Calendar</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>API acceso</div>
+      </div>
+
+      <!-- Setup & Onboarding -->
+      <button class="sect-btn" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Setup &amp; Onboarding</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#999" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Formación online paso a paso</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Migración de datos</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Onboarding 1:1</div>
+      </div>
+
+      <!-- Soporte -->
+      <button class="sect-btn" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Soporte</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#999" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Email de soporte</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Chat en vivo</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Account manager</div>
+      </div>
+    </div>
+
+    <!-- PROFESIONAL (destacado) -->
+    <div class="card-featured" style="position:relative;margin-top:0;">
+      <div class="best-badge">↓ Mejor oferta</div>
+      <div style="margin-bottom:8px;font-size:22px;font-weight:700;color:#02021e;">Profesional</div>
+      <p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.6;margin:0 0 24px;">Para negocios que quieren crecer y automatizar su gestión completa.</p>
+      <div class="price-monthly">
+        <span style="font-size:52px;font-weight:800;color:#631cff;line-height:1;">91</span>
+        <span style="font-size:28px;font-weight:700;color:#631cff;">€</span>
+        <span style="font-size:15px;color:rgba(2,2,30,.5);margin-left:4px;">/ mensual</span>
+      </div>
+      <div class="price-annual">
+        <span style="font-size:52px;font-weight:800;color:#631cff;line-height:1;">82</span>
+        <span style="font-size:28px;font-weight:700;color:#631cff;">€</span>
+        <span style="font-size:15px;color:rgba(2,2,30,.5);margin-left:4px;">/ mensual</span>
+        <div style="margin-top:4px;font-size:14px;font-weight:600;color:#631cff;">Ahorro de un 10%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin:16px 0 24px;">
+        <svg width="18" height="18" fill="rgba(2,2,30,.4)" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <span style="font-size:14px;font-weight:600;color:rgba(2,2,30,.6);">5 usuarios</span>
+      </div>
+      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:block;background:linear-gradient(87deg,#1869cc 4%,#742afe 47%,#e30beb 100%);color:#fff;font-size:16px;font-weight:600;padding:14px 24px;border-radius:14px;text-decoration:none;text-align:center;margin-bottom:28px;">Activar →</a>
+
+      <!-- Funcionalidades -->
+      <button class="sect-btn open" onclick="toggleSect(this)" style="border-top-color:rgba(99,28,255,.15);">
+        <span style="font-size:15px;font-weight:600;color:#631cff;">Funcionalidades</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Reservas online (múltiples reservas)</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Calendario / Agenda</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Gestión de equipo y colaboradores</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Aceptación de citas por parte de prof.</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Horarios y festivos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Pagos y depósitos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Facturación y reporte</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificaciones por email</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificaciones via WhatsApp</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cupones</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Tarjetas regalo</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Geolocalización equipo</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Servicios a domicilio (cálculo rutas)</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Múltiples ubicaciones</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Gestión de clientes</div>
+      </div>
+
+      <!-- Integraciones -->
+      <button class="sect-btn" onclick="toggleSect(this)" style="border-top-color:rgba(99,28,255,.15);">
+        <span style="font-size:15px;font-weight:600;color:#631cff;">Integraciones</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Stripe</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Google Calendar</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>API acceso</div>
+      </div>
+
+      <!-- Setup & Onboarding -->
+      <button class="sect-btn" onclick="toggleSect(this)" style="border-top-color:rgba(99,28,255,.15);">
+        <span style="font-size:15px;font-weight:600;color:#631cff;">Setup &amp; Onboarding</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Formación online paso a paso</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Migración de datos</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Onboarding 1:1</div>
+      </div>
+
+      <!-- Soporte -->
+      <button class="sect-btn" onclick="toggleSect(this)" style="border-top-color:rgba(99,28,255,.15);">
+        <span style="font-size:15px;font-weight:600;color:#631cff;">Soporte</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Email de soporte</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Chat en vivo</div>
+        <div class="feat-row unavailable"><svg class="check-x" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#e5e7eb"/><path d="M7 7l6 6M13 7l-6 6" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>Account manager</div>
+      </div>
+    </div>
+
+    <!-- MAX -->
+    <div class="pricing-card">
+      <div style="margin-bottom:8px;font-size:22px;font-weight:700;color:#02021e;">Max</div>
+      <p style="color:rgba(2,2,30,.55);font-size:14px;line-height:1.6;margin:0 0 24px;">Para empresas con varios centros o equipos que necesitan máximo control.</p>
+      <div class="price-monthly">
+        <span style="font-size:52px;font-weight:800;color:#02021e;line-height:1;">200</span>
+        <span style="font-size:28px;font-weight:700;color:#02021e;">€</span>
+        <span style="font-size:15px;color:rgba(2,2,30,.5);margin-left:4px;">/ mensual</span>
+      </div>
+      <div class="price-annual">
+        <span style="font-size:52px;font-weight:800;color:#02021e;line-height:1;">180</span>
+        <span style="font-size:28px;font-weight:700;color:#02021e;">€</span>
+        <span style="font-size:15px;color:rgba(2,2,30,.5);margin-left:4px;">/ mensual</span>
+        <div style="margin-top:4px;font-size:14px;font-weight:600;color:#631cff;">Ahorro de un 10%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin:16px 0 24px;">
+        <svg width="18" height="18" fill="rgba(2,2,30,.4)" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <span style="font-size:14px;font-weight:600;color:rgba(2,2,30,.6);">+ 10 usuarios</span>
+      </div>
+      <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:block;background:#02021e;color:#fff;font-size:16px;font-weight:600;padding:14px 24px;border-radius:14px;text-decoration:none;text-align:center;margin-bottom:28px;">Activar →</a>
+
+      <!-- Funcionalidades -->
+      <button class="sect-btn open" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Funcionalidades</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Reservas online (múltiples reservas)</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Calendario / Agenda</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Gestión de equipo y colaboradores</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Aceptación de citas por parte de prof.</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Horarios y festivos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Pagos y depósitos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Facturación y reporte</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificaciones por email</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Notificaciones via WhatsApp</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cupones</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Tarjetas regalo</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Geolocalización equipo</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Servicios a domicilio (cálculo rutas)</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Múltiples ubicaciones</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Gestión de clientes</div>
+      </div>
+
+      <!-- Integraciones -->
+      <button class="sect-btn" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Integraciones</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Stripe</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Google Calendar</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>API acceso</div>
+      </div>
+
+      <!-- Setup & Onboarding -->
+      <button class="sect-btn" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Setup &amp; Onboarding</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Formación online paso a paso</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Migración de datos</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Onboarding 1:1</div>
+      </div>
+
+      <!-- Soporte -->
+      <button class="sect-btn" onclick="toggleSect(this)">
+        <span style="font-size:15px;font-weight:600;color:#333;">Soporte</span>
+        <svg class="sect-arrow" width="16" height="16" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sect-body" style="display:none;">
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Email de soporte</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Chat en vivo</div>
+        <div class="feat-row"><svg class="check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Account manager</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#f8f7ff;padding:96px 40px;"><div style="max-width:780px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:56px;"><h2 class="font-gabarito" style="background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:42px;font-weight:700;margin:0;">Preguntas frecuentes</h2></div>
+  <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Puedo cambiar de plan en cualquier momento?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí. Puedes subir o bajar de plan cuando quieras. El cambio se aplica al inicio del siguiente ciclo de facturación.</p></div></div>
+  <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Hay permanencia o compromiso de continuidad?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Ninguno. Puedes cancelar en cualquier momento sin penalización. El plan mensual se puede cancelar mes a mes; el anual se cancela al finalizar el año contratado.</p></div></div>
+  <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Qué pasa si supero el límite de usuarios?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Si necesitas más usuarios de los incluidos en tu plan, puedes ampliar el número o pasarte al plan superior. Nuestro equipo te ayudará a encontrar la mejor opción.</p></div></div>
+  <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Hay periodo de prueba gratuito?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Sí, 30 días gratis sin necesidad de tarjeta de crédito para los planes de pago. El plan Iniciación es gratuito de forma permanente.</p></div></div>
+  <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Cómo funciona el descuento anual?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">Al contratar el plan anual ahorras un 10% respecto al precio mensual. El importe se cobra una sola vez al año.</p></div></div>
+</div></section>
+
+<!-- CTA -->
+<section style="background:#fff;padding:80px 40px;"><div style="max-width:900px;margin:0 auto;background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);border-radius:32px;padding:80px 60px;text-align:center;"><h2 class="font-gabarito" style="color:#fff;font-size:46px;line-height:1.1;font-weight:700;margin:0 0 20px;">Empieza gratis hoy mismo</h2><p style="color:rgba(255,255,255,.85);font-size:18px;line-height:1.6;max-width:560px;margin:0 auto 40px;">Sin tarjeta de crédito. Sin permanencia. 30 días para probar todo el potencial de Godolphy.</p><div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;"><a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="background:#EEFE3A;color:#02021e;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;">Empezar gratis</a><a href="#" style="border:2px solid #fff;color:#fff;font-size:18px;font-weight:600;padding:16px 40px;border-radius:20px;text-decoration:none;">Ver demo</a></div><p style="color:rgba(255,255,255,.6);font-size:14px;margin:20px 0 0;">30 días gratis · Sin tarjeta de crédito</p></div></section>
+
+<!-- FOOTER -->
+<footer style="background:#02021e;padding:80px 40px 40px;"><div style="max-width:1200px;margin:0 auto;"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;"><div><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:36px;margin-bottom:20px;display:block;" /><p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;max-width:280px;margin:0;">El software de reservas con IA para negocios de servicios.</p></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">INDUSTRIAS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/sectores/software-para-peluquerias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Peluquería</a></li><li><a href="/sectores/software-para-barberias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Barbería</a></li><li><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Centro de estética</a></li><li><a href="/sectores/software-para-salones-de-unas/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Salón de uñas</a></li><li><a href="/sectores/software-para-empresas-de-limpieza/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Empresa de limpieza</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">FUNCIONALIDADES</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Reservas online</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Gestión de equipo</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Pagos y cobros</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Recordatorios</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">RECURSOS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Blog</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Ayuda</a></li><li><a href="/precio/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Precio</a></li><li><a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="color:#EEFE3A;font-size:14px;text-decoration:none;font-weight:600;">Darme de alta</a></li></ul></div></div><div style="border-top:1px solid rgba(255,255,255,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;"><p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;">© 2025 Godolphy. Todos los derechos reservados.</p><div style="display:flex;gap:24px;"><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Privacidad</a><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Términos</a><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Cookies</a></div></div></div></footer>
+
+<script>
+  var isAnnual = false;
+
+  function toggleBilling() {
+    isAnnual = !isAnnual;
+    var toggle = document.getElementById('billing-toggle');
+    var lblM = document.getElementById('lbl-monthly');
+    var lblA = document.getElementById('lbl-annual');
+    toggle.classList.toggle('annual', isAnnual);
+    lblM.classList.toggle('active', !isAnnual);
+    lblA.classList.toggle('active', isAnnual);
+    document.body.classList.toggle('annual', isAnnual);
+  }
+
+  function toggleSect(btn) {
+    var body = btn.nextElementSibling;
+    var isOpen = btn.classList.contains('open');
+    if (isOpen) {
+      body.style.display = 'none';
+      btn.classList.remove('open');
+    } else {
+      body.style.display = 'block';
+      btn.classList.add('open');
+    }
+  }
+
+  function toggleFaq(btn) {
+    var b = btn.nextElementSibling, i = btn.querySelector('.faq-icon');
+    b.classList.toggle('open');
+    i.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
