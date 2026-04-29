@@ -86,6 +86,29 @@
     <span class="toggle-label" id="lbl-annual">Precio anual <span class="annual-badge">-10%</span></span>
   </div>
 
+  <!-- Selectors usuarios / reservas -->
+  <div style="display:flex;gap:16px;justify-content:center;align-items:center;margin-top:32px;flex-wrap:wrap;">
+    <!-- Usuarios -->
+    <div style="display:flex;align-items:center;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:100px;overflow:hidden;backdrop-filter:blur(8px);">
+      <span style="color:rgba(255,255,255,.7);font-size:15px;font-weight:600;padding:12px 20px;">Usuarios</span>
+      <div style="display:flex;align-items:center;background:#fff;border-radius:100px;margin:5px;gap:0;">
+        <button onclick="changeVal('users',-1)" style="background:none;border:none;cursor:pointer;padding:8px 12px;font-size:18px;color:#631cff;line-height:1;font-weight:700;">−</button>
+        <span id="val-users" style="font-size:16px;font-weight:700;color:#02021e;min-width:32px;text-align:center;">5</span>
+        <button onclick="changeVal('users',1)" style="background:none;border:none;cursor:pointer;padding:8px 12px;font-size:18px;color:#631cff;line-height:1;font-weight:700;">+</button>
+      </div>
+    </div>
+    <!-- Reservas -->
+    <div style="display:flex;align-items:center;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:100px;overflow:hidden;backdrop-filter:blur(8px);">
+      <span style="color:rgba(255,255,255,.7);font-size:15px;font-weight:600;padding:12px 20px;">Reservas / mes</span>
+      <div style="display:flex;align-items:center;background:#fff;border-radius:100px;margin:5px;gap:0;">
+        <button onclick="changeVal('reservas',-1)" style="background:none;border:none;cursor:pointer;padding:8px 12px;font-size:18px;color:#631cff;line-height:1;font-weight:700;">−</button>
+        <span id="val-reservas" style="font-size:16px;font-weight:700;color:#02021e;min-width:56px;text-align:center;">500</span>
+        <button onclick="changeVal('reservas',1)" style="background:none;border:none;cursor:pointer;padding:8px 12px;font-size:18px;color:#631cff;line-height:1;font-weight:700;">+</button>
+      </div>
+    </div>
+  </div>
+  <p id="selector-hint" style="color:rgba(255,255,255,.6);font-size:13px;margin:12px 0 0;"></p>
+
   <!-- Wave bottom -->
   <div style="position:absolute;bottom:-1px;left:0;right:0;overflow:hidden;height:80px;"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:100%;display:block;" fill="white"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/></svg></div>
 </section>
@@ -349,6 +372,38 @@
 
 <script>
   var isAnnual = false;
+  var usersSteps = [1, 2, 3, 5, 10, 15, 20, 30, 50];
+  var reservasSteps = [100, 250, 500, 1000, 2000, 5000, 10000];
+  var usersIdx = 3; // starts at 5
+  var reservasIdx = 2; // starts at 500
+
+  function changeVal(type, dir) {
+    if (type === 'users') {
+      usersIdx = Math.max(0, Math.min(usersSteps.length - 1, usersIdx + dir));
+      var v = usersSteps[usersIdx];
+      document.getElementById('val-users').textContent = v === 50 ? '50+' : v;
+    } else {
+      reservasIdx = Math.max(0, Math.min(reservasSteps.length - 1, reservasIdx + dir));
+      var v = reservasSteps[reservasIdx];
+      document.getElementById('val-reservas').textContent = v >= 10000 ? '10k+' : (v >= 1000 ? (v/1000)+'k' : v);
+    }
+    updateRecommended();
+  }
+
+  function updateRecommended() {
+    var users = usersSteps[usersIdx];
+    var reservas = reservasSteps[reservasIdx];
+    var hint = document.getElementById('selector-hint');
+    if (users <= 1 && reservas <= 250) {
+      hint.textContent = '→ El plan Iniciación es perfecto para ti.';
+    } else if (users <= 5 && reservas <= 1000) {
+      hint.textContent = '→ Te recomendamos el plan Profesional.';
+    } else {
+      hint.textContent = '→ El plan Max se adapta a tus necesidades.';
+    }
+  }
+
+  updateRecommended();
 
   function toggleBilling() {
     isAnnual = !isAnnual;
