@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facturación y reporte – Godolphy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body{font-family:'Poppins',sans-serif;margin:0;overflow-x:hidden;}
+    .font-gabarito{font-family:'Gabarito',sans-serif;}
+    .hero-bg{background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);}
+    .feat-section{padding:80px 40px;}
+    .feat-section.alt{background:#f8f7ff;}
+    .feat-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .feat-content.rev>.feat-text{order:2;}.feat-content.rev>.feat-img{order:1;}
+    .feat-text h2{font-family:'Gabarito',sans-serif;font-size:36px;font-weight:700;color:#02021e;line-height:1.15;margin:0 0 16px;}
+    .feat-text p{color:rgba(2,2,30,.65);font-size:16px;line-height:1.7;margin:0 0 14px;}
+    .feat-text p:last-child{margin:0;}
+    .bullet{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;}
+    .bullet svg{flex-shrink:0;margin-top:4px;}
+    .bullet span{color:rgba(2,2,30,.65);font-size:15px;line-height:1.65;}
+    .feat-img{background:linear-gradient(135deg,#f0ecff 0%,#e8e0ff 100%);border-radius:24px;min-height:380px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(99,28,255,.1);}
+    @media(max-width:960px){.feat-content{grid-template-columns:1fr;gap:40px;}.feat-content.rev>.feat-text{order:0;}.feat-content.rev>.feat-img{order:0;}}
+    @media(max-width:768px){nav ul{display:none!important;}nav>div>div:last-child{display:none!important;}nav>div{padding:0 20px!important;}.feat-section{padding:60px 20px;}.feat-text h2{font-size:28px;}}
+  </style>
+</head>
+<body>
+
+<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li><li><a href="#" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="/lista-de-espera/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="/precio/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a></div></div></nav>
+
+<section class="hero-bg" style="position:relative;padding:130px 40px 100px;text-align:center;overflow:hidden;">
+  <div style="display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;background:rgba(255,255,255,.15);border-radius:20px;margin-bottom:28px;">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+  </div>
+  <h1 class="font-gabarito" style="color:#fff;font-size:56px;font-weight:700;margin:0 0 20px;line-height:1.05;">Facturación y reporte</h1>
+  <p style="color:rgba(255,255,255,.85);font-size:20px;line-height:1.6;max-width:680px;margin:0 auto;">Descarga informes detallados, controla tus finanzas y toma decisiones basadas en datos reales. Todo desde tu panel de administración.</p>
+  <div style="margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="/lista-de-espera/" style="background:#EEFE3A;color:#02021e;font-size:16px;font-weight:700;padding:14px 36px;border-radius:20px;text-decoration:none;">Empezar gratis</a>
+    <a href="#" style="border:2px solid #fff;color:#fff;font-size:16px;font-weight:600;padding:14px 36px;border-radius:20px;text-decoration:none;">Ver demo</a>
+  </div>
+  <div style="position:absolute;bottom:-1px;left:0;right:0;line-height:0;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fff"/></svg></div>
+</section>
+
+<!-- Section 1: white -->
+<section class="feat-section">
+  <div class="feat-content">
+    <div class="feat-text">
+      <h2>Descarga el reporte de todos tus datos en Excel o CSV.</h2>
+      <p>Con informes de servicios, productos, profesionales, comisiones, tarjetas de regalo y cupones, así como informes de resumen de ventas, uso de tarjetas de regalo, uso de paquetes y más, tendrás todos los datos que necesitas para tomar las mejores decisiones para tu negocio.</p>
+    </div>
+    <div class="feat-img">
+      <div style="text-align:center;padding:40px;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#9B4FE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <p style="color:rgba(99,28,255,.4);font-size:13px;margin:16px 0 0;">Exportar a Excel</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: alt, rev -->
+<section class="feat-section alt">
+  <div class="feat-content rev">
+    <div class="feat-text">
+      <h2>Controla la facturación de cada cita.</h2>
+      <p>Accede al detalle de cobros de cada servicio: qué se cobró, cuándo, con qué método de pago y a qué cliente. Filtra por rango de fechas, profesional o servicio para obtener exactamente la información que necesitas.</p>
+      <div class="bullet"><svg width="18" height="18" viewBox="0 0 20 20" fill="#631cff"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Resumen diario, semanal y mensual de ingresos.</span></div>
+      <div class="bullet"><svg width="18" height="18" viewBox="0 0 20 20" fill="#631cff"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Desglose por profesional y por servicio.</span></div>
+      <div class="bullet"><svg width="18" height="18" viewBox="0 0 20 20" fill="#631cff"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Histórico de pagos y devoluciones.</span></div>
+    </div>
+    <div class="feat-img">
+      <div style="text-align:center;padding:40px;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#9B4FE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <p style="color:rgba(99,28,255,.4);font-size:13px;margin:16px 0 0;">Control de facturación</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: white -->
+<section class="feat-section">
+  <div class="feat-content">
+    <div class="feat-text">
+      <h2>Informes de comisiones para tu equipo.</h2>
+      <p>Genera automáticamente los informes de comisiones de cada profesional al cierre del período. Sin cálculos manuales, sin errores. Compártelos directamente con cada miembro del equipo desde el panel.</p>
+    </div>
+    <div class="feat-img">
+      <div style="text-align:center;padding:40px;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#9B4FE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <p style="color:rgba(99,28,255,.4);font-size:13px;margin:16px 0 0;">Informe de comisiones</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: alt, rev -->
+<section class="feat-section alt">
+  <div class="feat-content rev">
+    <div class="feat-text">
+      <h2>Informes de IA exportables en PDF.</h2>
+      <p>Los planes Pro y Max incluyen informes generados por el Copiloto IA con las conclusiones clave del negocio: rentabilidad por servicio, diagnóstico de clientes y alertas con impacto en €. Expórtalos en PDF para compartirlos con tu equipo o utilizarlos en tus reuniones de seguimiento.</p>
+    </div>
+    <div class="feat-img">
+      <div style="text-align:center;padding:40px;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#9B4FE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="10" cy="14" r="2"/><path d="M20 20l-3-3"/></svg>
+        <p style="color:rgba(99,28,255,.4);font-size:13px;margin:16px 0 0;">Informe IA en PDF</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f7ff;padding:80px 40px;"><div style="max-width:900px;margin:0 auto;background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);border-radius:32px;padding:80px 60px;text-align:center;"><h2 class="font-gabarito" style="color:#fff;font-size:46px;line-height:1.1;font-weight:700;margin:0 0 20px;">Empieza gratis hoy mismo</h2><p style="color:rgba(255,255,255,.85);font-size:18px;line-height:1.6;max-width:560px;margin:0 auto 40px;">Sin tarjeta de crédito. Sin permanencia. 30 días para probar todo el potencial de Godolphy.</p><div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;"><a href="/lista-de-espera/" style="background:#EEFE3A;color:#02021e;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;">Empezar gratis</a><a href="#" style="border:2px solid #fff;color:#fff;font-size:18px;font-weight:600;padding:16px 40px;border-radius:20px;text-decoration:none;">Ver demo</a></div><p style="color:rgba(255,255,255,.6);font-size:14px;margin:20px 0 0;">30 días gratis · Sin tarjeta de crédito</p></div></section>
+
+<footer style="background:#02021e;padding:80px 40px 40px;"><div style="max-width:1200px;margin:0 auto;"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;"><div><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:36px;margin-bottom:20px;display:block;" /><p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;max-width:280px;margin:0;">El software de reservas con IA para negocios de servicios.</p></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">INDUSTRIAS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/sectores/software-para-peluquerias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Peluquería</a></li><li><a href="/sectores/software-para-barberias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Barbería</a></li><li><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Centro de estética</a></li><li><a href="/sectores/software-para-salones-de-unas/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Salón de uñas</a></li><li><a href="/sectores/software-para-empresas-de-limpieza/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Empresa de limpieza</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">FUNCIONALIDADES</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/funcionalidades/reservas-online/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Reservas online</a></li><li><a href="/funcionalidades/calendario/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Calendario</a></li><li><a href="/funcionalidades/equipo-y-horarios/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Equipo y horarios</a></li><li><a href="/funcionalidades/pagos-y-depositos/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Pagos y depósitos</a></li><li><a href="/funcionalidades/gestion-de-clientes/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Gestión de clientes</a></li><li><a href="/funcionalidades/chat-y-notificaciones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Chat y notificaciones</a></li><li><a href="/funcionalidades/multiples-ubicaciones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Múltiples ubicaciones</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">RECURSOS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Blog</a></li><li><a href="#" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Ayuda</a></li><li><a href="/precio/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Precio</a></li><li><a href="/lista-de-espera/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Lista de espera</a></li><li><a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="color:#EEFE3A;font-size:14px;text-decoration:none;font-weight:600;">Darme de alta</a></li></ul></div></div><div style="border-top:1px solid rgba(255,255,255,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;"><p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;">© 2025 Godolphy. Todos los derechos reservados.</p><div style="display:flex;gap:24px;"><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Privacidad</a><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Términos</a><a href="#" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Cookies</a></div></div></div></footer>
+
+</body>
+</html>
