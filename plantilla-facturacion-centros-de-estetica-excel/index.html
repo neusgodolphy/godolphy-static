@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantilla facturación centros de estética - Excel - Godolphy</title>
+  <meta name="description" content="Descarga gratis la plantilla de facturación en Excel para centros de estética: organiza ingresos, controla pagos y simplifica tu gestión con Godolphy." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body{font-family:'Poppins',sans-serif;margin:0;overflow-x:hidden;color:#02021e;}
+    .font-gabarito{font-family:'Gabarito',sans-serif;}
+    .kpi-card{background:#f8f7ff;border-radius:16px;padding:24px 28px;border:1.5px solid rgba(99,28,255,.1);}
+    .kpi-card h3{font-family:'Gabarito',sans-serif;font-size:17px;font-weight:700;color:#631cff;margin:0 0 8px;}
+    .kpi-card p{font-size:14px;line-height:1.7;color:rgba(2,2,30,.65);margin:0;}
+    .kpi-card .formula{font-size:13px;font-weight:600;color:#02021e;margin-top:8px;padding:6px 12px;background:#fff;border-radius:8px;display:inline-block;}
+    .section-content h2{font-family:'Gabarito',sans-serif;font-size:28px;font-weight:700;color:#02021e;margin:0 0 20px;line-height:1.2;}
+    .section-content h3{font-family:'Gabarito',sans-serif;font-size:20px;font-weight:700;color:#02021e;margin:32px 0 12px;}
+    .section-content p{font-size:16px;line-height:1.85;color:rgba(2,2,30,.75);margin:0 0 16px;}
+    .section-content ul{margin:0 0 20px;padding-left:22px;}
+    .section-content li{font-size:16px;line-height:1.8;color:rgba(2,2,30,.75);margin-bottom:8px;}
+    .section-content strong{color:#02021e;font-weight:600;}
+    @media(max-width:768px){
+      nav ul{display:none!important;}
+      nav>div>div:last-child{display:none!important;}
+      nav>div{padding:0 20px!important;}
+      .hero-grid{grid-template-columns:1fr!important;}
+      .kpi-grid{grid-template-columns:1fr!important;}
+    }
+  </style>
+</head>
+<body style="background:#fff;">
+
+<!-- NAV -->
+<nav style="background:#fff;border-bottom:1px solid rgba(2,2,30,.08);padding:14px 0;position:sticky;top:0;z-index:50;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="/"><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:36px;" /></a>
+    <ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;">
+      <li><a href="/sectores/" style="color:#02021e;font-size:14px;font-weight:500;text-decoration:none;">Sectores ▾</a></li>
+      <li><a href="#" style="color:#02021e;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li>
+      <li><a href="/blog/" style="color:#02021e;font-size:14px;font-weight:500;text-decoration:none;">Blog</a></li>
+      <li><a href="/precio/" style="color:#02021e;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li>
+    </ul>
+    <div style="display:flex;gap:12px;">
+      <a href="#" style="border:2px solid #631cff;color:#631cff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a>
+      <a href="/lista-de-espera/" style="background:#631cff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,#f8f7ff 0%,#ede8ff 100%);padding:80px 40px 60px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <div style="display:inline-block;background:#631cff;color:#fff;font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px;letter-spacing:.05em;text-transform:uppercase;">Descarga gratuita</div>
+        <h1 class="font-gabarito" style="font-size:44px;font-weight:700;color:#02021e;line-height:1.1;margin:0 0 16px;">Plantilla excel<br/><span style="color:#631cff;">plan financiero</span><br/>centro estética 2026</h1>
+        <p style="font-size:17px;color:rgba(2,2,30,.65);line-height:1.7;margin:0 0 12px;">Calcula automáticamente tu CAC, LTV, EBITDA y margen de beneficio. Solo introduces 5 datos al mes; el resto se calcula solo.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#631cff" stroke="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="#631cff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:14px;color:rgba(2,2,30,.6);">Descargada más de 500 veces</span>
+          </div>
+        </div>
+        <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:16px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;">Descargar plantilla gratis</a>
+      </div>
+      <div>
+        <img src="/wp-images/plantilla-para-plan-financiero-salones-y-peluquerias-1536x1024.jpg" alt="Plantilla plan financiero para centros de estética" style="width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(99,28,255,.15);" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div style="max-width:900px;margin:0 auto;padding:80px 40px 0;">
+  <div class="section-content">
+    <h2>¿Cómo te ayudará esta plantilla?</h2>
+    <p>Esta herramienta de planificación financiera te permite controlar el rendimiento de tu centro de estética mes a mes con cálculos automáticos. Con solo 5 datos mensuales obtienes una imagen completa de la salud económica de tu negocio.</p>
+    <ul>
+      <li>Visualiza tus <strong>beneficios o pérdidas</strong> mensualmente sin complicaciones.</li>
+      <li>Evalúa la <strong>efectividad de tu marketing</strong> comparando CAC y LTV.</li>
+      <li>Identifica <strong>gastos innecesarios</strong> que están reduciendo tus márgenes.</li>
+      <li>Obtén datos financieros claros para conseguir <strong>financiación o inversión</strong>.</li>
+    </ul>
+  </div>
+
+  <img src="/wp-images/girloncomputermockup-1024x576.png" alt="Vista previa de la plantilla de facturación para centros de estética" style="width:100%;border-radius:20px;margin:40px 0;" />
+</div>
+
+<!-- KPI SECTIONS -->
+<div style="max-width:900px;margin:0 auto;padding:0 40px 80px;">
+
+  <div class="section-content">
+    <h2 style="margin-top:60px;">KPIs incluidos en la plantilla</h2>
+    <p>La plantilla incluye todos los indicadores que necesitas para tomar decisiones informadas sobre tu negocio.</p>
+  </div>
+
+  <!-- Indicadores Clave -->
+  <h3 class="font-gabarito" style="font-size:22px;font-weight:700;color:#02021e;margin:0 0 20px;">Indicadores Clave de Rendimiento</h3>
+  <div class="kpi-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:40px;">
+    <div class="kpi-card">
+      <h3>Ventas</h3>
+      <p>Total de ingresos por servicios y productos del período.</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Clientes que repiten</h3>
+      <p>Porcentaje de clientes recurrentes. Indicador clave de fidelización.</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Nuevos clientes</h3>
+      <p>Primeras visitas registradas durante el período analizado.</p>
+    </div>
+  </div>
+
+  <!-- Métricas Financieras -->
+  <h3 class="font-gabarito" style="font-size:22px;font-weight:700;color:#02021e;margin:0 0 20px;">Métricas Financieras</h3>
+  <div class="kpi-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;">
+    <div class="kpi-card">
+      <h3>CAC — Coste de Adquisición</h3>
+      <p>Cuánto te cuesta captar un nuevo cliente.</p>
+      <div class="formula">(Marketing + Ventas) ÷ Nuevos clientes</div>
+    </div>
+    <div class="kpi-card">
+      <h3>Ticket medio</h3>
+      <p>Gasto promedio por cliente en cada visita.</p>
+      <div class="formula">Ventas totales ÷ Nº de clientes</div>
+    </div>
+    <div class="kpi-card">
+      <h3>LTV — Lifetime Value</h3>
+      <p>Ingresos totales que genera un cliente durante toda su relación contigo.</p>
+      <div class="formula">Ticket medio × Frecuencia × Duración</div>
+    </div>
+    <div class="kpi-card">
+      <h3>LTV / CAC</h3>
+      <p>Ratio de rentabilidad. Un valor superior a 3 indica un negocio rentable y sostenible.</p>
+    </div>
+  </div>
+
+  <!-- Facturación y Costes -->
+  <h3 class="font-gabarito" style="font-size:22px;font-weight:700;color:#02021e;margin:0 0 20px;">Facturación y Costes</h3>
+  <div style="background:#f8f7ff;border-radius:16px;padding:28px;margin-bottom:40px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Facturación bruta</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Ingresos totales antes de gastos</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Coste de materiales</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Productos de belleza y consumibles</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Salarios</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Remuneración del equipo con cargas sociales</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Marketing y ventas</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Publicidad y promociones</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Local y equipamiento</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Alquiler, mantenimiento, mobiliario</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Legal</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Licencias, seguros, asesoría</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Tecnología</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Software y suscripciones digitales</p></div></div>
+      <div style="display:flex;align-items:flex-start;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#631cff;margin-top:6px;flex-shrink:0;"></span><div><strong style="font-size:15px;color:#02021e;">Total gastos</strong><p style="font-size:14px;color:rgba(2,2,30,.6);margin:2px 0 0;">Suma automática de todos los costes</p></div></div>
+    </div>
+  </div>
+
+  <!-- Rentabilidad -->
+  <h3 class="font-gabarito" style="font-size:22px;font-weight:700;color:#02021e;margin:0 0 20px;">Rentabilidad y Finanzas</h3>
+  <div class="kpi-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;">
+    <div class="kpi-card">
+      <h3>Margen de operaciones</h3>
+      <p>Diferencia entre ingresos y gastos totales del período.</p>
+      <div class="formula">Ingresos − Total gastos</div>
+    </div>
+    <div class="kpi-card">
+      <h3>EBIT</h3>
+      <p>Beneficio antes de impuestos e intereses. Mide la rentabilidad operativa real.</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Impuestos (IVA 21%)</h3>
+      <p>Cálculo automático del IVA sobre los servicios prestados.</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Resultado bancario</h3>
+      <p>Saldo final mensual en tu cuenta después de todos los movimientos.</p>
+    </div>
+  </div>
+
+  <!-- Testimonio -->
+  <div style="background:linear-gradient(135deg,#631cff 0%,#9B4FE8 100%);border-radius:20px;padding:40px;margin:40px 0;">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="rgba(255,255,255,.3)" style="margin-bottom:16px;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1zm12 0c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+    <p style="font-size:18px;line-height:1.75;color:#fff;margin:0 0 20px;font-style:italic;">"Gracias a esta plantilla descubrí que estaba gastando el 40% de mis ingresos en marketing con un CAC de €120. Ahora lo tengo en €45 y he duplicado los beneficios."</p>
+    <p style="font-size:14px;color:rgba(255,255,255,.7);margin:0;font-weight:600;">María González — Propietaria de Soft Nails Madrid</p>
+  </div>
+
+  <!-- CTA Final -->
+  <div style="text-align:center;padding:60px 0 20px;">
+    <h2 class="font-gabarito" style="font-size:34px;font-weight:700;color:#02021e;margin:0 0 16px;">Descarga la plantilla gratis</h2>
+    <p style="font-size:17px;color:rgba(2,2,30,.55);margin:0 0 32px;max-width:500px;margin-left:auto;margin-right:auto;">Únete a los más de 500 propietarios de centros de estética que ya controlan sus finanzas con esta herramienta.</p>
+    <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:inline-block;background:#631cff;color:#fff;font-size:16px;font-weight:700;padding:18px 48px;border-radius:20px;text-decoration:none;">Empieza ahora — Es gratis</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#02021e;padding:80px 40px 40px;"><div style="max-width:1200px;margin:0 auto;"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;"><div><img src="https://www.figma.com/api/mcp/asset/bae72a92-3579-442d-8251-4f767a57afa2" alt="Godolphy" style="height:36px;margin-bottom:20px;display:block;" /><p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;max-width:280px;margin:0;">El software de reservas con IA para negocios de servicios.</p></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">INDUSTRIAS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/sectores/software-para-peluquerias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Peluquería</a></li><li><a href="/sectores/software-para-barberias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Barbería</a></li><li><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Centro de estética</a></li><li><a href="/sectores/software-para-salones-de-unas/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Salón de uñas</a></li><li><a href="/sectores/software-para-empresas-de-limpieza/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Empresa de limpieza</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">FUNCIONALIDADES</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/funcionalidades/reservas-online/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Reservas online</a></li><li><a href="/funcionalidades/calendario/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Calendario</a></li><li><a href="/funcionalidades/equipo-y-horarios/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Equipo y horarios</a></li><li><a href="/funcionalidades/pagos-y-depositos/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Pagos y depósitos</a></li><li><a href="/funcionalidades/gestion-de-clientes/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Gestión de clientes</a></li><li><a href="/funcionalidades/chat-y-notificaciones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Chat y notificaciones</a></li><li><a href="/funcionalidades/fidelizacion-ai/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Fidelización AI</a></li><li><a href="/funcionalidades/facturacion-y-reporte/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Facturación y reporte</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">RECURSOS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/blog/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Blog</a></li><li><a href="/precio/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Precio</a></li><li><a href="/lista-de-espera/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Lista de espera</a></li></ul></div></div><div style="border-top:1px solid rgba(255,255,255,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;"><p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;">© 2025 Godolphy. Todos los derechos reservados.</p><div style="display:flex;gap:24px;"><a href="/politica-de-privacidad/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Privacidad</a><a href="/terminos-y-condiciones/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Términos</a><a href="/politica-de-cookies/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Cookies</a></div></div></div></footer>
+
+</body>
+</html>
