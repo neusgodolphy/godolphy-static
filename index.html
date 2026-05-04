@@ -50,18 +50,19 @@
   
 @media(max-width:768px){
   /* Navbar */
+  nav{padding:32px 0!important;}
   nav ul{display:none!important;}
   nav>div>div{display:none!important;}
-  nav>div{padding:0 20px!important;}
+  nav > div{padding-left:20px!important;padding-right:20px!important;}
   #nav-hamburger{display:flex!important;}
   /* Hero */
-  section.hero-bg{padding:120px 20px 120px!important;}
+  section.hero-bg{padding:100px 20px 380px!important;}
   section.hero-bg h1{font-size:38px!important;line-height:1.1!important;}
   section.hero-bg h2{font-size:22px!important;}
   section.hero-bg p{font-size:15px!important;}
   div[style*="display:flex;gap:16px;justify-content:center"]{flex-direction:column!important;align-items:center!important;gap:12px!important;}
-  /* Tabs section: quitar margen negativo */
-  section[style*="margin-top:-320px"]{margin-top:-80px!important;padding:0 16px 0!important;}
+  /* Tabs section: overlap gradient, tab buttons land on solid purple above the wave */
+  section[style*="margin-top:-320px"]{margin-top:-280px!important;padding:0 16px 0!important;}
   div[style*="max-width:70%"]{max-width:100%!important;}
   div[style*="display:flex;justify-content:center;gap:0"]{overflow-x:auto!important;justify-content:flex-start!important;}
   /* Feature sections: apilar */
@@ -75,11 +76,14 @@
   button[style*="position:absolute;top:-20px"]{top:10px!important;right:10px!important;width:72px!important;height:72px!important;}
   /* Secciones generales */
   section{padding:56px 20px!important;}
-  /* Contenedores max-width sin padding lateral */
-  div[style*="max-width:1320px"],div[style*="max-width:1200px"],div[style*="max-width:960px"],div[style*="max-width:780px"]{padding-left:0!important;padding-right:0!important;}
+  /* Contenedores max-width sin padding lateral (excluye nav) */
+  section div[style*="max-width:1320px"],section div[style*="max-width:1200px"],section div[style*="max-width:960px"],section div[style*="max-width:780px"],footer div[style*="max-width:1320px"],footer div[style*="max-width:1200px"],footer div[style*="max-width:960px"],footer div[style*="max-width:780px"]{padding-left:0!important;padding-right:0!important;}
   /* Features grid */
   div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
   div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+  /* Footer 4 columnas */
+  div[style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important;gap:32px!important;}
+  footer div[style*="border-bottom"]{padding-bottom:40px!important;}
   div[style*="padding:0 80px"]{padding:0!important;}
   /* DIF banners: stack on mobile */
   div[style*="align-items:center;gap:40px"]{flex-direction:column!important;gap:20px!important;}
@@ -99,6 +103,32 @@
   /* Testimonial slider */
   div[style*="grid-template-columns:repeat(3,1fr);"]{grid-template-columns:1fr!important;}
 }
+
+  /* ── FOOTER GRID MOBILE FIX ── */
+  @media(max-width:768px){
+    div[style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important;gap:32px!important;}
+  }
+
+  /* ── FOOTER OVERFLOW FIX ── */
+  footer{box-sizing:border-box;width:100%;overflow-x:hidden;}
+  @media(max-width:768px){
+    footer{padding:48px 20px 24px!important;}
+    footer > div{padding:0!important;max-width:100%!important;}
+    div[style*="justify-content:space-between;align-items:center"]{flex-direction:column!important;align-items:flex-start!important;gap:16px!important;}
+    footer div[style*="display:flex;gap:24px"]{flex-wrap:wrap!important;}
+  }
+
+  /* ── FOOTER MOBILE SIMPLIFY ── */
+  @media(max-width:768px){
+    /* Hide nav columns: keep only col 1 (logo + contact) */
+    div[style*="grid-template-columns:2fr 1fr 1fr 1fr"] > div:nth-child(n+2),
+    div[style*="grid-template-columns:1fr 1fr 1fr 1fr"] > div:nth-child(n+2){display:none!important;}
+    /* Force single column */
+    div[style*="grid-template-columns:2fr 1fr 1fr 1fr"],
+    div[style*="grid-template-columns:1fr 1fr 1fr 1fr"]{grid-template-columns:1fr!important;gap:0!important;margin-bottom:32px!important;}
+    /* Show mobile CTA */
+    .footer-mobile-cta{display:inline-block!important;}
+  }
 </style>
 </head>
 <body>
@@ -320,7 +350,7 @@ function toggleMobileNav(){
       <a href="/funcionalidades/servicios-a-domicilio/" target="_blank" style="display:inline-block;background:linear-gradient(90deg,#9B4FE8,#631cff);color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">¿Cómo funcionan los servicios a domicilio?</a>
     </div>
     <div style="flex:1;position:relative;">
-      <img src="/wp-images/google-maps.png" alt="Servicios a domicilio" style="width:100%;" />
+      <img src="/wp-images/servicios-domicilio-mapa.png" alt="Servicios a domicilio" style="width:100%;" />
       <button style="position:absolute;top:-20px;right:-20px;width:110px;height:110px;background:#080f1e;border:10px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
         <svg style="width:32px;height:32px;color:#f54748;margin-left:4px;" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
@@ -485,38 +515,6 @@ function toggleMobileNav(){
 </section>
 
 
-<!-- DIF: Sin IVA (home) -->
-<section style="background:#fff;padding:20px 40px 60px;">
-  <div style="max-width:1300px;margin:0 auto;">
-    <div style="background:linear-gradient(135deg,#02021e 0%,#1a0a4a 100%);border-radius:24px;padding:40px 56px;display:flex;align-items:center;gap:40px;">
-      <div style="flex-shrink:0;width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EEFE3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      </div>
-      <div style="flex:1;">
-        <p style="color:#EEFE3A;font-size:12px;font-weight:600;letter-spacing:.08em;margin:0 0 6px;">EMPRESA USA · SIN IVA EUROPEO</p>
-        <h3 class="font-gabarito" style="color:#fff;font-size:24px;font-weight:700;margin:0 0 8px;">El precio que ves es el que pagas — 21% más económico que alternativas españolas</h3>
-        <p style="color:rgba(255,255,255,.65);font-size:15px;margin:0;">Godolphy opera como empresa registrada en EE.UU. Las suscripciones no llevan IVA europeo. Planes desde 33€/mes todo incluido.</p>
-      </div>
-      <a href="/precio/" style="flex-shrink:0;background:#EEFE3A;color:#02021e;font-size:15px;font-weight:700;padding:12px 28px;border-radius:14px;text-decoration:none;white-space:nowrap;">Ver precios</a>
-    </div>
-  </div>
-</section>
-
-<!-- DIF: Cesta múltiple -->
-<section style="background:#f8f7ff;padding:80px 40px;">
-  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:80px;">
-    <div style="flex:1;">
-      <h2 class="font-gabarito" style="font-size:42px;line-height:1.1;font-weight:700;color:#02021e;margin:0 0 20px;">Reserva varios servicios a la vez, en un solo pago</h2>
-      <p style="color:rgba(2,2,30,.7);font-size:17px;line-height:1.65;margin:0 0 16px;">Tus clientes pueden añadir varias reservas — con distintos profesionales, en distintos días — y pagar todo de una vez. El sistema calcula la duración total y bloquea el tiempo exacto en la agenda. Sin solapamientos, sin gestión manual.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
-        <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="#631cff" style="flex-shrink:0;margin-top:2px;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span style="color:rgba(2,2,30,.8);font-size:15px;">Un solo pago para múltiples reservas</span></div>
-        <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="#631cff" style="flex-shrink:0;margin-top:2px;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span style="color:rgba(2,2,30,.8);font-size:15px;">Servicios combinados en una cita (manicura + pedicura = 1h 45min bloqueados)</span></div>
-        <div style="display:flex;align-items:flex-start;gap:12px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="#631cff" style="flex-shrink:0;margin-top:2px;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span style="color:rgba(2,2,30,.8);font-size:15px;">El sistema valida que el profesional puede realizar todos los servicios seleccionados</span></div>
-      </div>
-    </div>
-    <div style="flex:1;"><div style="background:linear-gradient(135deg,#f0ebff,#e0d5ff);border-radius:24px;padding:32px;"><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 24px rgba(99,28,255,.1);"><div style="font-size:13px;font-weight:600;color:#631cff;margin-bottom:16px;letter-spacing:.05em;">RESUMEN DE RESERVAS</div><div style="display:flex;flex-direction:column;gap:10px;"><div style="background:#f8f7ff;border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:14px;font-weight:600;color:#02021e;">Manicura con Ana</div><div style="font-size:12px;color:rgba(2,2,30,.5);">Lunes 12 mayo · 10:00</div></div><div style="font-size:14px;font-weight:700;color:#631cff;">45€</div></div><div style="background:#f8f7ff;border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:14px;font-weight:600;color:#02021e;">Masaje con Laura</div><div style="font-size:12px;color:rgba(2,2,30,.5);">Miércoles 14 mayo · 11:30</div></div><div style="font-size:14px;font-weight:700;color:#631cff;">60€</div></div><div style="border-top:1px solid rgba(2,2,30,.08);margin-top:4px;padding-top:12px;display:flex;justify-content:space-between;align-items:center;"><div style="font-size:15px;font-weight:700;color:#02021e;">Total</div><div style="font-size:20px;font-weight:800;color:#631cff;">105€</div></div><div style="background:linear-gradient(90deg,#9B4FE8,#631cff);color:#fff;text-align:center;padding:12px;border-radius:10px;font-size:14px;font-weight:600;margin-top:4px;">Pagar todo de una vez</div></div></div></div></div>
-  </div>
-</section>
 <!-- ═══════════════════════════════════════ CTA FINAL ═══════════════════════════════════════ -->
 <section style="background:#fff;padding:60px 40px 80px;">
   <div style="max-width:1300px;margin:0 auto;background:linear-gradient(160deg,#7835C3 0%,#631cff 55%,#3a0aaa 100%);border-radius:30px;padding:45px 80px 80px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 8px 40px rgba(99,28,255,.3);">
@@ -564,17 +562,17 @@ function toggleMobileNav(){
           <a href="/sectores/software-para-barberias/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Barberías</a>
           <a href="/sectores/software-para-spa-y-masajes/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Centros masajes SPA</a>
           <a href="/sectores/software-para-empresas-de-limpieza/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Empresas de limpieza</a>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Limpieza de oficinas</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Limpieza industrial</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Limpieza de vehículos</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Técnicos de campo</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Manitas a domicilio</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Jardineros</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Lampistas</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Fontaneros</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Mantenimiento de piscinas</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Niñeras</span>
-          <span style="color:rgba(255,255,255,.7);font-size:17px;">Tutores a domicilio</span>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
         </div>
       </div>
 
