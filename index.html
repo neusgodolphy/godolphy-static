@@ -383,67 +383,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════ PRICING ═══════════════════════════════════════ -->
-<section style="background:rgba(8,15,30,.02);padding:92px 40px 100px;">
-  <div style="max-width:1320px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:56px;">
-      <h3 class="font-gabarito" style="background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:64px;line-height:76.8px;font-weight:700;margin:0 0 24px;">Precio</h3>
-      <p style="color:#02021e;font-size:18.6px;line-height:28px;margin:0;">Un único pack con todas las funcionalidades que se adapta a medida que creces.<br>Empieza hoy a digitalizar y optimizar tu negocio de servicios a domicilio / técnicos de campo.</p>
-    </div>
-    <div style="display:flex;gap:30px;max-width:980px;margin:0 auto;">
-      <!-- Calculator -->
-      <div style="flex:1;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);padding:28px;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
-          <div>
-            <label style="display:block;color:#333;font-weight:600;font-size:15.6px;margin-bottom:8px;">Reservas por mes:</label>
-            <div style="position:relative;">
-              <select id="reservas-sel" onchange="calcPrice()" style="width:100%;border:1px solid #e8e8e8;border-radius:5px;padding:12px 36px 12px 18px;color:#4e4e62;font-size:16px;appearance:none;background:#fff;cursor:pointer;">
-                <option value="29">100 servicios</option>
-                <option value="49">200–500 servicios</option>
-                <option value="79">500–1000 servicios</option>
-                <option value="119">1000–1500 servicios</option>
-                <option value="159">1500–2000 servicios</option>
-                <option value="199">Más de 2000 servicios</option>
-              </select>
-              <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:#696871;">▾</span>
-            </div>
-          </div>
-          <div>
-            <label style="display:block;color:#333;font-weight:600;font-size:15.6px;margin-bottom:8px;">Número de profesionales:</label>
-            <input id="prof-inp" type="number" value="1" min="1" onchange="calcPrice()" style="width:100%;border:1px solid rgba(0,0,0,.1);border-radius:8px;padding:12px 16px;color:#4e4e62;font-size:16px;box-sizing:border-box;" />
-          </div>
-        </div>
-        <!-- Toggle -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px;">
-          <span class="font-roboto" style="font-weight:700;color:#212529;font-size:20px;">Mensualmente</span>
-          <div id="toggle" class="toggle-track" onclick="toggleBilling()">
-            <div class="toggle-thumb"></div>
-          </div>
-          <span class="font-roboto" style="font-weight:700;color:#212529;font-size:20px;">Anualmente</span>
-        </div>
-        <div style="text-align:center;margin-top:16px;">
-          <img src="https://www.figma.com/api/mcp/asset/e507a709-e328-4aba-99f5-2b152c030723" alt="Ahorra un 20%" style="height:96px;" />
-        </div>
-      </div>
-      <!-- Result -->
-      <div style="width:300px;background:#121212;border-radius:12px;overflow:hidden;position:relative;display:flex;flex-direction:column;gap:44px;padding:44px 30px 30px;">
-        <!-- Oferta ribbon -->
-        <div style="position:absolute;top:0;right:0;width:140px;height:140px;overflow:hidden;">
-          <div style="position:absolute;top:28px;right:-36px;background:#eefe3a;color:#333;font-weight:600;font-size:16px;padding:12px 48px;transform:rotate(45deg);">Oferta</div>
-        </div>
-        <div>
-          <p class="font-roboto" style="color:#fff;font-weight:700;font-size:18px;margin:0 0 8px;">Todo Incluido</p>
-          <div style="display:flex;align-items:baseline;gap:4px;">
-            <span id="price-out" class="font-roboto" style="color:#fff;font-weight:700;font-size:40px;">€29.00</span>
-            <span class="font-roboto" style="color:#fff;font-size:15px;">/ mes</span>
-          </div>
-        </div>
-        <a href="https://www.godolphy.com/darme-de-alta/" target="_blank" style="display:block;background:#eefe3a;color:#404040;font-family:'Roboto',sans-serif;font-weight:700;font-size:18px;text-align:center;padding:16px 32px;border-radius:8px;text-decoration:none;">Crear mi cuenta</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════════════════════════════ DECORATIVE BAND ═══════════════════════════════════════ -->
 <div style="position:relative;overflow:hidden;line-height:0;">
   <img src="https://www.figma.com/api/mcp/asset/a38d594c-85d1-492d-b992-00fd194e61d7" alt="" style="width:100%;display:block;" />
