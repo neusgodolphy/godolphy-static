@@ -47,8 +47,9 @@
 @media(max-width:768px){
   /* Navbar */
   nav ul{display:none!important;}
-  nav>div>div:last-child{display:none!important;}
+  nav>div>div{display:none!important;}
   nav>div{padding:0 20px!important;}
+  #nav-hamburger{display:flex!important;}
   /* Hero */
   section.hero-bg{padding:120px 20px 120px!important;}
   section.hero-bg h1{font-size:38px!important;line-height:1.1!important;}
@@ -110,8 +111,43 @@
       <a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a>
       <a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a>
     </div>
+    <!-- Hamburger (mobile only) -->
+    <button id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Abrir menú" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile nav overlay -->
+<div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:200;background:#3a0aaa;flex-direction:column;padding:24px 24px 40px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;">
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" /></a>
+    <button onclick="toggleMobileNav()" aria-label="Cerrar menú" style="background:none;border:none;cursor:pointer;padding:4px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav style="display:flex;flex-direction:column;gap:0;flex:1;">
+    <a href="/sectores/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.15);">Sectores</a>
+    <a href="/funcionalidades/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.15);">Funcionalidades</a>
+    <a href="/lista-de-espera/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.15);">Recursos</a>
+    <a href="/precio/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.15);">Precio</a>
+  </nav>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:32px;">
+    <a href="#" style="background:#EEFE3A;color:#3a0aaa;font-size:16px;font-weight:700;padding:14px 24px;border-radius:20px;text-decoration:none;text-align:center;">Demo</a>
+    <a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:16px;font-weight:700;padding:14px 24px;border-radius:20px;text-decoration:none;text-align:center;">Lista de espera</a>
+  </div>
+</div>
+
+<script>
+function toggleMobileNav(){
+  var overlay=document.getElementById('mobile-nav');
+  var open=overlay.style.display==='flex';
+  overlay.style.display=open?'none':'flex';
+  document.body.style.overflow=open?'':'hidden';
+}
+</script>
 
 <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
 <section class="hero-bg" style="position:relative;padding:160px 40px 420px;text-align:center;overflow:hidden;">
