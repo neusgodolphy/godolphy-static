@@ -14,8 +14,8 @@
 @media(max-width:768px){
   /* Navbar: ocultar menú y botones, mantener logo */
   nav ul{display:none!important;}
-  nav>div>div:last-child{display:none!important;}
-  nav>div{padding:0 20px!important;}
+  nav>div>div{display:none!important;}
+  nav>div{padding:0 20px!important;}#nav-hamburger{display:flex!important;}
   /* Secciones: padding reducido */
   section{padding:56px 20px!important;}
   section.hero-bg{padding:100px 20px 56px!important;}
@@ -123,7 +123,46 @@
 <body>
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs><linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9B4FE8"/><stop offset="100%" stop-color="#631cff"/></linearGradient></defs></svg>
 
-<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores</a></li><li><a href="/funcionalidades/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="/lista-de-espera/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="/precio/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a></div></div></nav>
+<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores</a></li><li><a href="/funcionalidades/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="/lista-de-espera/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="/precio/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a></div>
+    <!-- Hamburger (mobile only) -->
+    <button id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Abrir menú" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:200;background:#3a0aaa;flex-direction:column;padding:24px 24px 40px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;">
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" /></a>
+    <button onclick="toggleMobileNav()" aria-label="Cerrar menú" style="background:none;border:none;cursor:pointer;padding:4px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav style="display:flex;flex-direction:column;gap:0;flex:1;">
+    <a href="/sectores/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Sectores</a>
+    <a href="/funcionalidades/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Funcionalidades</a>
+    <a href="/lista-de-espera/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Recursos</a>
+    <a href="/precio/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Precio</a>
+  </nav>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:32px;">
+    <a href="#" style="background:#EEFE3A;color:#3a0aaa;font-size:16px;font-weight:700;padding:14px 24px;border-radius:20px;text-decoration:none;text-align:center;">Demo</a>
+    <a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:16px;font-weight:700;padding:14px 24px;border-radius:20px;text-decoration:none;text-align:center;">Lista de espera</a>
+  </div>
+</div>
+
+<script>
+function toggleMobileNav(){
+  var o=document.getElementById('mobile-nav');
+  var open=o.style.display==='flex';
+  o.style.display=open?'none':'flex';
+  document.body.style.overflow=open?'':'hidden';
+}
+</script>
+
+
 
 <section class="hero-bg" style="position:relative;padding:130px 40px 100px;overflow:hidden;"><div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px;"><div style="flex:1;max-width:580px;"><div style="display:inline-block;background:rgba(255,255,255,.15);color:#EEFE3A;font-size:13px;font-weight:600;letter-spacing:.08em;padding:6px 18px;border-radius:20px;margin-bottom:24px;border:1px solid rgba(238,254,58,.3);">SALONES DE UÑAS</div><h1 class="font-gabarito" style="color:#fff;font-size:58px;line-height:1.05;font-weight:700;margin:0 0 20px;">Software para salones de uñas — Agenda online y gestión de clientes</h1><p style="color:rgba(255,255,255,.85);font-size:18px;line-height:1.6;margin:0 0 36px;">Reservas online, gestión de nail artists, cobros y recordatorios. Todo desde una sola plataforma.</p><div style="display:flex;gap:14px;flex-wrap:wrap;"><a href="https://www.godolphy.com/lista-de-espera/" target="_blank" style="background:#fff;color:#631cff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:20px;text-decoration:none;">Empezar gratis</a><a href="#" style="border:2px solid #fff;color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:20px;text-decoration:none;">Ver demo</a></div><p style="color:rgba(255,255,255,.6);font-size:13px;margin:16px 0 0;">30 días gratis · Sin tarjeta de crédito</p></div><div style="flex:1;display:flex;justify-content:flex-end;"><img src="/images/unas-hero.png" alt="Software salón uñas" style="width:100%;max-width:520px;" /></div></div><div style="position:absolute;bottom:-1px;left:0;right:0;overflow:hidden;height:80px;"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:100%;display:block;" fill="white"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/></svg></div></section>
 

@@ -26,7 +26,7 @@
     .bullet span{color:rgba(2,2,30,.65);font-size:15px;line-height:1.65;}
     .feat-img{background:linear-gradient(135deg,#f0ecff 0%,#e8e0ff 100%);border-radius:24px;min-height:380px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(99,28,255,.1);}
     @media(max-width:960px){.feat-content{grid-template-columns:1fr;gap:40px;}.feat-content.rev>.feat-text{order:0;}.feat-content.rev>.feat-img{order:0;}}
-    @media(max-width:768px){nav ul{display:none!important;}nav>div>div:last-child{display:none!important;}nav>div{padding:0 20px!important;}.feat-section{padding:60px 20px;}.feat-text h2{font-size:28px;}}
+    @media(max-width:768px){nav ul{display:none!important;}nav>div>div{display:none!important;}nav>div{padding:0 20px!important;}#nav-hamburger{display:flex!important;}.feat-section{padding:60px 20px;}.feat-text h2{font-size:28px;}section.hero-bg{padding:80px 20px 60px!important;}section.hero-bg h1{font-size:32px!important;line-height:1.15!important;}section.hero-bg p{font-size:15px!important;}div[style*="padding:80px 60px"]{padding:40px 24px!important;}h2[style*="font-size:46px"]{font-size:28px!important;}.faq-btn span{font-size:15px!important;}}
   .faq-item{border-bottom:1px solid rgba(2,2,30,.1);}.faq-btn{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;}.faq-body{display:none;padding:0 0 24px;}.faq-body.open{display:block;}.faq-icon{transition:transform .3s;flex-shrink:0;margin-left:16px;}.faq-icon.open{transform:rotate(45deg);}
   </style>
 
@@ -81,7 +81,46 @@
 </head>
 <body>
 
-<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores</a></li><li><a href="/funcionalidades/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="/lista-de-espera/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="/precio/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a></div></div></nav>
+<nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;"><div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;"><a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" /></a><ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;"><li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores</a></li><li><a href="/funcionalidades/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li><li><a href="/lista-de-espera/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Recursos</a></li><li><a href="/precio/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Precio</a></li></ul><div style="display:flex;gap:12px;"><a href="#" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Demo</a><a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:14px;font-weight:600;padding:8px 28px;border-radius:20px;text-decoration:none;">Lista de espera</a></div>
+    <!-- Hamburger (mobile only) -->
+    <button id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Abrir menú" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:200;background:#3a0aaa;flex-direction:column;padding:24px 24px 40px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;">
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" /></a>
+    <button onclick="toggleMobileNav()" aria-label="Cerrar menú" style="background:none;border:none;cursor:pointer;padding:4px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav style="display:flex;flex-direction:column;gap:0;flex:1;">
+    <a href="/sectores/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Sectores</a>
+    <a href="/funcionalidades/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Funcionalidades</a>
+    <a href="/lista-de-espera/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Recursos</a>
+    <a href="/precio/" style="color:#fff;font-size:22px;font-weight:600;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);">Precio</a>
+  </nav>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:32px;">
+    <a href="#" style="background:#EEFE3A;color:#3a0aaa;font-size:16px;font-weight:700;padding:14px 24px;border-radius:20px;text-decoration:none;text-align:center;">Demo</a>
+    <a href="/lista-de-espera/" style="border:2px solid #fff;color:#fff;font-size:16px;font-weight:700;padding:14px 24px;border-radius:20px;text-decoration:none;text-align:center;">Lista de espera</a>
+  </div>
+</div>
+
+<script>
+function toggleMobileNav(){
+  var o=document.getElementById('mobile-nav');
+  var open=o.style.display==='flex';
+  o.style.display=open?'none':'flex';
+  document.body.style.overflow=open?'':'hidden';
+}
+</script>
+
+
 
 <section class="hero-bg" style="position:relative;padding:130px 40px 100px;text-align:center;overflow:hidden;">
   <div style="display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;background:rgba(255,255,255,.15);border-radius:20px;margin-bottom:28px;">
