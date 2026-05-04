@@ -274,6 +274,83 @@ function toggleMobileNav(){
 <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span style="color:#02021e;font-size:17px;font-weight:600;">¿Godolphy cobra comisión por cada reserva?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="#631cff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-body"><p style="color:rgba(2,2,30,.65);font-size:16px;line-height:1.65;margin:0;">No. Godolphy cobra una cuota mensual fija. No hay comisiones por reserva ni por pago.</p></div></div>
 </div></section>
 <script>function toggleFaq(btn){var body=btn.nextElementSibling;var icon=btn.querySelector(".faq-icon");body.classList.toggle("open");icon.classList.toggle("open");}</script>
+
+<!-- PAGOS_CONFIG_SECTION -->
+<section style="background:#f8f7ff;padding:96px 40px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <h2 class="font-gabarito" style="font-size:38px;font-weight:700;color:#02021e;margin:0 0 16px;line-height:1.15;">Configura exactamente cómo y cuándo cobras</h2>
+    <p style="color:rgba(2,2,30,.65);font-size:17px;line-height:1.75;margin:0 0 56px;">Godolphy te da control total sobre la gestión de pagos de tu negocio. Desde la pantalla de configuración puedes definir cada detalle.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px;">
+
+      <div style="background:#fff;border-radius:20px;padding:36px;">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#9B4FE8,#631cff);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="font-gabarito" style="font-size:20px;font-weight:700;color:#02021e;margin:0 0 12px;">¿Cobras al reservar o después?</h3>
+        <p style="color:rgba(2,2,30,.65);font-size:15px;line-height:1.7;margin:0;">Elige si el cliente paga el servicio completo al reservar o solo un depósito. El depósito puede ser un importe fijo o un porcentaje del total — tú decides.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:36px;">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#9B4FE8,#631cff);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="font-gabarito" style="font-size:20px;font-weight:700;color:#02021e;margin:0 0 12px;">Cobro automático del resto</h3>
+        <p style="color:rgba(2,2,30,.65);font-size:15px;line-height:1.7;margin:0;">Si el cliente pagó solo el depósito, el sistema cobra automáticamente el importe restante. Elige cuándo: 15 minutos después de empezar la cita, al finalizar, o cuando el profesional marque el servicio como completado.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:36px;">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#9B4FE8,#631cff);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M9 14l-4-4 4-4"/><path d="M5 10h11a4 4 0 0 1 0 8h-1"/></svg>
+        </div>
+        <h3 class="font-gabarito" style="font-size:20px;font-weight:700;color:#02021e;margin:0 0 12px;">Política de cancelación</h3>
+        <p style="color:rgba(2,2,30,.65);font-size:15px;line-height:1.7;margin:0 0 12px;">Define qué pasa si el cliente cancela fuera de plazo o no aparece. Puedes configurar por separado cancelación tardía y no-show:</p>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+          <li style="color:rgba(2,2,30,.65);font-size:14px;">· Devolver el depósito completo</li>
+          <li style="color:rgba(2,2,30,.65);font-size:14px;">· Retener el depósito</li>
+          <li style="color:rgba(2,2,30,.65);font-size:14px;">· Cobrar el servicio completo</li>
+        </ul>
+      </div>
+
+      <div style="background:#fff;border-radius:20px;padding:36px;">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#9B4FE8,#631cff);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="font-gabarito" style="font-size:20px;font-weight:700;color:#02021e;margin:0 0 12px;">Precio de desplazamiento por zonas</h3>
+        <p style="color:rgba(2,2,30,.65);font-size:15px;line-height:1.7;margin:0 0 12px;">Para servicios a domicilio, define zonas con precio extra automático. El sistema calcula la zona del cliente al reservar y añade el coste al total:</p>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+          <li style="color:rgba(2,2,30,.65);font-size:14px;">· 0–5 km → sin cargo</li>
+          <li style="color:rgba(2,2,30,.65);font-size:14px;">· 5–10 km → +10€</li>
+          <li style="color:rgba(2,2,30,.65);font-size:14px;">· 10–15 km → +20€</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="background:linear-gradient(135deg,#02021e,#1a0a4a);border-radius:20px;padding:36px;display:flex;gap:32px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;display:flex;align-items:flex-start;gap:14px;">
+        <div style="flex-shrink:0;width:36px;height:36px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="18" height="18" fill="none" stroke="#EEFE3A" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div><p style="color:#fff;font-size:14px;font-weight:600;margin:0 0 4px;">Sin comisiones por transacción</p><p style="color:rgba(255,255,255,.55);font-size:13px;margin:0;">Solo pagas la cuota mensual de Godolphy.</p></div>
+      </div>
+      <div style="flex:1;min-width:200px;display:flex;align-items:flex-start;gap:14px;">
+        <div style="flex-shrink:0;width:36px;height:36px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="18" height="18" fill="none" stroke="#EEFE3A" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div><p style="color:#fff;font-size:14px;font-weight:600;margin:0 0 4px;">Stripe, TPV físico y efectivo</p><p style="color:rgba(255,255,255,.55);font-size:13px;margin:0;">Tú decides cómo cobras en cada caso.</p></div>
+      </div>
+      <div style="flex:1;min-width:200px;display:flex;align-items:flex-start;gap:14px;">
+        <div style="flex-shrink:0;width:36px;height:36px;background:rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="18" height="18" fill="none" stroke="#EEFE3A" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div><p style="color:#fff;font-size:14px;font-weight:600;margin:0 0 4px;">Sin IVA europeo</p><p style="color:rgba(255,255,255,.55);font-size:13px;margin:0;">Godolphy opera como LLC en EE.UU. El precio que ves es el final.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section style="background:#fff;padding:80px 40px;">
   <!-- SEO_TEXT_BLOCK -->
   <div style="max-width:780px;margin:0 auto;">
