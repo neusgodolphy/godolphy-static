@@ -465,4 +465,12 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Integraciones -->
+  <url>
+    <loc>https://www.godolphy.com/integraciones/holded/</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
