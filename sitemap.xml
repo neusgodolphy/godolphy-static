@@ -4,7 +4,7 @@
   <!-- Home -->
   <url>
     <loc>https://www.godolphy.com/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,37 +44,37 @@
   <!-- Sectores -->
   <url>
     <loc>https://www.godolphy.com/sectores/software-para-centro-de-estetica-y-salones/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.godolphy.com/sectores/software-para-peluquerias/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.godolphy.com/sectores/software-para-barberias/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.godolphy.com/sectores/software-para-spa-y-masajes/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.godolphy.com/sectores/software-para-salones-de-unas/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.godolphy.com/sectores/software-para-empresas-de-limpieza/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -427,6 +427,12 @@
 
   <!-- Legal -->
   <url>
+    <loc>https://www.godolphy.com/legal/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.godolphy.com/aviso-legal/</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>yearly</changefreq>
@@ -472,7 +478,7 @@
   </url>
   <url>
     <loc>https://www.godolphy.com/alternativa-a-booksy/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
