@@ -61,6 +61,16 @@
       "source": "/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica",
       "destination": "/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica/",
       "permanent": true
+    },
+    {
+      "source": "/diferencias-entre-fresha-y-godolphy",
+      "destination": "/alternativa-a-fresha/",
+      "permanent": true
+    },
+    {
+      "source": "/diferencias-entre-fresha-y-godolphy/",
+      "destination": "/alternativa-a-fresha/",
+      "permanent": true
     }
   ]
 }
