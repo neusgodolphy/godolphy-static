@@ -1,0 +1,50 @@
+name: Publish Scheduled Articles
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check and publish articles
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          PUBLISHED=0
+
+          for file in borrador/*.html; do
+            [ -f "$file" ] || continue
+            filename=$(basename "$file")
+            filedate="${filename:0:10}"
+
+            if [[ "$filedate" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] && \
+               [[ "$filedate" <= "$TODAY" ]]; then
+              newname="${filename:11}"
+              cp "$file" "$newname"
+              rm "$file"
+              echo "Published: $newname"
+              PUBLISHED=1
+
+              slug="${newname%.html}"
+              url="https://godolphy.com/${slug}/"
+              if ! grep -q "$url" sitemap.xml; then
+                sed -i "s|</urlset>|  <url>\n    <loc>${url}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n</urlset>|" sitemap.xml
+              fi
+            fi
+          done
+
+          echo "PUBLISHED=$PUBLISHED" >> $GITHUB_ENV
+
+      - name: Commit changes
+        if: env.PUBLISHED == '1'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Auto-publish scheduled articles $(date +%Y-%m-%d)"
+          git push
