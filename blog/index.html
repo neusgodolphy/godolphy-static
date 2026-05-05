@@ -7,9 +7,11 @@
   <link rel="canonical" href="https://www.godolphy.com/blog/" />
   <meta property="og:title" content="Blog | Godolphy — Recursos para negocios de belleza y servicios" />
   <meta property="og:description" content="Guías, consejos y recursos para negocios de servicios: peluquerías, centros de estética, barberías, spas y más." />
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
   <style>
     body{font-family:'Poppins',sans-serif;margin:0;overflow-x:hidden;color:#02021e;}
     .font-gabarito{font-family:'Gabarito',sans-serif;}
@@ -55,7 +57,7 @@
 <!-- NAV -->
 <nav style="background:#fff;border-bottom:1px solid rgba(2,2,30,.08);padding:14px 0;position:sticky;top:0;z-index:50;">
   <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
-    <a href="/"><img src="/wp-images/logo-violeta.png" alt="Godolphy" style="height:36px;" /></a>
+    <a href="/"><img src="/wp-images/logo-violeta.png" alt="Godolphy" style="height:36px;" / loading="lazy" width="864" height="215"></a>
     <ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;">
       <li><a href="/sectores/" style="color:#02021e;font-size:14px;font-weight:500;text-decoration:none;">Sectores</a></li>
       <li><a href="/funcionalidades/" style="color:#02021e;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li>
@@ -78,7 +80,7 @@
 <!-- Mobile nav overlay -->
 <div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:200;background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);flex-direction:column;padding:24px 24px 40px;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;">
-    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" /></a>
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" / width="864" height="215"></a>
     <button onclick="toggleMobileNav()" aria-label="Cerrar menú" style="background:none;border:none;cursor:pointer;padding:4px;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
@@ -119,7 +121,7 @@ function toggleMobileNav(){
   <div class="blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
 
     <a href="/como-evitar-clientes-indeseados-en-un-spa/" class="post-card">
-      <img src="/wp-images/como-evitar-clientes-indeseados-en-un-spa.jpg" alt="Cómo evitar clientes indeseados en mi spa" loading="lazy" />
+      <img src="/wp-images/como-evitar-clientes-indeseados-en-un-spa.jpg" alt="Cómo evitar clientes indeseados en mi spa" loading="lazy" / width="1280" height="960">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Cómo evitar clientes indeseados en mi spa</h2>
@@ -128,7 +130,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/errores-legales-en-centro-de-masajes/" class="post-card">
-      <img src="/wp-images/errores-legales-en-centro-de-masajes.jpg" alt="Errores legales que pueden cerrar un centro de masajes" loading="lazy" />
+      <img src="/wp-images/errores-legales-en-centro-de-masajes.jpg" alt="Errores legales que pueden cerrar un centro de masajes" loading="lazy" / width="685" height="454">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Errores legales que pueden cerrar un centro de masajes</h2>
@@ -137,7 +139,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/licencias-para-un-centro-de-masajes/" class="post-card">
-      <img src="/wp-images/licencias-para-un-centro-de-masajes.jpg" alt="Licencias necesarias para un centro de masajes" loading="lazy" />
+      <img src="/wp-images/licencias-para-un-centro-de-masajes.jpg" alt="Licencias necesarias para un centro de masajes" loading="lazy" / width="785" height="524">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Licencias necesarias para un centro de masajes</h2>
@@ -146,7 +148,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/inspeccion-a-un-centro-de-masajes/" class="post-card">
-      <img src="/wp-images/inspeccion-a-un-centro-de-masajes.jpg" alt="Qué te pueden pedir en una inspección a un centro de masajes" loading="lazy" />
+      <img src="/wp-images/inspeccion-a-un-centro-de-masajes.jpg" alt="Qué te pueden pedir en una inspección a un centro de masajes" loading="lazy" / width="1500" height="1000">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Qué te pueden pedir en una inspección a un centro de masajes</h2>
@@ -155,7 +157,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-calcular-los-precios-de-mis-masajes/" class="post-card">
-      <img src="/wp-images/como-calcular-los-precios-de-masajes.jpg" alt="¿Cómo calcular los precios de mis masajes?" loading="lazy" />
+      <img src="/wp-images/como-calcular-los-precios-de-masajes.jpg" alt="¿Cómo calcular los precios de mis masajes?" loading="lazy" / width="1280" height="853">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo calcular los precios de mis masajes?</h2>
@@ -164,7 +166,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-calcular-los-precios-de-barberia/" class="post-card">
-      <img src="/wp-images/como-calcular-los-precios-de-barberia.jpg" alt="¿Cómo calcular los precios de mi barbería?" loading="lazy" />
+      <img src="/wp-images/como-calcular-los-precios-de-barberia.jpg" alt="¿Cómo calcular los precios de mi barbería?" loading="lazy" / width="1349" height="901">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo calcular los precios de mi barbería?</h2>
@@ -173,7 +175,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-calcular-los-precios-de-mis-servicios-de-manicura/" class="post-card">
-      <img src="/wp-images/precios-servicios-de-manicura-1.jpg" alt="¿Cómo calcular los precios de mis servicios de manicura?" loading="lazy" />
+      <img src="/wp-images/precios-servicios-de-manicura-1.jpg" alt="¿Cómo calcular los precios de mis servicios de manicura?" loading="lazy" / width="1200" height="857">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo calcular los precios de mis servicios de manicura?</h2>
@@ -182,7 +184,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/precios-de-servicios-de-peluqueria/" class="post-card">
-      <img src="/wp-images/precios-de-servicios-de-peluqueria-1.jpg" alt="¿Cómo calcular los precios de mis servicios de peluquería?" loading="lazy" />
+      <img src="/wp-images/precios-de-servicios-de-peluqueria-1.jpg" alt="¿Cómo calcular los precios de mis servicios de peluquería?" loading="lazy" / width="640" height="569">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo calcular los precios de mis servicios de peluquería?</h2>
@@ -191,7 +193,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/requisitos-de-sanidad-para-un-salon-de-belleza/" class="post-card">
-      <img src="/wp-images/requisitos-de-sanidad-para-un-salon-de-belleza-1.jpg" alt="¿Qué exige sanidad para un salón de belleza?" loading="lazy" />
+      <img src="/wp-images/requisitos-de-sanidad-para-un-salon-de-belleza-1.jpg" alt="¿Qué exige sanidad para un salón de belleza?" loading="lazy" / width="1500" height="1000">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Qué exige sanidad para un salón de belleza?</h2>
@@ -200,7 +202,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/requisitos-para-abrir-un-centro-de-masajes-en-espana/" class="post-card">
-      <img src="/wp-images/requisitos-para-abrir-un-centro-de-masajes-en-espana-1.jpg" alt="Requisitos para abrir un centro de masajes en España" loading="lazy" />
+      <img src="/wp-images/requisitos-para-abrir-un-centro-de-masajes-en-espana-1.jpg" alt="Requisitos para abrir un centro de masajes en España" loading="lazy" / width="701" height="493">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Requisitos para abrir un centro de masajes en España</h2>
@@ -209,7 +211,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-contratar-una-manicurista-consejos-requisitos-y-mas/" class="post-card">
-      <img src="/wp-images/como-contratar-una-manicurista-1.jpg" alt="Cómo contratar una manicurista: consejos, requisitos y más" loading="lazy" />
+      <img src="/wp-images/como-contratar-una-manicurista-1.jpg" alt="Cómo contratar una manicurista: consejos, requisitos y más" loading="lazy" / width="1500" height="1000">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Cómo contratar una manicurista: consejos, requisitos y más</h2>
@@ -218,7 +220,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/cuanto-gana-un-salon-de-unas-en-espana/" class="post-card">
-      <img src="/wp-images/cuanto-gana-un-salon-de-unas-en-espana-1.jpg" alt="¿Cuánto gana un salón de uñas en España?" loading="lazy" />
+      <img src="/wp-images/cuanto-gana-un-salon-de-unas-en-espana-1.jpg" alt="¿Cuánto gana un salón de uñas en España?" loading="lazy" / width="1000" height="667">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cuánto gana un salón de uñas en España?</h2>
@@ -227,7 +229,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/que-se-necesita-para-abrir-un-salon-de-unas/" class="post-card">
-      <img src="/wp-images/que-se-necesita-para-abrir-un-salon-de-unas-11.jpg" alt="¿Qué se necesita para abrir un salón de uñas?" loading="lazy" />
+      <img src="/wp-images/que-se-necesita-para-abrir-un-salon-de-unas-11.jpg" alt="¿Qué se necesita para abrir un salón de uñas?" loading="lazy" / width="1280" height="853">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Qué se necesita para abrir un salón de uñas?</h2>
@@ -236,7 +238,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/franquicias-de-estetica-rentables/" class="post-card">
-      <img src="/wp-images/franquicias-de-estetica-rentables-1.png" alt="¿Cuáles son las franquicias de salones de estética más rentables?" loading="lazy" />
+      <img src="/wp-images/franquicias-de-estetica-rentables-1.png" alt="¿Cuáles son las franquicias de salones de estética más rentables?" loading="lazy" / width="1280" height="791">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cuáles son las franquicias de salones de estética más rentables?</h2>
@@ -245,7 +247,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/que-se-necesita-para-abrir-un-salon-de-estetica/" class="post-card">
-      <img src="/wp-images/que-se-necesita-para-abrir-un-salon-de-estetica-1.jpg" alt="¿Qué se necesita para abrir un salón de estética?" loading="lazy" />
+      <img src="/wp-images/que-se-necesita-para-abrir-un-salon-de-estetica-1.jpg" alt="¿Qué se necesita para abrir un salón de estética?" loading="lazy" / width="1345" height="897">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Qué se necesita para abrir un salón de estética?</h2>
@@ -254,7 +256,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/cuanto-gana-una-manicurista-en-espana/" class="post-card">
-      <img src="/wp-images/cuanto-gana-una-manicurista-en-espana-1.jpg" alt="¿Cuánto dinero gana una manicurista?" loading="lazy" />
+      <img src="/wp-images/cuanto-gana-una-manicurista-en-espana-1.jpg" alt="¿Cuánto dinero gana una manicurista?" loading="lazy" / width="1200" height="857">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cuánto dinero gana una manicurista?</h2>
@@ -263,7 +265,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-atraer-clientas-para-unas/" class="post-card">
-      <img src="/wp-images/como-atraer-clientas-para-unas.jpg" alt="¿Cómo atraer clientas para uñas?" loading="lazy" />
+      <img src="/wp-images/como-atraer-clientas-para-unas.jpg" alt="¿Cómo atraer clientas para uñas?" loading="lazy" / width="589" height="393">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo atraer clientas para uñas?</h2>
@@ -272,7 +274,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/diferencias-entre-fresha-y-godolphy/" class="post-card">
-      <img src="/wp-images/Group-1000003070.webp" alt="Diferencias entre Fresha y Godolphy" loading="lazy" />
+      <img src="/wp-images/Group-1000003070.webp" alt="Diferencias entre Fresha y Godolphy" loading="lazy" / width="3303" height="2875">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Comparativas</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Diferencias entre Fresha y Godolphy</h2>
@@ -281,7 +283,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-un-masajista-puede-evitar-clientes-indeseados-sin-renunciar-a-la-organizacion-digital/" class="post-card">
-      <img src="/wp-images/Group-1000003109-_1_.webp" alt="Clientes incómodos en masajes: La estrategia para evitarlos" loading="lazy" />
+      <img src="/wp-images/Group-1000003109-_1_.webp" alt="Clientes incómodos en masajes: La estrategia para evitarlos" loading="lazy" / width="2638" height="1860">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Clientes incómodos en masajes: La estrategia para evitarlos</h2>
@@ -308,7 +310,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/marketing-local-para-salones-de-estetica/" class="post-card">
-      <img src="/wp-images/cheerful-manicurist-is-posing-for-photographer-2023-11-27-05-04-50-utc-scaled.jpg" alt="Marketing Local para Salones de Estética" loading="lazy" />
+      <img src="/wp-images/cheerful-manicurist-is-posing-for-photographer-2023-11-27-05-04-50-utc-scaled.jpg" alt="Marketing Local para Salones de Estética" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Marketing</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Marketing Local para Salones de Estética</h2>
@@ -317,7 +319,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/inbound-marketing-para-salones-de-estetica/" class="post-card">
-      <img src="/wp-images/hairstylist-trimming-hair-of-the-customer-in-a-bea-2025-02-09-23-28-24-utc-scaled.jpg" alt="Inbound Marketing para Salones de Estética" loading="lazy" />
+      <img src="/wp-images/hairstylist-trimming-hair-of-the-customer-in-a-bea-2025-02-09-23-28-24-utc-scaled.jpg" alt="Inbound Marketing para Salones de Estética" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Marketing</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Inbound Marketing para Salones de Estética</h2>
@@ -326,7 +328,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/aspectos-clave-para-optimizar-tu-centro-de-estetica/" class="post-card">
-      <img src="/wp-images/male-having-nails-and-hair-treatment-in-beauty-sal-2023-11-27-05-29-08-utc-scaled.jpg" alt="Aspectos clave para optimizar tu centro de estética" loading="lazy" />
+      <img src="/wp-images/male-having-nails-and-hair-treatment-in-beauty-sal-2023-11-27-05-29-08-utc-scaled.jpg" alt="Aspectos clave para optimizar tu centro de estética" loading="lazy" / width="1600" height="1066">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Aspectos clave para optimizar tu centro de estética</h2>
@@ -335,7 +337,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/consejos-para-seleccionar-tecnicos-de-unas-peluqueros-barberos-centro-de-estetica/" class="post-card">
-      <img src="/wp-images/barberis-alta-aeat-scaled.jpg" alt="Consejos para seleccionar técnicos de uñas, peluqueros y barberos" loading="lazy" />
+      <img src="/wp-images/barberis-alta-aeat-scaled.jpg" alt="Consejos para seleccionar técnicos de uñas, peluqueros y barberos" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Consejos para seleccionar técnicos de uñas, peluqueros y barberos</h2>
@@ -344,7 +346,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-escoger-el-local-para-mi-centro-de-estetica-salon-de-unas-peluqueria-o-barberia/" class="post-card">
-      <img src="/wp-images/grooming-studio-with-stylist-caring-dog-2024-06-21-01-43-51-utc-scaled.jpg" alt="¿Cómo escoger el local para mi centro de estética?" loading="lazy" />
+      <img src="/wp-images/grooming-studio-with-stylist-caring-dog-2024-06-21-01-43-51-utc-scaled.jpg" alt="¿Cómo escoger el local para mi centro de estética?" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo escoger el local para mi centro de estética?</h2>
@@ -353,7 +355,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-crear-una-experiencia-memorable-en-tu-salon-de-unas-peluqueria-o-barberia/" class="post-card">
-      <img src="/wp-images/barber-shop-2023-11-27-05-35-59-utc-scaled.jpg" alt="¿Cómo crear una experiencia memorable en tu salón?" loading="lazy" />
+      <img src="/wp-images/barber-shop-2023-11-27-05-35-59-utc-scaled.jpg" alt="¿Cómo crear una experiencia memorable en tu salón?" loading="lazy" / width="1600" height="1068">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo crear una experiencia memorable en tu salón?</h2>
@@ -362,7 +364,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-dar-de-alta-mi-salon-en-espana-legalmente/" class="post-card">
-      <img src="/wp-images/positive-delighted-visitor-looking-at-her-nail-mas-2023-11-27-05-27-43-utc-scaled.jpg" alt="¿Cómo dar de alta mi salón en España legalmente?" loading="lazy" />
+      <img src="/wp-images/positive-delighted-visitor-looking-at-her-nail-mas-2023-11-27-05-27-43-utc-scaled.jpg" alt="¿Cómo dar de alta mi salón en España legalmente?" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo dar de alta mi salón en España legalmente?</h2>
@@ -371,7 +373,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/que-debo-tener-en-cuenta-antes-de-abrir-mi-salon-de-unas-o-centro-de-estetica/" class="post-card">
-      <img src="/wp-images/hairdresser-curling-woman-hair-in-beauty-salon-2023-11-27-05-06-52-utc-scaled-e1734354575272.jpg" alt="¿Qué debo tener en cuenta antes de abrir mi salón?" loading="lazy" />
+      <img src="/wp-images/hairdresser-curling-woman-hair-in-beauty-salon-2023-11-27-05-06-52-utc-scaled-e1734354575272.jpg" alt="¿Qué debo tener en cuenta antes de abrir mi salón?" loading="lazy" / width="1560" height="1090">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Qué debo tener en cuenta antes de abrir mi salón?</h2>
@@ -380,7 +382,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/estrategias-atraer-y-retener-clientes/" class="post-card">
-      <img src="/wp-images/atraer-clientes-peluqueria-min.jpg" alt="8 Estrategias para Atraer y Retener Clientes en tu Peluquería" loading="lazy" />
+      <img src="/wp-images/atraer-clientes-peluqueria-min.jpg" alt="8 Estrategias para Atraer y Retener Clientes en tu Peluquería" loading="lazy" / width="1200" height="800">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Marketing</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">8 Estrategias para Atraer y Retener Clientes en tu Peluquería</h2>
@@ -389,7 +391,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-empezar-un-negocio-de-peluqueria-a-domicilio/" class="post-card">
-      <img src="/wp-images/peluqueria-a-domicilio-min.jpg" alt="¿Cómo Empezar un Negocio de Peluquería a Domicilio?" loading="lazy" />
+      <img src="/wp-images/peluqueria-a-domicilio-min.jpg" alt="¿Cómo Empezar un Negocio de Peluquería a Domicilio?" loading="lazy" / width="1200" height="800">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo Empezar un Negocio de Peluquería a Domicilio?</h2>
@@ -398,7 +400,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-utilizar-whatsapp-para-recordar-citas-promociones/" class="post-card">
-      <img src="/wp-images/recordatorios-por-whatsapp-min.jpg" alt="¿Cómo utilizar WhatsApp para recordar citas y promociones?" loading="lazy" />
+      <img src="/wp-images/recordatorios-por-whatsapp-min.jpg" alt="¿Cómo utilizar WhatsApp para recordar citas y promociones?" loading="lazy" / width="1200" height="800">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo utilizar WhatsApp para recordar citas y promociones?</h2>
@@ -407,7 +409,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/consejos-evitar-cancelaciones-turnos-clientes/" class="post-card">
-      <img src="/wp-images/cancelacion-de-turno-min.jpg" alt="Consejos para Evitar Cancelaciones de Turnos de tus Clientes" loading="lazy" />
+      <img src="/wp-images/cancelacion-de-turno-min.jpg" alt="Consejos para Evitar Cancelaciones de Turnos de tus Clientes" loading="lazy" / width="1200" height="800">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Consejos para Evitar Cancelaciones de Turnos de tus Clientes</h2>
@@ -416,7 +418,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/plan-financiero-salon-estetica-excel-google-sheet/" class="post-card">
-      <img src="/wp-images/hairdressers-styling-women-hair-in-beauty-salon-2023-11-27-05-27-56-utc-scaled-e1734439884215.jpg" alt="Plan financiero con plantilla excel para salones de estética" loading="lazy" />
+      <img src="/wp-images/hairdressers-styling-women-hair-in-beauty-salon-2023-11-27-05-27-56-utc-scaled-e1734439884215.jpg" alt="Plan financiero con plantilla excel para salones de estética" loading="lazy" / width="1060" height="705">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Plan financiero con plantilla excel para salones de estética</h2>
@@ -425,7 +427,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/abrir-centro-de-estetica-en-espana/" class="post-card">
-      <img src="/wp-images/abrir-centro-de-belleza-min.jpg" alt="Requisitos para Abrir un Centro de Estética en España" loading="lazy" />
+      <img src="/wp-images/abrir-centro-de-belleza-min.jpg" alt="Requisitos para Abrir un Centro de Estética en España" loading="lazy" / width="1200" height="800">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Requisitos para Abrir un Centro de Estética en España</h2>
@@ -434,7 +436,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/servicio-de-manicura-en-espana/" class="post-card">
-      <img src="/wp-images/focused-diligent-manicurist-is-working-at-her-work-2023-11-27-05-29-07-utc-scaled.jpg" alt="Cómo Preparar y Organizar un servicio de Manicura y Pedicura" loading="lazy" />
+      <img src="/wp-images/focused-diligent-manicurist-is-working-at-her-work-2023-11-27-05-29-07-utc-scaled.jpg" alt="Cómo Preparar y Organizar un servicio de Manicura y Pedicura" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Cómo Preparar y Organizar un servicio de Manicura y Pedicura</h2>
@@ -443,7 +445,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/tus-excusas-para-no-realizar-servicios-a-domicilio/" class="post-card">
-      <img src="/wp-images/belleza-a-domicilio.png" alt="Tus excusas para no realizar servicios a domicilio" loading="lazy" />
+      <img src="/wp-images/belleza-a-domicilio.png" alt="Tus excusas para no realizar servicios a domicilio" loading="lazy" / width="972" height="774">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Tus excusas para no realizar servicios a domicilio</h2>
@@ -452,7 +454,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-evitar-las-citas-canceladas-de-mi-salon/" class="post-card">
-      <img src="/wp-images/peluquera-enfadada-scaled.jpg" alt="Cómo evitar las citas canceladas de mi salón" loading="lazy" />
+      <img src="/wp-images/peluquera-enfadada-scaled.jpg" alt="Cómo evitar las citas canceladas de mi salón" loading="lazy" / width="1600" height="1067">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Consejos de negocio</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Cómo evitar las citas canceladas de mi salón</h2>
@@ -461,7 +463,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-conseguir-mas-clientes-salon-de-belleza/" class="post-card">
-      <img src="/wp-images/marketing-salones-bellesza-2025.png" alt="Cómo Conseguir Más Clientes para mi salón de Belleza" loading="lazy" />
+      <img src="/wp-images/marketing-salones-bellesza-2025.png" alt="Cómo Conseguir Más Clientes para mi salón de Belleza" loading="lazy" / width="1210" height="772">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Marketing</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">Cómo Conseguir Más Clientes para mi salón de Belleza en 2026</h2>
@@ -470,7 +472,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-escoger-el-mejor-software-para-mi-salon-de-unas/" class="post-card">
-      <img src="/wp-images/como-escoger-software-para-mi-salon-de-unas.png" alt="¿Cómo escoger el mejor software para mi salón de uñas?" loading="lazy" />
+      <img src="/wp-images/como-escoger-software-para-mi-salon-de-unas.png" alt="¿Cómo escoger el mejor software para mi salón de uñas?" loading="lazy" / width="1116" height="738">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo escoger el mejor software para mi salón de uñas?</h2>
@@ -488,7 +490,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/cual-es-el-iva-para-un-servicio-de-estetica/" class="post-card">
-      <img src="/wp-images/espana-entre-paises-eurozona-menos-recaudan-iva-643x342-1.png" alt="¿Cuál es el IVA para un servicio de estética en España?" loading="lazy" />
+      <img src="/wp-images/espana-entre-paises-eurozona-menos-recaudan-iva-643x342-1.png" alt="¿Cuál es el IVA para un servicio de estética en España?" loading="lazy" / width="643" height="342">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cuál es el IVA para un servicio de estética en España?</h2>
@@ -497,7 +499,7 @@ function toggleMobileNav(){
     </a>
 
     <a href="/como-crear-una-factura-para-un-servicio-estetico/" class="post-card">
-      <img src="/wp-images/como-crear-una-facturas.png" alt="¿Cómo crear una factura para un servicio estético?" loading="lazy" />
+      <img src="/wp-images/como-crear-una-facturas.png" alt="¿Cómo crear una factura para un servicio estético?" loading="lazy" / width="1042" height="690">
       <div style="padding:24px;">
         <span style="font-size:12px;font-weight:600;color:#631cff;text-transform:uppercase;letter-spacing:.06em;">Guías</span>
         <h2 class="font-gabarito" style="font-size:19px;font-weight:700;color:#02021e;margin:8px 0 10px;line-height:1.25;">¿Cómo crear una factura para un servicio estético?</h2>
@@ -509,7 +511,7 @@ function toggleMobileNav(){
 </div>
 
 <!-- FOOTER -->
-<footer style="background:#02021e;padding:80px 40px 40px;"><div style="max-width:1200px;margin:0 auto;"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;"><div><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;margin-bottom:20px;display:block;" /><p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;max-width:280px;margin:0;">El software de reservas con IA para negocios de servicios.</p></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">INDUSTRIAS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/sectores/software-para-peluquerias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Peluquería</a></li><li><a href="/sectores/software-para-barberias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Barbería</a></li><li><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Centro de estética</a></li><li><a href="/sectores/software-para-salones-de-unas/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Salón de uñas</a></li><li><a href="/sectores/software-para-empresas-de-limpieza/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Empresa de limpieza</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">FUNCIONALIDADES</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/funcionalidades/reservas-online/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Reservas online</a></li><li><a href="/funcionalidades/calendario/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Calendario</a></li><li><a href="/funcionalidades/equipo-y-horarios/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Equipo y horarios</a></li><li><a href="/funcionalidades/pagos-y-depositos/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Pagos y depósitos</a></li><li><a href="/funcionalidades/gestion-de-clientes/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Gestión de clientes</a></li><li><a href="/funcionalidades/chat-y-notificaciones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Chat y notificaciones</a></li><li><a href="/funcionalidades/fidelizacion-ai/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Fidelización AI</a></li><li><a href="/funcionalidades/facturacion-y-reporte/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Facturación y reporte</a></li></ul></div><div><h4 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">RECURSOS</h4><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/blog/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Blog</a></li><li><a href="/precio/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Precio</a></li><li><a href="/lista-de-espera/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Lista de espera</a></li></ul></div></div><div style="border-top:1px solid rgba(255,255,255,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;"><p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;">© 2025 Godolphy. Todos los derechos reservados.</p><div style="display:flex;gap:24px;"><a href="/politica-de-privacidad/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Privacidad</a><a href="/terminos-y-condiciones/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Términos</a><a href="/politica-de-cookies/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Cookies</a></div></div></div></footer>
+<footer style="background:#02021e;padding:80px 40px 40px;"><div style="max-width:1200px;margin:0 auto;"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px;"><div><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;margin-bottom:20px;display:block;" / width="864" height="215"><p style="color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;max-width:280px;margin:0;">El software de reservas con IA para negocios de servicios.</p></div><div><h3 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">INDUSTRIAS</h3><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/sectores/software-para-peluquerias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Peluquería</a></li><li><a href="/sectores/software-para-barberias/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Barbería</a></li><li><a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Centro de estética</a></li><li><a href="/sectores/software-para-salones-de-unas/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Salón de uñas</a></li><li><a href="/sectores/software-para-empresas-de-limpieza/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Empresa de limpieza</a></li></ul></div><div><h3 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">FUNCIONALIDADES</h3><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/funcionalidades/reservas-online/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Reservas online</a></li><li><a href="/funcionalidades/calendario/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Calendario</a></li><li><a href="/funcionalidades/equipo-y-horarios/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Equipo y horarios</a></li><li><a href="/funcionalidades/pagos-y-depositos/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Pagos y depósitos</a></li><li><a href="/funcionalidades/gestion-de-clientes/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Gestión de clientes</a></li><li><a href="/funcionalidades/chat-y-notificaciones/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Chat y notificaciones</a></li><li><a href="/funcionalidades/fidelizacion-ai/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Fidelización AI</a></li><li><a href="/funcionalidades/facturacion-y-reporte/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Facturación y reporte</a></li></ul></div><div><h3 style="color:#fff;font-size:13px;font-weight:600;margin:0 0 20px;letter-spacing:.05em;">RECURSOS</h3><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;"><li><a href="/blog/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Blog</a></li><li><a href="/precio/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Precio</a></li><li><a href="/lista-de-espera/" style="color:rgba(255,255,255,.5);font-size:14px;text-decoration:none;">Lista de espera</a></li></ul></div></div><div style="border-top:1px solid rgba(255,255,255,.1);padding-top:32px;display:flex;justify-content:space-between;align-items:center;"><p style="color:rgba(255,255,255,.3);font-size:13px;margin:0;">© 2025 Godolphy. Todos los derechos reservados.</p><div style="display:flex;gap:24px;"><a href="/politica-de-privacidad/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Privacidad</a><a href="/terminos-y-condiciones/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Términos</a><a href="/politica-de-cookies/" style="color:rgba(255,255,255,.3);font-size:13px;text-decoration:none;">Cookies</a></div></div></div></footer>
 
 </body>
 </html>

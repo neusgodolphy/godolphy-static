@@ -9,10 +9,12 @@
   <link rel="canonical" href="https://www.godolphy.com/" />
   <meta property="og:title" content="Godolphy | Software de reservas con IA para centros de estética, peluquerías y spas" />
   <meta property="og:description" content="Gestiona reservas, equipo y clientes con inteligencia artificial. Godolphy analiza tu negocio y te dice cómo crecer. 30 días gratis, sin tarjeta." />
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
   <style>
     body { font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
     .font-gabarito { font-family: 'Gabarito', sans-serif; }
@@ -138,7 +140,7 @@
 <!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
 <nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;">
   <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
-    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" /></a>
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" / width="864" height="215"></a>
     <ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;">
       <li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Sectores</a></li>
       <li><a href="/funcionalidades/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li>
@@ -161,7 +163,7 @@
 <!-- Mobile nav overlay -->
 <div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:200;background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);flex-direction:column;padding:24px 24px 40px;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;">
-    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" /></a>
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" / width="864" height="215"></a>
     <button onclick="toggleMobileNav()" aria-label="Cerrar menú" style="background:none;border:none;cursor:pointer;padding:4px;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
@@ -188,8 +190,9 @@ function toggleMobileNav(){
 </script>
 
 <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+<main>
 <section class="hero-bg" style="position:relative;padding:160px 40px 420px;text-align:center;overflow:hidden;">
-  <img src="https://www.figma.com/api/mcp/asset/3f8c2084-a74d-4e12-bbe3-0b02ede4cb0c" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;pointer-events:none;" />
+  <img src="https://www.figma.com/api/mcp/asset/3f8c2084-a74d-4e12-bbe3-0b02ede4cb0c" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;pointer-events:none;" / loading="lazy">
   <div style="position:relative;z-index:1;max-width:960px;margin:0 auto;">
     <h1 class="font-gabarito" style="color:#fff;font-size:68px;line-height:1.04;font-weight:700;margin:0 0 16px;">El motor de reservas con IA</h1>
     <h2 class="font-poppins" style="color:#fff;font-size:35px;font-weight:400;margin:0 0 24px;">que te ayuda con tus finanzas</h2>
@@ -235,16 +238,16 @@ function toggleMobileNav(){
     <div style="overflow:hidden;border-radius:16px;box-shadow:0 16px 60px rgba(0,0,0,.18);max-width:70%;margin:0 auto;">
       <div id="tab-track" style="transform:translateX(0%);">
         <div class="tab-slide">
-          <img src="/wp-images/reservas-fondo.png" alt="Reservas" style="width:100%;display:block;" />
+          <img src="/wp-images/reservas-fondo.png" alt="Reservas" style="width:100%;display:block;" / width="1514" height="1093">
         </div>
         <div class="tab-slide">
-          <img src="/wp-images/agenda-visualizacion-citas.png" alt="Agenda" style="width:100%;display:block;" />
+          <img src="/wp-images/agenda-visualizacion-citas.png" alt="Agenda" style="width:100%;display:block;" / loading="lazy" width="1512" height="982">
         </div>
         <div class="tab-slide">
-          <img src="/wp-images/Equipo-1.png" alt="Equipo" style="width:100%;display:block;" />
+          <img src="/wp-images/Equipo-1.png" alt="Equipo" style="width:100%;display:block;" / loading="lazy" width="1512" height="982">
         </div>
         <div class="tab-slide">
-          <img src="/wp-images/Captura-de-pantalla-2026-04-08-a-las-22.21.51.png" alt="Análisis" style="width:100%;display:block;" />
+          <img src="/wp-images/Captura-de-pantalla-2026-04-08-a-las-22.21.51.png" alt="Análisis" style="width:100%;display:block;" / loading="lazy" width="1512" height="1064">
         </div>
       </div>
     </div>
@@ -273,7 +276,7 @@ function toggleMobileNav(){
       </ul>
     </div>
     <div style="flex:1;">
-      <img src="/wp-images/Captura-de-pantalla-2026-04-08-a-las-22.21.51.png" alt="Análisis de negocio con IA" style="width:100%;border-radius:12px;" />
+      <img src="/wp-images/Captura-de-pantalla-2026-04-08-a-las-22.21.51.png" alt="Análisis de negocio con IA" style="width:100%;border-radius:12px;" / loading="lazy" width="1512" height="1064">
     </div>
   </div>
 </section>
@@ -287,7 +290,7 @@ function toggleMobileNav(){
       <a href="/funcionalidades/reservas-online/" target="_blank" style="display:inline-block;background:linear-gradient(90deg,#9B4FE8,#631cff);color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Ver proceso de reserva</a>
     </div>
     <div style="flex:1;">
-      <img src="https://www.figma.com/api/mcp/asset/9928ddda-efe0-459d-810c-ad7b9efe9707" alt="Software para salones de uñas - reservas y agenda" style="width:100%;" />
+      <img src="https://www.figma.com/api/mcp/asset/9928ddda-efe0-459d-810c-ad7b9efe9707" alt="Software para salones de uñas - reservas y agenda" style="width:100%;" / loading="lazy">
     </div>
   </div>
 </section>
@@ -318,7 +321,7 @@ function toggleMobileNav(){
       </ul>
     </div>
     <div style="flex:1;">
-      <img src="/images/1926.png" alt="Extras en la reserva con cálculo automático de tiempo" style="width:100%;border-radius:12px;" />
+      <img src="/images/1926.png" alt="Extras en la reserva con cálculo automático de tiempo" style="width:100%;border-radius:12px;" / loading="lazy" width="2880" height="2048">
     </div>
   </div>
 </section>
@@ -345,7 +348,7 @@ function toggleMobileNav(){
       <a href="/funcionalidades/pagos-y-depositos/" target="_blank" style="display:inline-block;background:linear-gradient(90deg,#9B4FE8,#631cff);color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Ver pagos y depósitos</a>
     </div>
     <div style="flex:1;">
-      <img src="https://www.figma.com/api/mcp/asset/46b4e26b-c839-4ed0-974a-ac1551843da3" alt="Procese pagos contra las tarjetas de crédito almacenadas" style="width:100%;" />
+      <img src="https://www.figma.com/api/mcp/asset/46b4e26b-c839-4ed0-974a-ac1551843da3" alt="Procese pagos contra las tarjetas de crédito almacenadas" style="width:100%;" / loading="lazy">
     </div>
   </div>
 </section>
@@ -364,7 +367,7 @@ function toggleMobileNav(){
       <a href="/funcionalidades/equipo-y-horarios/" target="_blank" style="display:inline-block;background:linear-gradient(90deg,#9B4FE8,#631cff);color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">Ver gestión del equipo</a>
     </div>
     <div style="flex:1;">
-      <img src="https://www.figma.com/api/mcp/asset/720cb7a0-0207-4399-9bb0-30a7b70436ff" alt="La agenda inteligente para técnicos de campo" style="width:100%;" />
+      <img src="https://www.figma.com/api/mcp/asset/720cb7a0-0207-4399-9bb0-30a7b70436ff" alt="La agenda inteligente para técnicos de campo" style="width:100%;" / loading="lazy">
     </div>
   </div>
 </section>
@@ -378,7 +381,7 @@ function toggleMobileNav(){
       <a href="/funcionalidades/servicios-a-domicilio/" target="_blank" style="display:inline-block;background:linear-gradient(90deg,#9B4FE8,#631cff);color:#fff;font-size:17.6px;font-weight:600;padding:15px 32px;border-radius:20px;text-decoration:none;">¿Cómo funcionan los servicios a domicilio?</a>
     </div>
     <div style="flex:1;position:relative;">
-      <img src="/wp-images/servicios-domicilio-mapa.png" alt="Servicios a domicilio" style="width:100%;" />
+      <img src="/wp-images/servicios-domicilio-mapa.png" alt="Servicios a domicilio" style="width:100%;" / loading="lazy" width="3696" height="2864">
       <button style="position:absolute;top:-20px;right:-20px;width:110px;height:110px;background:#080f1e;border:10px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
         <svg style="width:32px;height:32px;color:#f54748;margin-left:4px;" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
@@ -395,7 +398,7 @@ function toggleMobileNav(){
       <p style="color:rgba(2,2,30,.8);font-size:18.8px;line-height:28px;margin:0;">Escoge la plantilla según tu sector y envía mensajes customizados con AI según el perfil de cada cliente, a tu nombre. Aumenta la tasa de fidelización un 60%.</p>
     </div>
     <div style="flex:1;padding:0 48px;">
-      <img src="https://www.figma.com/api/mcp/asset/feec43cf-4ae5-4fbf-b545-ea74dcaf41ad" alt="Conversación WhatsApp con clienta" style="width:100%;" />
+      <img src="https://www.figma.com/api/mcp/asset/feec43cf-4ae5-4fbf-b545-ea74dcaf41ad" alt="Conversación WhatsApp con clienta" style="width:100%;" / loading="lazy">
     </div>
   </div>
 </section>
@@ -410,55 +413,55 @@ function toggleMobileNav(){
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002276.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002276.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/fidelizacion-ai/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Fidelización AI</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Comunicaciones automatizadas por WhatsApp que se sienten más humanas con un mensaje personalizado con AI.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002288.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002288.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/servicios-a-domicilio/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Servicios a domicilio</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Permite reservas en base ubicación y calculo de los tiempos necesarios para el servicio + desplazamiento.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002280.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002280.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/reservas-online/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Reservas online</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Permite reservas fáciles para el usuario y adaptadas a tu negocio con cálculo de los tiempos y precios.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002282.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002282.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/pagos-y-depositos/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Pagos y depósitos</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Solicita un deposito porcentual o fijo en el momento de la reserva para consolidar el compromiso de los clientes.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002281.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002281.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/multiples-ubicaciones/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Múltiples ubicaciones</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Permite reservar entre varias ubicaciones o salones, o citas a domicilio. Asigna profesionales y precios a cada ubicación.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002287.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002287.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/gestion-de-clientes/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Gestión de clientes</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Gestiona toda la información de los clientes desde un único lugar, reservas, métodos de pago, etc.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002284.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002284.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/geolocalizacion-equipo/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Geolocalización equipo</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Visualiza la ubicación de tu equipo, asigna nuevos proyectos y servicios, incrementa el precio en base ubicación, etc.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002284.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002284.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/facturacion-y-reporte/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Facturación y reporte</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Descárgate un excel periódico con todos los datos de ventas para poder ejecutar una correcta contabilidad.</p>
       </div>
 
       <div style="background:#fff;border-radius:10px;padding:40px 40px 68px;">
-        <img src="/wp-images/Group-1000002281.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" />
+        <img src="/wp-images/Group-1000002281.svg" alt="" style="width:60px;height:60px;margin-bottom:24px;" / loading="lazy">
         <a href="/funcionalidades/equipo-y-horarios/" target="_blank" style="display:block;background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;font-size:19.5px;text-transform:capitalize;margin-bottom:16px;text-decoration:none;">Equipo y horarios</a>
         <p style="color:rgba(2,2,30,.8);font-size:17.3px;line-height:27px;margin:0;">Gestiona los horarios del equipo interno o freelance, sus vacaciones, qué servicios realizan, precios, comisiones, etc.</p>
       </div>
@@ -471,7 +474,7 @@ function toggleMobileNav(){
 <section style="background:#eeeeee;padding:155px 40px 102px;">
   <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:64px;">
     <div style="flex:1;">
-      <img src="https://www.figma.com/api/mcp/asset/cd860da3-a9f7-4e6f-af80-33466c5b29f5" alt="Gestión de clientes para tu centro de estética en España" style="width:100%;" />
+      <img src="https://www.figma.com/api/mcp/asset/cd860da3-a9f7-4e6f-af80-33466c5b29f5" alt="Gestión de clientes para tu centro de estética en España" style="width:100%;" / loading="lazy">
     </div>
     <div style="flex:1;padding-left:48px;">
       <h3 class="font-gabarito" style="background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:50px;line-height:50px;font-weight:600;margin:0 0 24px;">Analiza las ventas y toma<br>acciones correctivas</h3>
@@ -487,7 +490,7 @@ function toggleMobileNav(){
 
 <!-- ═══════════════════════════════════════ DECORATIVE BAND ═══════════════════════════════════════ -->
 <div style="position:relative;overflow:hidden;line-height:0;">
-  <img src="https://www.figma.com/api/mcp/asset/a38d594c-85d1-492d-b992-00fd194e61d7" alt="" style="width:100%;display:block;" />
+  <img src="https://www.figma.com/api/mcp/asset/a38d594c-85d1-492d-b992-00fd194e61d7" alt="" style="width:100%;display:block;" / loading="lazy">
   <div style="position:absolute;inset:0;background:linear-gradient(to right,#fff 0%,transparent 18%,transparent 82%,#fff 100%);pointer-events:none;"></div>
 </div>
 
@@ -504,7 +507,7 @@ function toggleMobileNav(){
         <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
         <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">"Hemos mejorado muchísimo el tiempo de transporte entre servicio y aumentado el número de servicios diarios por profesional. La experiencia del cliente ha mejorado notablemente."</p>
         <div style="display:flex;align-items:center;gap:14px;">
-          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=NeusFigueres&backgroundColor=ffd5dc" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Neus Figueres" />
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=NeusFigueres&backgroundColor=ffd5dc" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Neus Figueres" / loading="lazy">
           <div>
             <div style="color:#02021e;font-size:15px;font-weight:600;">Neus Figueres</div>
             <div style="color:rgba(2,2,30,.5);font-size:13px;">CEO Orgasmi</div>
@@ -517,7 +520,7 @@ function toggleMobileNav(){
         <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
         <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">"Mis clientes pueden agendar citas y cambiar las horas todo dentro de la política y sin tener que llamarme. He ganado en tranquilidad y mis clientes están mucho más satisfechos."</p>
         <div style="display:flex;align-items:center;gap:14px;">
-          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=SilviaGonzalo&backgroundColor=c0aede" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Silvia Gonzalo" />
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=SilviaGonzalo&backgroundColor=c0aede" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Silvia Gonzalo" / loading="lazy">
           <div>
             <div style="color:#02021e;font-size:15px;font-weight:600;">Silvia Gonzalo</div>
             <div style="color:rgba(2,2,30,.5);font-size:13px;">Terapeuta</div>
@@ -530,7 +533,7 @@ function toggleMobileNav(){
         <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
         <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">"Las rutas de mis empleados son mucho más óptimas, ellos mismos pueden comunicarse con los clientes y ofrecer una mejor experiencia de trabajo."</p>
         <div style="display:flex;align-items:center;gap:14px;">
-          <img src="https://api.dicebear.com/9.x/micah/svg?seed=RicardoAlemany&backgroundColor=b6e3f4" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Ricardo Alemany" />
+          <img src="https://api.dicebear.com/9.x/micah/svg?seed=RicardoAlemany&backgroundColor=b6e3f4" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Ricardo Alemany" / loading="lazy">
           <div>
             <div style="color:#02021e;font-size:15px;font-weight:600;">Ricardo Alemany</div>
             <div style="color:rgba(2,2,30,.5);font-size:13px;">Empresario</div>
@@ -549,12 +552,13 @@ function toggleMobileNav(){
     <h2 class="font-gabarito" style="color:#fff;font-size:52px;line-height:1.1;font-weight:700;margin:0 0 32px;">Empieza gratis hoy</h2>
     <div style="display:flex;align-items:center;gap:16px;">
       <a href="https://www.godolphy.com/lista-de-espera/" target="_blank" style="display:inline-block;background:#fff;color:#631cff;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;font-family:'Poppins',sans-serif;">Empieza ahora</a>
-      <img src="/wp-images/Arrow-shape-1024x983.png" alt="" style="width:60px;" />
+      <img src="/wp-images/Arrow-shape-1024x983.png" alt="" style="width:60px;" / loading="lazy" width="1024" height="983">
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+</main>
 <footer style="background:#02021e;padding:80px 40px 24px;">
   <div style="max-width:1320px;margin:0 auto;">
 
@@ -563,7 +567,7 @@ function toggleMobileNav(){
 
       <!-- Logo + contact -->
       <div>
-        <img src="https://www.figma.com/api/mcp/asset/84d86152-3050-4b8f-ba33-8e5c0bb130a2" alt="Godolphy" style="height:56px;margin-bottom:24px;" />
+        <img src="https://www.figma.com/api/mcp/asset/84d86152-3050-4b8f-ba33-8e5c0bb130a2" alt="Godolphy" style="height:56px;margin-bottom:24px;" / loading="lazy">
         <div style="display:flex;flex-direction:column;gap:12px;">
           <span style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.7);font-size:17.2px;">
             <svg style="width:16px;height:16px;flex-shrink:0;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
@@ -582,7 +586,7 @@ function toggleMobileNav(){
 
       <!-- Industrias -->
       <div>
-        <h4 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Industrias</h4>
+        <h3 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Industrias</h3>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <a href="/sectores/software-para-centro-de-estetica-y-salones/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Centro estética</a>
           <a href="/sectores/software-para-salones-de-unas/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Salón de uñas</a>
@@ -606,7 +610,7 @@ function toggleMobileNav(){
 
       <!-- Funcionalidades -->
       <div>
-        <h4 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Funcionalidades</h4>
+        <h3 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Funcionalidades</h3>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <a href="/funcionalidades/reservas-online/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Reservas online</a>
           <a href="/funcionalidades/calendario/" style="color:#0d6efd;font-size:17.4px;text-decoration:none;">Calendario</a>
@@ -624,7 +628,7 @@ function toggleMobileNav(){
 
       <!-- Recursos -->
       <div>
-        <h4 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Recursos</h4>
+        <h3 style="color:#fff;font-weight:600;font-size:18px;letter-spacing:1px;margin:0 0 20px;">Recursos</h3>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <a href="#" style="color:#0d6efd;font-size:17.4px;line-height:26px;text-decoration:none;">Plantilla excel plan financiero centros estética.</a>
           <a href="#" style="color:#0d6efd;font-size:17.4px;line-height:26px;text-decoration:none;">Guia Emprendedores Salones estética</a>
@@ -636,13 +640,13 @@ function toggleMobileNav(){
     <div style="display:flex;align-items:flex-start;justify-content:space-between;padding-top:32px;gap:32px;">
       <!-- CTA -->
       <div>
-        <h5 style="color:#fff;font-weight:600;font-size:17.9px;letter-spacing:1px;margin:0 0 8px;">Lista de espera</h5>
+        <h4 style="color:#fff;font-weight:600;font-size:17.9px;letter-spacing:1px;margin:0 0 8px;">Lista de espera</h4>
         <p style="color:rgba(255,255,255,.7);font-size:16.7px;margin:0 0 20px;">Prueba godolphy durante 30 días.</p>
         <a href="https://www.godolphy.com/lista-de-espera/" target="_blank" style="display:inline-block;background:#eefe3b;color:#631cff;font-weight:600;font-size:17.6px;padding:15px 32px;border-radius:20px;text-decoration:none;">Empieza ahora</a>
       </div>
       <!-- Legal -->
       <div>
-        <h5 style="color:#fff;font-weight:600;font-size:17.9px;letter-spacing:1px;margin:0 0 20px;">Legal</h5>
+        <h4 style="color:#fff;font-weight:600;font-size:17.9px;letter-spacing:1px;margin:0 0 20px;">Legal</h4>
         <div style="display:flex;flex-wrap:wrap;gap:12px 16px;max-width:480px;">
           <a href="/politica-de-privacidad/" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">Política privacidad</a>
           <a href="/politica-de-cookies/" style="color:rgba(255,255,255,.7);font-size:17px;text-decoration:none;">Cookies</a>
@@ -653,10 +657,10 @@ function toggleMobileNav(){
       </div>
       <!-- Social -->
       <div style="display:flex;gap:16px;margin-top:48px;">
-        <a href="https://www.instagram.com/godolphy.app" target="_blank" style="width:30px;height:30px;background:rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+        <a href="https://www.instagram.com/godolphy.app" target="_blank" aria-label="Seguir en Instagram" style="width:30px;height:30px;background:rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;">
           <svg style="width:14px;height:14px;" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" style="width:30px;height:30px;background:rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="Seguir en LinkedIn" style="width:30px;height:30px;background:rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;">
           <svg style="width:14px;height:14px;" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
       </div>

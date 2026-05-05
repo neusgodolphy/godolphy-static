@@ -8,10 +8,12 @@
   <link rel="canonical" href="https://www.godolphy.com/sectores/" />
   <meta property="og:title" content="Sectores | Godolphy — Software de gestión para negocios de belleza y servicios" />
   <meta property="og:description" content="Godolphy está diseñado para peluquerías, barberías, centros de estética, spas, salones de uñas y empresas de limpieza. Descubre la solución para tu sector." />
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
   <style>
     body { font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
     .font-gabarito { font-family: 'Gabarito', sans-serif; }
@@ -102,7 +104,7 @@
 <!-- NAVBAR -->
 <nav style="position:absolute;top:0;left:0;right:0;z-index:50;padding:14px 0;">
   <div style="max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
-    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" /></a>
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:40px;" / width="864" height="215"></a>
     <ul style="display:flex;gap:32px;list-style:none;margin:0;padding:0;">
       <li><a href="/sectores/" style="color:#fff;font-size:14px;font-weight:600;text-decoration:none;">Sectores</a></li>
       <li><a href="/funcionalidades/" style="color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Funcionalidades</a></li>
@@ -125,7 +127,7 @@
 <!-- Mobile nav overlay -->
 <div id="mobile-nav" style="display:none;position:fixed;inset:0;z-index:200;background:linear-gradient(160deg,#9B4FE8 0%,#7835C3 30%,#631cff 65%,#3a0aaa 100%);flex-direction:column;padding:24px 24px 40px;">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;">
-    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" /></a>
+    <a href="/"><img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;" / width="864" height="215"></a>
     <button onclick="toggleMobileNav()" aria-label="Cerrar menú" style="background:none;border:none;cursor:pointer;padding:4px;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
@@ -154,6 +156,7 @@ function toggleMobileNav(){
 
 
 <!-- HERO -->
+<main>
 <section class="hero-bg" style="position:relative;padding:180px 40px 120px;text-align:center;overflow:hidden;">
   <div style="position:relative;z-index:1;max-width:860px;margin:0 auto;">
     <h1 class="font-gabarito" style="color:#fff;font-size:64px;line-height:1.05;font-weight:700;margin:0 0 20px;">Godolphy para cada sector</h1>
@@ -188,7 +191,7 @@ function toggleMobileNav(){
       <!-- Centro estética -->
       <a href="/sectores/software-para-centro-de-estetica-y-salones/" class="sector-card" style="background:#f8f7ff;border-radius:24px;overflow:hidden;display:block;border:1.5px solid rgba(99,28,255,.1);">
         <div style="height:200px;overflow:hidden;">
-          <img src="/wp-images/que-se-necesita-para-abrir-un-salon-de-estetica-1.jpg" alt="Centro estética" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+          <img src="/wp-images/que-se-necesita-para-abrir-un-salon-de-estetica-1.jpg" alt="Centro estética" style="width:100%;height:100%;object-fit:cover;object-position:center top;" / loading="lazy" width="1345" height="897">
         </div>
         <div style="padding:28px 28px 32px;">
           <h3 style="color:#02021e;font-size:22px;font-weight:700;margin:0 0 10px;font-family:'Gabarito',sans-serif;">Centro de estética</h3>
@@ -203,7 +206,7 @@ function toggleMobileNav(){
       <!-- Salón de uñas -->
       <a href="/sectores/software-para-salones-de-unas/" class="sector-card" style="background:#f8f7ff;border-radius:24px;overflow:hidden;display:block;border:1.5px solid rgba(99,28,255,.1);">
         <div style="height:200px;overflow:hidden;">
-          <img src="/wp-images/focused-diligent-manicurist-is-working-at-her-work-2023-11-27-05-29-07-utc-scaled.jpg" alt="Salón de uñas" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+          <img src="/wp-images/focused-diligent-manicurist-is-working-at-her-work-2023-11-27-05-29-07-utc-scaled.jpg" alt="Salón de uñas" style="width:100%;height:100%;object-fit:cover;object-position:center top;" / loading="lazy" width="1600" height="1067">
         </div>
         <div style="padding:28px 28px 32px;">
           <h3 style="color:#02021e;font-size:22px;font-weight:700;margin:0 0 10px;font-family:'Gabarito',sans-serif;">Salón de uñas</h3>
@@ -218,7 +221,7 @@ function toggleMobileNav(){
       <!-- Peluquería -->
       <a href="/sectores/software-para-peluquerias/" class="sector-card" style="background:#f8f7ff;border-radius:24px;overflow:hidden;display:block;border:1.5px solid rgba(99,28,255,.1);">
         <div style="height:200px;overflow:hidden;">
-          <img src="/wp-images/hairdresser-curling-woman-hair-in-beauty-salon-2023-11-27-05-06-52-utc-scaled-e1734354575272.jpg" alt="Peluquería" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+          <img src="/wp-images/hairdresser-curling-woman-hair-in-beauty-salon-2023-11-27-05-06-52-utc-scaled-e1734354575272.jpg" alt="Peluquería" style="width:100%;height:100%;object-fit:cover;object-position:center top;" / loading="lazy" width="1560" height="1090">
         </div>
         <div style="padding:28px 28px 32px;">
           <h3 style="color:#02021e;font-size:22px;font-weight:700;margin:0 0 10px;font-family:'Gabarito',sans-serif;">Peluquería</h3>
@@ -237,7 +240,7 @@ function toggleMobileNav(){
       <!-- Barbería -->
       <a href="/sectores/software-para-barberias/" class="sector-card" style="background:#f8f7ff;border-radius:24px;overflow:hidden;display:flex;border:1.5px solid rgba(99,28,255,.1);">
         <div style="width:220px;flex-shrink:0;overflow:hidden;flex-shrink:0;">
-          <img src="/wp-images/barber-shop-2023-11-27-05-35-59-utc-scaled.jpg" alt="Barbería" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+          <img src="/wp-images/barber-shop-2023-11-27-05-35-59-utc-scaled.jpg" alt="Barbería" style="width:100%;height:100%;object-fit:cover;object-position:center;" / loading="lazy" width="1600" height="1068">
         </div>
         <div style="padding:32px 32px;">
           <h3 style="color:#02021e;font-size:22px;font-weight:700;margin:0 0 10px;font-family:'Gabarito',sans-serif;">Barbería</h3>
@@ -252,7 +255,7 @@ function toggleMobileNav(){
       <!-- SPA -->
       <a href="/sectores/software-para-spa-y-masajes/" class="sector-card" style="background:#f8f7ff;border-radius:24px;overflow:hidden;display:flex;border:1.5px solid rgba(99,28,255,.1);">
         <div style="width:220px;flex-shrink:0;overflow:hidden;">
-          <img src="/wp-images/como-evitar-clientes-indeseados-en-un-spa.jpg" alt="SPA y masajes" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+          <img src="/wp-images/como-evitar-clientes-indeseados-en-un-spa.jpg" alt="SPA y masajes" style="width:100%;height:100%;object-fit:cover;object-position:center;" / loading="lazy" width="1280" height="960">
         </div>
         <div style="padding:32px 32px;">
           <h3 style="color:#02021e;font-size:22px;font-weight:700;margin:0 0 10px;font-family:'Gabarito',sans-serif;">Centro SPA y masajes</h3>
@@ -284,7 +287,7 @@ function toggleMobileNav(){
     <!-- Empresa limpieza — full width card -->
     <a href="/sectores/software-para-empresas-de-limpieza/" class="sector-card" style="background:#fff;border-radius:24px;overflow:hidden;display:flex;border:1.5px solid rgba(26,26,255,.1);margin-bottom:28px;min-height:240px;">
       <div style="width:320px;flex-shrink:0;overflow:hidden;">
-        <img src="/wp-images/requisitos-de-sanidad-para-un-salon-de-belleza-1.jpg" alt="Empresas de limpieza" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+        <img src="/wp-images/requisitos-de-sanidad-para-un-salon-de-belleza-1.jpg" alt="Empresas de limpieza" style="width:100%;height:100%;object-fit:cover;object-position:center;" / loading="lazy" width="1500" height="1000">
       </div>
       <div style="padding:40px 48px;display:flex;flex-direction:column;justify-content:center;">
         <div style="display:inline-block;background:#eef2ff;color:#1a1aff;font-size:12px;font-weight:600;letter-spacing:.08em;padding:5px 14px;border-radius:20px;margin-bottom:16px;width:fit-content;">LIMPIEZA</div>
@@ -357,17 +360,18 @@ function toggleMobileNav(){
     <p style="color:rgba(255,255,255,.8);font-size:18px;margin:0 0 36px;">30 días sin compromiso. Sin tarjeta de crédito.</p>
     <div style="display:flex;align-items:center;gap:16px;">
       <a href="https://www.godolphy.com/lista-de-espera/" target="_blank" style="display:inline-block;background:#fff;color:#631cff;font-size:18px;font-weight:700;padding:16px 40px;border-radius:20px;text-decoration:none;">Empieza ahora</a>
-      <img src="/wp-images/Arrow-shape-1024x983.png" alt="" style="width:60px;" />
+      <img src="/wp-images/Arrow-shape-1024x983.png" alt="" style="width:60px;" / loading="lazy" width="1024" height="983">
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer style="background:#02021e;padding:80px 40px 24px;">
   <div style="max-width:1320px;margin:0 auto;">
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.1);">
       <div>
-        <img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;margin-bottom:24px;display:block;" />
+        <img src="/wp-images/logo.png" alt="Godolphy" style="height:36px;margin-bottom:24px;display:block;" / width="864" height="215">
         <div style="display:flex;flex-direction:column;gap:12px;">
           <span style="color:rgba(255,255,255,.7);font-size:15px;">📍 Barcelona</span>
           <span style="color:rgba(255,255,255,.7);font-size:15px;">📞 +34 614 058 249</span>
