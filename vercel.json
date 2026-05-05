@@ -1,4 +1,66 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/cookies",
+      "destination": "/politica-de-cookies/",
+      "permanent": true
+    },
+    {
+      "source": "/software-para-barberias",
+      "destination": "/sectores/software-para-barberias/",
+      "permanent": true
+    },
+    {
+      "source": "/software-para-barberias/",
+      "destination": "/sectores/software-para-barberias/",
+      "permanent": true
+    },
+    {
+      "source": "/que-debo-tener-en-cuenta-antes-de-abrir-mi-salon-de-unas-o-centro-de-estetica",
+      "destination": "/que-debo-tener-en-cuenta-antes-de-abrir-mi-salon/",
+      "permanent": true
+    },
+    {
+      "source": "/que-debo-tener-en-cuenta-antes-de-abrir-mi-salon-de-unas-o-centro-de-estetica/",
+      "destination": "/que-debo-tener-en-cuenta-antes-de-abrir-mi-salon/",
+      "permanent": true
+    },
+    {
+      "source": "/cual-es-el-iva-para-un-servicio-de-estetica-en-espana-2-2",
+      "destination": "/cual-es-el-iva-para-un-servicio-de-estetica/",
+      "permanent": true
+    },
+    {
+      "source": "/cual-es-el-iva-para-un-servicio-de-estetica-en-espana-2-2/",
+      "destination": "/cual-es-el-iva-para-un-servicio-de-estetica/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica",
+      "destination": "/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica/",
+      "destination": "/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/funcionalidades/fidelizacion-ai",
+      "destination": "/funcionalidades/fidelizacion-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/funcionalidades/fidelizacion-ai/",
+      "destination": "/funcionalidades/fidelizacion-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica",
+      "destination": "/casos-de-exito-de-campanas-de-marketing-de-salones-es-estetica/",
+      "permanent": true
+    }
+  ]
 }
