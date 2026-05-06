@@ -71,6 +71,16 @@
       "source": "/diferencias-entre-fresha-y-godolphy/",
       "destination": "/alternativa-a-fresha/",
       "permanent": true
+    },
+    {
+      "source": "/darme-de-alta",
+      "destination": "/lista-de-espera/",
+      "permanent": false
+    },
+    {
+      "source": "/darme-de-alta/",
+      "destination": "/lista-de-espera/",
+      "permanent": false
     }
   ]
 }
