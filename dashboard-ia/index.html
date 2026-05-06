@@ -305,6 +305,79 @@
   .hero-alerts-container .alerts-col { width: 100% !important; }
   .hero-alerts-container .robot-col { width: 180px !important; }
 }
+  
+    /* TESTIMONIOS */
+    .testi-section {
+      background: #F8F7FF;
+      padding: 80px 24px;
+    }
+    .testi-eyebrow {
+      font-size: 12px; font-weight: 700;
+      color: #621CFF; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 14px;
+      text-align: center;
+    }
+    .testi-title {
+      font-family: 'Gabarito', sans-serif;
+      font-size: 36px; font-weight: 700;
+      color: #111827; text-align: center;
+      margin-bottom: 48px; line-height: 1.2;
+    }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .testi-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .testi-bigquote {
+      font-size: 48px; line-height: 1;
+      color: #621CFF; font-weight: 900;
+      font-family: Georgia, serif;
+      margin-bottom: -8px;
+    }
+    .testi-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px; color: #374151;
+      line-height: 1.7; flex: 1;
+    }
+    .testi-divider {
+      border: none; border-top: 1px solid #ede9fe;
+      margin: 0;
+    }
+    .testi-author {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .testi-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #621CFF; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-weight: 700; font-size: 14px; color: #111827;
+    }
+    .testi-role {
+      font-size: 12px; color: #9CA3AF; margin-top: 2px;
+    }
+    @media(max-width: 900px) {
+      .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 580px) {
+      .testi-grid { grid-template-columns: 1fr; }
+      .testi-title { font-size: 28px; }
+    }
+
   </style>
 </head>
 <body>
@@ -570,38 +643,128 @@
 </section>
 
 <!-- TESTIMONIOS -->
-<section class="section">
-  <div class="section-inner" style="text-align:center;">
-    <p class="section-label">Lo que dicen nuestros clientes</p>
-    <h2 class="section-title">Resultados reales, no promesas</h2>
+<section class="testi-section">
+  <div style="max-width:1060px;margin:0 auto;">
+    <p class="testi-eyebrow">LO QUE DICEN NUESTROS CLIENTES</p>
+    <h2 class="testi-title">Resultados reales, no promesas</h2>
     <div class="testi-grid">
       <div class="testi-card">
-        <p class="testi-quote">"Descubrí que 3 de mis servicios más populares me estaban haciendo perder dinero. En dos semanas ajusté los precios y ya noto la diferencia."</p>
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Tenía un 35% de clientas que habían dejado de venir sin que yo me diera cuenta.</p>
+        <hr class="testi-divider">
         <div class="testi-author">
-          <div class="testi-avatar-placeholder">ML</div>
+          <div class="testi-avatar">LA</div>
           <div>
-            <div class="testi-name">María López</div>
-            <div class="testi-role">Dueña de Salón Bella Vida, Madrid</div>
+            <div class="testi-name">Laura</div>
+            <div class="testi-role">Centro de estética, Madrid</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
-        <p class="testi-quote">"Pensaba que mi problema era conseguir nuevos clientes. Resulta que tenía un 40% de clientes que no volvían. Ahora los recupero antes de perderlos."</p>
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Mi servicio más popular era el menos rentable por hora. Lo tenía mal precio desde el principio.</p>
+        <hr class="testi-divider">
         <div class="testi-author">
-          <div class="testi-avatar-placeholder">CR</div>
+          <div class="testi-avatar">SI</div>
           <div>
-            <div class="testi-name">Carlos Ruiz</div>
-            <div class="testi-role">Propietario de Nails & Co, Barcelona</div>
+            <div class="testi-name">Silvia</div>
+            <div class="testi-role">Peluquera autónoma, Barcelona</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
-        <p class="testi-quote">"Por fin entiendo mis números sin tener que ser contable. Las recomendaciones son claras y fáciles de aplicar desde el primer día."</p>
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Estaba dejando ir casi 3.000€ al mes en capacidad sin usar. No lo veía.</p>
+        <hr class="testi-divider">
         <div class="testi-author">
-          <div class="testi-avatar-placeholder">AG</div>
+          <div class="testi-avatar">IS</div>
           <div>
-            <div class="testi-name">Ana García</div>
-            <div class="testi-role">Directora de Centro Dermia, Valencia</div>
+            <div class="testi-name">Ismael</div>
+            <div class="testi-role">Barbería, Valencia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Cuando vi cuánto me costaba cada no-show de verdad, activar los depósitos fue urgente.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">MA</div>
+          <div>
+            <div class="testi-name">Marta</div>
+            <div class="testi-role">Salón de uñas, Bilbao</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Subí el precio de mi servicio estrella un 15% y no perdí ni una clienta.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">AN</div>
+          <div>
+            <div class="testi-name">Ana</div>
+            <div class="testi-role">Esteticista, Zaragoza</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Recuperé 23 clientas perdidas en dos semanas con una campaña sencilla.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">RO</div>
+          <div>
+            <div class="testi-name">Roberto</div>
+            <div class="testi-role">Centro de belleza, Málaga</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Dos servicios consumían el 40% de mi tiempo y generaban el 18% de mis ingresos.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">PA</div>
+          <div>
+            <div class="testi-name">Patricia</div>
+            <div class="testi-role">Peluquera, Alicante</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Mis clientas VIP eran las que más riesgo tenían de no volver. Nadie lo veía.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">EL</div>
+          <div>
+            <div class="testi-name">Elena</div>
+            <div class="testi-role">Centro de masajes, San Sebastián</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">En 20 años de barbería nunca había tenido datos así de claros.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">JA</div>
+          <div>
+            <div class="testi-name">Javier</div>
+            <div class="testi-role">Barbero, Madrid</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-bigquote">"</div>
+        <p class="testi-text">Los martes por la tarde perdía dinero cada semana sin saber por qué.</p>
+        <hr class="testi-divider">
+        <div class="testi-author">
+          <div class="testi-avatar">CA</div>
+          <div>
+            <div class="testi-name">Carmen</div>
+            <div class="testi-role">Spa, Sevilla</div>
           </div>
         </div>
       </div>
