@@ -360,16 +360,7 @@
       .testi-grid { grid-template-columns: 1fr; }
       .testi-title { font-size: 28px; }
     }
-
-  
-    /* TESTI NEW GRID */
-    .testi-new-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    @media(max-width: 900px) { .testi-new-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media(max-width: 580px) { .testi-new-grid { grid-template-columns: 1fr; } }
+}
 
   </style>
 </head>
@@ -636,117 +627,119 @@
 </section>
 
 <!-- TESTIMONIOS -->
-<section style="padding:80px 24px;background:linear-gradient(135deg,#f5f0ff 0%,#fdf9ff 55%,#ede9fe 100%);">
-  <div style="max-width:1060px;margin:0 auto;">
-    <h2 style="font-family:'Gabarito',sans-serif;font-size:clamp(26px,3vw,36px);font-weight:700;color:#621CFF;text-align:center;margin:0 0 48px;">La confianza de nuestros clientes</h2>
-    <div class="testi-new-grid">
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Tenía un 35% de clientas que habían dejado de venir sin que yo me diera cuenta.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#EDE9FE"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#8B5CF6"/><rect x="13" y="16" width="34" height="38" rx="5" fill="#2D1505"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#F5CBA7"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#F5CBA7"/><ellipse cx="30" cy="14" rx="13" ry="7" fill="#2D1505"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+<section style="background:#fff;padding:95px 40px 100px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:60px;">
+      <h2 class="font-gabarito" style="background:linear-gradient(90deg,#9B4FE8,#631cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:clamp(36px,5vw,60px);line-height:1.15;font-weight:600;margin:0;">La confianza de nuestros<br>clientes</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Tenía un 35% de clientas que habían dejado de venir sin que yo me diera cuenta.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=LauraM&backgroundColor=ffd5dc" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Laura M." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Laura</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Centro de estética, Madrid</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Laura M.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Centro de estética, Madrid</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Mi servicio más popular era el menos rentable por hora. Lo tenía mal precio desde el principio.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#FCE7F3"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#EC4899"/><rect x="15" y="18" width="30" height="22" rx="4" fill="#7B4B2A"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#F5CBA7"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#F5CBA7"/><ellipse cx="30" cy="14" rx="13" ry="7" fill="#7B4B2A"/><rect x="15" y="24" width="5" height="14" rx="3" fill="#7B4B2A"/><rect x="40" y="24" width="5" height="14" rx="3" fill="#7B4B2A"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Mi servicio más popular era el menos rentable por hora. Lo tenía mal precio desde el principio.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=SilviaG&backgroundColor=c0aede" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Silvia G." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Silvia</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Peluquera autónoma, Barcelona</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Silvia G.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Peluquera autónoma, Barcelona</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Estaba dejando ir casi 3.000€ al mes en capacidad sin usar. No lo veía.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#D1FAE5"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#059669"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#C68642"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#C68642"/><ellipse cx="30" cy="14" rx="13" ry="6" fill="#1A1209"/><rect x="17" y="14" width="26" height="6" fill="#1A1209"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><ellipse cx="30" cy="36" rx="8" ry="5" fill="#6B3A1F" opacity="0.85"/><rect x="22" y="31" width="16" height="5" fill="#6B3A1F" opacity="0.85"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Estaba dejando ir casi 3.000€ al mes en capacidad sin usar. No lo veía.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=IsmaelR&backgroundColor=b6e3f4" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Ismael R." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Ismael</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Barbería, Valencia</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Ismael R.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Barbería, Valencia</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Cuando vi cuánto me costaba cada no-show de verdad, activar los depósitos fue urgente.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#FEF3C7"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#F59E0B"/><ellipse cx="30" cy="20" rx="17" ry="16" fill="#4A2C0A"/><circle cx="14" cy="24" r="7" fill="#4A2C0A"/><circle cx="46" cy="24" r="7" fill="#4A2C0A"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#C68642"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#C68642"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Cuando vi cuánto me costaba cada no-show de verdad, activar los depósitos fue urgente.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=MartaL&backgroundColor=d1fae5" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Marta L." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Marta</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Salón de uñas, Bilbao</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Marta L.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Salón de uñas, Bilbao</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Subí el precio de mi servicio estrella un 15% y no perdí ni una clienta.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#DBEAFE"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#3B82F6"/><rect x="13" y="16" width="34" height="38" rx="5" fill="#E8C547"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#FFE0B2"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#FFE0B2"/><ellipse cx="30" cy="14" rx="13" ry="7" fill="#E8C547"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Subí el precio de mi servicio estrella un 15% y no perdí ni una clienta.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=AnaP&backgroundColor=fef3c7" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Ana P." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Ana</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Esteticista, Zaragoza</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Ana P.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Esteticista, Zaragoza</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Recuperé 23 clientas perdidas en dos semanas con una campaña sencilla.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#FEE2E2"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#EF4444"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#8B5E3C"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#8B5E3C"/><ellipse cx="30" cy="14" rx="13.5" ry="7" fill="#1A1A1A"/><rect x="16" y="14" width="28" height="7" fill="#1A1A1A"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Recuperé 23 clientas perdidas en dos semanas con una campaña sencilla.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=RobertoS&backgroundColor=fee2e2" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Roberto S." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Roberto</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Centro de belleza, Málaga</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Roberto S.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Centro de belleza, Málaga</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Dos servicios consumían el 40% de mi tiempo y generaban el 18% de mis ingresos.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#E0F2FE"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#0EA5E9"/><ellipse cx="30" cy="15" rx="12" ry="6" fill="#4A3728"/><circle cx="30" cy="10" r="6" fill="#4A3728"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#F5CBA7"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#F5CBA7"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Dos servicios consumían el 40% de mi tiempo y generaban el 18% de mis ingresos.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=PatriciaV&backgroundColor=e0f2fe" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Patricia V." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Patricia</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Peluquera, Alicante</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Patricia V.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Peluquera, Alicante</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Mis clientas VIP eran las que más riesgo tenían de no volver. Nadie lo veía.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#F0FDF4"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#10B981"/><rect x="13" y="16" width="34" height="38" rx="5" fill="#D4A017"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#FFE0B2"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#FFE0B2"/><ellipse cx="30" cy="14" rx="13" ry="7" fill="#D4A017"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Mis clientas VIP eran las que más riesgo tenían de no volver. Nadie lo veía.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=ElenaC&backgroundColor=f0fdf4" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Elena C." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Elena</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Centro de masajes, San Sebastián</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Elena C.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Centro de masajes, San Sebastián</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;En 20 años de barbería nunca había tenido datos así de claros.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#F3F4F6"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#6B7280"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#D4956A"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#D4956A"/><ellipse cx="30" cy="15" rx="13" ry="6" fill="#9CA3AF"/><ellipse cx="22" cy="15" rx="5" ry="5" fill="#9CA3AF"/><ellipse cx="38" cy="15" rx="5" ry="5" fill="#9CA3AF"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;En 20 años de barbería nunca había tenido datos así de claros.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=JavierM&backgroundColor=f3f4f6" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Javier M." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Javier</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Barbero, Madrid</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Javier M.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Barbero, Madrid</div>
           </div>
         </div>
       </div>
-      <div style="background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(98,28,255,0.07);display:flex;flex-direction:column;gap:18px;">
-        <div style="display:inline-flex;align-items:center;gap:6px;background:#621CFF;padding:5px 12px;border-radius:20px;width:fit-content;"><span style="color:#FACC15;font-size:13px;letter-spacing:2px;">★★★★★</span></div>
-        <p style="font-family:'Poppins',sans-serif;font-size:15px;color:#1a0033;line-height:1.7;margin:0;">&ldquo;Los martes por la tarde perdía dinero cada semana sin saber por qué.&rdquo;</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="30" fill="#FDF4FF"/><ellipse cx="30" cy="66" rx="22" ry="14" fill="#A855F7"/><rect x="13" y="16" width="34" height="38" rx="5" fill="#0A0A0A"/><rect x="24" y="39" width="12" height="9" rx="2" fill="#C68642"/><ellipse cx="30" cy="27" rx="13" ry="14" fill="#C68642"/><ellipse cx="30" cy="14" rx="13" ry="7" fill="#0A0A0A"/><circle cx="25" cy="26" r="1.8" fill="#1a1a1a"/><circle cx="35" cy="26" r="1.8" fill="#1a1a1a"/><path d="M25 32 Q30 36.5 35 32" stroke="#1a1a1a" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <div style="background:#f8f7ff;border-radius:20px;padding:36px 32px;border:1.5px solid rgba(99,28,255,.08);">
+        <div style="margin-bottom:18px;font-size:18px;color:#EEFE3A;background:linear-gradient(90deg,#9B4FE8,#631cff);display:inline-block;padding:4px 10px;border-radius:8px;">★★★★★</div>
+        <p style="color:rgba(2,2,30,.75);font-size:16px;line-height:1.7;margin:0 0 28px;">&ldquo;Los martes por la tarde perdía dinero cada semana sin saber por qué.&rdquo;</p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img src="https://api.dicebear.com/9.x/lorelei/svg?seed=CarmenT&backgroundColor=fdf4ff" width="44" height="44" style="border-radius:50%;flex-shrink:0;background:#f0ebff;" alt="Carmen T." loading="lazy">
           <div>
-            <div style="font-weight:700;font-size:14px;color:#111827;">Carmen</div>
-            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">Spa, Sevilla</div>
+            <div style="color:#02021e;font-size:15px;font-weight:600;">Carmen T.</div>
+            <div style="color:rgba(2,2,30,.5);font-size:13px;">Spa, Sevilla</div>
           </div>
         </div>
       </div>
