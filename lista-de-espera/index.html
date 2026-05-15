@@ -372,6 +372,15 @@ function toggleMobileNav(){
       }
     }, 6000);
   });
+
+  // Pre-fill form fields from URL parameters (?email=...&firstname=...)
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var emailParam = params.get('email');
+    var firstnameParam = params.get('firstname');
+    if (emailParam) document.getElementById('email').value = emailParam;
+    if (firstnameParam) document.getElementById('fullname').value = firstnameParam;
+  })();
 </script>
 </body>
 </html>
