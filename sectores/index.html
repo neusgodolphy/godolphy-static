@@ -45,17 +45,30 @@
     section[style*="padding:96px 40px"]{padding:56px 20px!important;}
     section[style*="padding:80px 40px"]{padding:48px 20px!important;}
     section[style*="padding:130px 40px"]{padding:100px 20px 56px!important;}
+    section[style*="padding:64px 40px"]{padding:40px 20px!important;}
     /* CTA inner box */
     div[style*="padding:80px 60px"]{padding:40px 24px!important;}
+    div[style*="padding:60px 80px"]{padding:36px 20px!important;}
     div[style*="border-radius:32px"]{border-radius:20px!important;}
     h2[style*="font-size:46px"]{font-size:26px!important;line-height:1.2!important;}
+    h2[style*="font-size:52px"]{font-size:26px!important;line-height:1.2!important;}
+    h2[style*="font-size:44px"]{font-size:24px!important;line-height:1.2!important;}
+    h2[style*="font-size:40px"]{font-size:24px!important;line-height:1.2!important;}
     /* CTA buttons: column */
     div[style*="display:flex;gap:16px;justify-content:center;flex-wrap:wrap"]{flex-direction:column!important;align-items:stretch!important;}
     /* Hero CTA buttons */
     div[style*="display:flex;gap:14px;flex-wrap:wrap"]{flex-direction:column!important;align-items:stretch!important;}
-    /* Cards grids */
+    div[style*="display:flex;gap:16px;justify-content:center;"]{flex-direction:column!important;align-items:stretch!important;}
+    /* Cards grids — all to single column */
     div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
     div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+    div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+    /* Horizontal sector cards (barbería, spa, limpieza): stack vertically */
+    .sector-card[style*="display:flex"]{flex-direction:column!important;}
+    .sector-card[style*="display:flex"] > div[style*="width:220px"]{width:100%!important;height:180px!important;}
+    .sector-card[style*="display:flex"] > div[style*="width:320px"]{width:100%!important;height:200px!important;}
+    .sector-card[style*="display:flex"] > div[style*="padding:32px"]{padding:24px 20px!important;}
+    .sector-card[style*="display:flex"] > div[style*="padding:40px 48px"]{padding:24px 20px!important;}
     /* 3-step domicilio grid */
     div[style*="grid-template-columns:repeat(3,1fr);gap:40px"]{grid-template-columns:1fr!important;}
     /* Testimonials */
@@ -70,6 +83,7 @@
     /* Typography */
     h2[style*="font-size:42px"]{font-size:24px!important;line-height:1.2!important;}
     p[style*="font-size:18px"]{font-size:16px!important;}
+    p[style*="font-size:19px"]{font-size:16px!important;}
   }
 
   /* ── FOOTER GRID MOBILE FIX ── */
