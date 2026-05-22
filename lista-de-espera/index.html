@@ -41,10 +41,17 @@
       nav>div>div{display:none!important;}
       nav>div{padding:0 20px!important;}#nav-hamburger{display:flex!important;}
       section.hero-bg{padding:120px 20px 60px!important;}
-      section.hero-bg h1{font-size:38px!important;}
-      .benefits-grid{grid-template-columns:1fr;max-width:480px;}
+      section.hero-bg h1{font-size:32px!important;line-height:1.12!important;}
+      section.hero-bg p{font-size:16px!important;}
+      /* Stack hero grid to single column */
+      div[style*="grid-template-columns:1fr 1fr;gap:80px"]{grid-template-columns:1fr!important;gap:40px!important;}
+      /* Benefits: 2 columns on tablet, 1 on small */
+      .benefits-grid{grid-template-columns:repeat(2,1fr);max-width:100%;}
+      /* Form card smaller padding */
+      div[style*="padding:40px 36px"]{padding:28px 20px!important;}
     }
     @media(max-width:540px){
+      section.hero-bg h1{font-size:28px!important;}
       .benefits-grid{grid-template-columns:1fr;}
     }
   
